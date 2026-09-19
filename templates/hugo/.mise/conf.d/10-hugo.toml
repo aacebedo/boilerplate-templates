@@ -1,0 +1,5 @@
+[tools]
+go = "{{ .go_version }}"
+hugo-extended = "{{ .hugo_version }}"
+node = "{{ .node_version }}"
+"pipx:djlint" = "{{ .djlint_version }}"

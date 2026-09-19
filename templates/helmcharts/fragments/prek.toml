@@ -1,0 +1,11 @@
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "helm-lint"
+name = "helm lint"
+entry = "mise run --quiet helmcharts:lint"
+language = "system"
+files = "^charts/"
+pass_filenames = false

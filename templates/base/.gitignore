@@ -1,0 +1,2 @@
+.rumdl_cache/
+{{ template "fragments" (dict "vars" . "name" ".gitignore") -}}

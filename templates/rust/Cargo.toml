@@ -1,0 +1,6 @@
+[package]
+name = "{{ .crate_name }}"
+version = "{{ .crate_version }}"
+edition = "{{ .rust_edition }}"
+
+[dependencies]

@@ -1,0 +1,5 @@
+[tools]
+helm = "{{ .helm_version }}"
+
+[vars]
+helm_unittest_version = "{{ .helm_unittest_version }}"

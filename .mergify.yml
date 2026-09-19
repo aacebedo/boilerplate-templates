@@ -1,0 +1,28 @@
+---
+queue_rules:
+  - merge_method: merge
+    name: default
+    branch_protection_injection_mode: merge
+    autoqueue: true
+    queue_conditions:
+      - or:
+          - label = reviewed
+          - label = dependencies
+      - check-success = pr-checks
+    merge_conditions:
+      - or:
+          - label = reviewed
+          - label = dependencies
+      - check-success = pr-checks
+merge_protections:
+  - name: Merge only if reviewed
+    description: Merge only if the PR has been reviewed or is a dependency update
+    if:
+      - base = main
+    success_conditions:
+      - or:
+          - label = reviewed
+          - label = dependencies
+merge_protections_settings:
+  reporting_method: check-runs
+  auto_merge_conditions: true

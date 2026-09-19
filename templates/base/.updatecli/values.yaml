@@ -1,0 +1,134 @@
+---
+github:
+  owner: {{ .github_owner }}
+  repository: {{ .project_slug }}
+  branch: main
+
+miseDeps:
+  base:
+    - slug: shellcheck
+      answerKey: shellcheck_version
+      tomlKey: shellcheck
+      kind: githubrelease
+      owner: koalaman
+      repo: shellcheck
+      trimPrefix: true
+    - slug: editorconfig-checker
+      answerKey: editorconfig_checker_version
+      tomlKey: '"github:editorconfig-checker/editorconfig-checker"'
+      kind: githubrelease
+      owner: editorconfig-checker
+      repo: editorconfig-checker
+      trimPrefix: true
+    - slug: trivy
+      answerKey: trivy_version
+      tomlKey: trivy
+      kind: githubrelease
+      owner: aquasecurity
+      repo: trivy
+      trimPrefix: true
+    - slug: ryl
+      answerKey: ryl_version
+      tomlKey: '"github:owenlamont/ryl"'
+      kind: githubrelease
+      owner: owenlamont
+      repo: ryl
+      trimPrefix: true
+    - slug: prek
+      answerKey: prek_version
+      tomlKey: prek
+      kind: githubrelease
+      owner: j178
+      repo: prek
+      trimPrefix: true
+    - slug: shfmt
+      answerKey: shfmt_version
+      tomlKey: shfmt
+      kind: githubrelease
+      owner: mvdan
+      repo: sh
+      trimPrefix: true
+    - slug: yamlfmt
+      answerKey: yamlfmt_version
+      tomlKey: yamlfmt
+      kind: githubrelease
+      owner: google
+      repo: yamlfmt
+      trimPrefix: true
+    - slug: tombi
+      answerKey: tombi_version
+      tomlKey: '"github:tombi-toml/tombi"'
+      kind: githubrelease
+      owner: tombi-toml
+      repo: tombi
+      trimPrefix: true
+    - slug: cocogitto
+      answerKey: cocogitto_version
+      tomlKey: '"github:cocogitto/cocogitto"'
+      kind: githubrelease
+      owner: cocogitto
+      repo: cocogitto
+      trimPrefix: true
+    - slug: gh
+      answerKey: gh_version
+      tomlKey: gh
+      kind: githubrelease
+      owner: cli
+      repo: cli
+      trimPrefix: true
+    - slug: rumdl
+      answerKey: rumdl_version
+      tomlKey: rumdl
+      kind: githubrelease
+      owner: rvben
+      repo: rumdl
+      trimPrefix: true
+    - slug: updatecli
+      answerKey: updatecli_version
+      tomlKey: updatecli
+      kind: githubrelease
+      owner: updatecli
+      repo: updatecli
+      trimPrefix: true
+    - slug: codebook
+      answerKey: codebook_version
+      tomlKey: '"github:blopker/codebook"'
+      kind: githubrelease
+      owner: blopker
+      repo: codebook
+      trimPrefix: true
+    - slug: biome
+      answerKey: biome_version
+      tomlKey: biome
+      kind: githubrelease
+      owner: biomejs
+      repo: biome
+      trimPrefix: false
+      versionfilterRegex: '@biomejs/biome@(\d+\.\d+\.\d+)'
+    - slug: uv
+      answerKey: uv_version
+      tomlKey: uv
+      kind: pypi
+      name: uv
+      trimPrefix: false
+    - slug: reuse
+      answerKey: reuse_version
+      tomlKey: '"pipx:reuse"'
+      kind: pypi
+      name: reuse
+      trimPrefix: false
+      inlineTable: true
+    - slug: boilerplate
+      answerKey: boilerplate_version
+      tomlKey: boilerplate
+      kind: githubrelease
+      owner: gruntwork-io
+      repo: boilerplate
+      trimPrefix: true
+    - slug: yq
+      answerKey: yq_version
+      tomlKey: yq
+      kind: githubrelease
+      owner: mikefarah
+      repo: yq
+      trimPrefix: true

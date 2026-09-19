@@ -1,0 +1,35 @@
+[tools]
+shellcheck = "{{ .shellcheck_version }}"
+"github:editorconfig-checker/editorconfig-checker" = "{{ .editorconfig_checker_version }}"
+trivy = "{{ .trivy_version }}"
+"github:owenlamont/ryl" = "{{ .ryl_version }}"
+prek = "{{ .prek_version }}"
+shfmt = "{{ .shfmt_version }}"
+yamlfmt = "{{ .yamlfmt_version }}"
+"github:tombi-toml/tombi" = "{{ .tombi_version }}"
+"github:cocogitto/cocogitto" = "{{ .cocogitto_version }}"
+gh = "{{ .gh_version }}"
+rumdl = "{{ .rumdl_version }}"
+updatecli = "{{ .updatecli_version }}"
+biome = "{{ .biome_version }}"
+"github:blopker/codebook" = "{{ .codebook_version }}"
+uv = "{{ .uv_version }}"
+"pipx:reuse" = { version = "{{ .reuse_version }}", extras = "charset-normalizer" }
+boilerplate = "{{ .boilerplate_version }}"
+yq = "{{ .yq_version }}"
+
+[vars]
+{{`# editorconfig-checker-disable
+repo_host = '''{{ exec(command="git remote get-url origin 2>/dev/null |
+  sed 's/[.]git$//' |
+  awk -F'[/:]' '{print $(NF-2)}' |
+  sed 's/.*@//' || echo ''") | trim }}'''
+repo_owner = '''{{ exec(command="git remote get-url origin 2>/dev/null |
+  sed 's/[.]git$//' |
+  awk -F'[/:]' '{print $(NF-1)}' || echo ''") | trim }}'''
+repo_name = '''{{ exec(command="git remote get-url origin 2>/dev/null |
+  sed 's/[.]git$//' |
+  awk -F'[/:]' '{print $NF}' || echo ''") | trim }}'''
+# editorconfig-checker-enable
+repo_url = "https://{{vars.repo_host}}/{{vars.repo_owner}}/{{vars.repo_name}}"
+commit_sha = '''{{ exec(command="git rev-parse HEAD 2>/dev/null || echo ''") | trim }}'''`}}

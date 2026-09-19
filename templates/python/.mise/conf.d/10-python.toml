@@ -1,0 +1,3 @@
+[tools]
+python = "{{ .python_version }}"
+ruff = "{{ .ruff_version }}"

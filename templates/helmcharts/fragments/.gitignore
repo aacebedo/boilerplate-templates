@@ -1,0 +1,4 @@
+
+# Helm charts
+.build/
+charts/*/charts/

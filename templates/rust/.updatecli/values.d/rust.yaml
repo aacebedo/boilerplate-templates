@@ -1,0 +1,11 @@
+---
+miseDeps:
+  rust:
+    - slug: rust
+      answerKey: rust_version
+      tomlKey: rust
+      kind: githubrelease
+      owner: rust-lang
+      repo: rust
+      trimPrefix: false
+      file: .mise/conf.d/10-rust.toml

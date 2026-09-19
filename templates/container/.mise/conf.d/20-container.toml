@@ -1,0 +1,6 @@
+[tools]
+hadolint = "{{ .hadolint_version }}"
+"github:reteps/dockerfmt" = "{{ .dockerfmt_version }}"
+
+[vars]
+image_name = "ghcr.io/{{`{{vars.repo_owner}}/{{vars.repo_name}}`}}"

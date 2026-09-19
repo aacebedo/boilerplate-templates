@@ -1,0 +1,33 @@
+---
+name: "Autodiscover GitHub Actions updates"
+
+scms:
+  default:
+    kind: github
+    spec:
+      owner: "{{ .github.owner }}"
+      repository: "{{ .github.repository }}"
+      token: '{{ requiredEnv "UPDATECLI_GITHUB_TOKEN" }}'
+      branch: "{{ .github.branch }}"
+      commitusingapi: true
+
+autodiscovery:
+  scmid: default
+  actionid: default
+  groupby: individual
+  crawlers:
+    github/action:
+      rootdir: ".github"
+      digest: false
+      credentials:
+        "github.com":
+          kind: github
+          token: '{{ requiredEnv "UPDATECLI_GITHUB_TOKEN" }}'
+
+actions:
+  default:
+    kind: github/pullrequest
+    scmid: default
+    spec:
+      labels:
+        - dependencies

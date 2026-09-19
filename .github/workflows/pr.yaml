@@ -1,0 +1,35 @@
+---
+name: PR
+
+# yamllint disable-line rule:truthy
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+permissions: {}
+
+jobs:
+  pr-checks:
+    runs-on: ubuntu-26.04
+    container:
+      image: ghcr.io/aacebedo/devcontainer-base:1.22.0
+    permissions:
+      contents: read
+      packages: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+          fetch-tags: true
+      - name: Setup
+        uses: ./.github/actions/setup
+      - name: Lint
+        run: mise run lint
+      - name: Test
+        run: mise run test

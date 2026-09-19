@@ -1,0 +1,10 @@
+{
+  "name": "{{ .project_name }} development container",
+  "image": "ghcr.io/aacebedo/devcontainer-base:{{ .devcontainer_image_version }}",
+  "containerEnv": {
+    "MISE_TRUSTED_CONFIG_PATHS": "${containerWorkspaceFolder}",
+    "MISE_GITHUB_TOKEN": "${localEnv:MISE_GITHUB_TOKEN}"
+  },
+  "postCreateCommand": "mise bootstrap -y",
+  "remoteUser": "devcontaineruser"
+}

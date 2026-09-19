@@ -1,0 +1,10 @@
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "djlint"
+name = "djlint"
+entry = "djlint"
+language = "system"
+files = '^src/layouts/.*\.html$'

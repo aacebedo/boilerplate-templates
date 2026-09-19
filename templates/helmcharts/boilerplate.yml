@@ -1,0 +1,28 @@
+---
+required_version: ">= 0.16.0"
+
+variables:
+  - name: helm_version
+    description: Helm version for mise to install
+    default: "4.3.0"
+
+  - name: helm_unittest_version
+    description: >-
+      helm-unittest plugin version, installed into the Helm from mise by the helmcharts:install-plugins task
+    default: "1.1.2"
+
+skip_files:
+  - path: "fragments"
+    if: "true"
+  - path: "fragments/*"
+    if: "true"
+
+hooks:
+  after:
+    - command: sh
+      dir: "{{ outputFolder }}"
+      args:
+        - -c
+        - 'printf "%s\n---\n" "$ANSWERS" >>.boilerplate-answers.parts'
+      env:
+        ANSWERS: '{{ omit . "This" "BoilerplateConfigVars" "BoilerplateConfigDeps" "__each__" | toYaml }}'

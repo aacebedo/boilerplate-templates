@@ -1,0 +1,48 @@
+---
+miseDeps:
+  hugo:
+    - slug: go
+      answerKey: go_version
+      tomlKey: go
+      kind: githubrelease
+      owner: golang
+      repo: go
+      trimPrefix: false
+      versionfilterRegex: '^go(\d+\.\d+\.\d+)$'
+      file: .mise/conf.d/10-hugo.toml
+    - slug: hugoExtended
+      answerKey: hugo_version
+      tomlKey: hugo-extended
+      kind: githubrelease
+      owner: gohugoio
+      repo: hugo
+      trimPrefix: true
+      file: .mise/conf.d/10-hugo.toml
+    - slug: node
+      answerKey: node_version
+      tomlKey: node
+      kind: githubrelease
+      owner: nodejs
+      repo: node
+      trimPrefix: false
+      versionfilterRegex: '^v(26\.\d+\.\d+)$'
+      file: .mise/conf.d/10-hugo.toml
+    - slug: djlint
+      answerKey: djlint_version
+      tomlKey: '"pipx:djlint"'
+      kind: pypi
+      name: djlint
+      trimPrefix: false
+      file: .mise/conf.d/10-hugo.toml
+
+npmDeps:
+  - slug: lighthouse
+    answerKey: lighthouse_version
+    answersFile: .boilerplate-answers.yaml
+    packageName: lighthouse
+    file: tests/package.json
+  - slug: puppeteer
+    answerKey: puppeteer_version
+    answersFile: .boilerplate-answers.yaml
+    packageName: puppeteer
+    file: tests/package.json
