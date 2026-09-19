@@ -1,0 +1,229 @@
+---
+# Entry point of every project: renders the base tooling, then each layer listed in
+# `layers` as a dependency. A layer injects content into base files (prek.toml,
+# .gitignore, ...) through its fragments/ directory, see _partials/fragments.tmpl.
+required_version: ">= 0.16.0"
+
+variables:
+  - name: project_name
+    description: >-
+      Human-readable project name. There's no smart default derived from the output
+      folder, so please type the real name.
+    type: string
+    default: "My Project"
+    confirm: true
+    order: 0
+
+  - name: project_slug
+    description: >-
+      Slug used in image names, URLs, etc. Derived from the project name, lowercased with
+      spaces replaced by dashes. Not prompted for, because Boilerplate would show this
+      default unrendered: pass --var project_slug=... to override it.
+    type: string
+    default: '{{ .project_name | lower | replaceAll " " "-" }}'
+    order: 1
+
+  - name: project_description
+    description: One-line project description
+    type: string
+    default: ""
+    confirm: true
+    order: 2
+
+  - name: github_owner
+    description: >-
+      GitHub organization or user that owns the repository, also the copyright holder
+      written into REUSE.toml (and LICENSE, for MIT)
+    type: string
+    order: 3
+    validations:
+      - required
+
+  - name: license
+    description: >-
+      SPDX identifier of the project's license (e.g. Apache-2.0, MIT, MPL-2.0,
+      GPL-3.0-or-later). Required, with no default: licensing is a deliberate choice. Its
+      text is downloaded from SPDX into LICENSE and LICENSES/ (needs network), REUSE.toml
+      puts every file under it unless it carries its own SPDX header, and `reuse lint` is
+      wired into prek.
+    type: string
+    order: 4
+    validations:
+      - required
+
+  - name: layers
+    description: >-
+      Layers to stack on top of the base tooling, rendered in this order. Each one is a
+      sibling template directory: container, hugo, python, rust.
+    type: list
+    default: []
+    confirm: true
+    order: 5
+
+  # --- Tools installed by mise (.mise/conf.d/00-base.toml) ---
+
+  - name: shellcheck_version
+    description: shellcheck version for mise to install
+    default: "0.11.0"
+
+  - name: editorconfig_checker_version
+    description: editorconfig-checker version for mise to install
+    default: "4.0.1"
+
+  - name: trivy_version
+    description: Trivy version for mise to install
+    default: "0.74.0"
+
+  - name: ryl_version
+    description: ryl (YAML linter) version for mise to install
+    default: "0.22.0"
+
+  - name: prek_version
+    description: prek version for mise to install
+    default: "0.5.3"
+
+  - name: shfmt_version
+    description: shfmt version for mise to install
+    default: "3.14.1"
+
+  - name: yamlfmt_version
+    description: yamlfmt version for mise to install
+    default: "0.21.0"
+
+  - name: tombi_version
+    description: Tombi version for mise to install
+    default: "1.5.5"
+
+  - name: cocogitto_version
+    description: Cocogitto version for mise to install
+    default: "7.0.0"
+
+  - name: gh_version
+    description: GitHub CLI version for mise to install
+    default: "2.101.0"
+
+  - name: rumdl_version
+    description: rumdl version for mise to install
+    default: "0.2.73"
+
+  - name: updatecli_version
+    description: Updatecli version for mise to install
+    default: "0.121.0"
+
+  - name: biome_version
+    description: Biome version for mise to install, also used for the .biome.json schema URL
+    default: "2.5.14"
+
+  - name: codebook_version
+    description: Codebook version for mise to install
+    default: "0.3.43"
+
+  - name: uv_version
+    description: uv version for mise to install, also used by mise to install the pipx:* tools
+    default: "0.12.16"
+
+  - name: reuse_version
+    description: REUSE tool version for mise to install
+    default: "6.2.0"
+
+  - name: boilerplate_version
+    description: Boilerplate version for mise to install, used to apply and update the templates
+    default: "0.16.0"
+
+  - name: yq_version
+    description: yq version for mise to install, used to read and write the answers file
+    default: "4.53.6"
+
+  # --- CI (GitHub Actions refs and the container image the jobs run in) ---
+
+  - name: runner_ubuntu_version
+    description: Ubuntu version of the GitHub-hosted runner every workflow job runs on (runs-on)
+    default: "26.04"
+
+  - name: checkout_action_version
+    description: Git ref of actions/checkout used by every workflow
+    default: "v7.0.1"
+
+  - name: mise_action_version
+    description: Git ref of jdx/mise-action used by the setup action
+    default: "v4.3.0"
+
+  - name: devcontainer_image_version
+    description: >-
+      Tag of ghcr.io/aacebedo/devcontainer-base, used by the devcontainer and by the CI
+      jobs so both run in the same environment
+    default: "1.22.0"
+
+partials:
+  - "_partials/*.tmpl"
+
+dependencies:
+  # Layers inherit every variable above, so they can use the CI versions too.
+  - name: layer
+    template-url: "../{{ .__each__ }}"
+    output-folder: "."
+    for_each_reference: layers
+    # An empty for_each_reference list still renders the dependency once, without __each__.
+    skip: "{{ not .layers }}"
+
+skip_files:
+  - path: "_partials"
+    if: "true"
+  - path: "_partials/*"
+    if: "true"
+
+hooks:
+  after:
+    # Record what the project was generated from, so that check-templates and
+    # update-templates need no Boilerplate manifest. This runs once every layer has been
+    # rendered, so $parts already holds the answers each of them appended.
+    - command: sh
+      dir: "{{ outputFolder }}"
+      args:
+        - -c
+        - |
+          set -e
+          answers=.boilerplate-answers.yaml
+          parts=.boilerplate-answers.parts
+          # go-getter clones the template repository, so the checkout Boilerplate rendered
+          # from carries the version it was fetched at: the release tag when HEAD is on
+          # one, else the commit, both of which go straight into a ?ref=. The repository
+          # itself is always the same one, so the update task hard-codes it.
+          ref="$(git -C "$TEMPLATE_FOLDER" describe --tags --exact-match HEAD 2>/dev/null || true)"
+          if [ -z "$ref" ]; then
+            ref="$(git -C "$TEMPLATE_FOLDER" rev-parse HEAD 2>/dev/null || true)"
+          fi
+          { printf '%s\n' "$ANSWERS"
+            if [ -f "$parts" ]; then printf -- '---\n'; cat "$parts"; fi
+          } >"$parts.all"
+          printf '%s\n' \
+            '# The answers the Boilerplate templates were applied with, and the template' \
+            '# version they were rendered from. Rewritten by "mise run update-templates".' \
+            '---' >"$answers"
+          REF="$ref" mise x -- yq ea \
+            '. as $a ireduce ({}; . * $a) | sort_keys(.) |
+            {"template_ref": strenv(REF)} * .' \
+            "$parts.all" >>"$answers"
+          rm -f "$parts" "$parts.all"
+      env:
+        TEMPLATE_FOLDER: "{{ templateFolder }}"
+        # Every variable this template resolved, minus Boilerplate's own bookkeeping.
+        ANSWERS: '{{ omit . "This" "BoilerplateConfigVars" "BoilerplateConfigDeps" "__each__" | toYaml }}'
+
+    - command: sh
+      # Hooks run in the template folder unless told otherwise.
+      dir: "{{ outputFolder }}"
+      args:
+        - -c
+        - |
+          set -e
+          if [ ! -s LICENSE ]; then
+            mise x -- reuse download -o LICENSE "$LICENSE_ID"
+            HOLDER="$(date +%Y) $COPYRIGHT_HOLDER" awk -v p="<year> <copyright holders>" \
+              '(i = index($0, p)) { $0 = substr($0, 1, i - 1) ENVIRON["HOLDER"] substr($0, i + length(p)) } 1' \
+              LICENSE >LICENSE.tmp && mv LICENSE.tmp LICENSE || { rm -f LICENSE.tmp; exit 1; }
+          fi
+          mise x -- reuse download --all
+      env:
+        LICENSE_ID: "{{ .license }}"
+        COPYRIGHT_HOLDER: "{{ .github_owner }}"

@@ -1,0 +1,31 @@
+---
+# Merged over .updatecli/values.yaml by the update-deps task.
+miseDeps:
+  container:
+    - slug: hadolint
+      answerKey: hadolint_version
+      tomlKey: hadolint
+      kind: githubrelease
+      owner: hadolint
+      repo: hadolint
+      trimPrefix: true
+      file: .mise/conf.d/20-container.toml
+    - slug: dockerfmt
+      answerKey: dockerfmt_version
+      tomlKey: '"github:reteps/dockerfmt"'
+      kind: githubrelease
+      owner: reteps
+      repo: dockerfmt
+      trimPrefix: true
+      file: .mise/conf.d/20-container.toml
+
+# Consumed by .updatecli/manifests/dockerfile.yaml: every entry is one ARG pinned in a
+# Dockerfile, bumped by its own pull request. For example, to track
+# `ARG ALPINE_VERSION=3.24.2`:
+#   - slug: alpine
+#     arg: ALPINE_VERSION
+#     file: src/Dockerfile
+#     kind: dockerimage
+#     image: alpine
+#     tagfilter: '^\d+\.\d+\.\d+$'
+dockerfileDeps: []

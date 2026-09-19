@@ -1,0 +1,15 @@
+[project]
+name = "{{ .package_name }}"
+version = "{{ .package_version }}"
+requires-python = ">={{ regexFind "^[0-9]+[.][0-9]+" .python_version }}"
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest=={{ .pytest_version }}"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py{{ regexFind "^[0-9]+[.][0-9]+" .python_version | replaceAll "." "" }}"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

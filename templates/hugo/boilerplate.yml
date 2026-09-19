@@ -1,0 +1,64 @@
+---
+# Layer rendered by the base template when "hugo" is listed in its layers.
+required_version: ">= 0.16.0"
+
+variables:
+  - name: site_title
+    description: Site title, rendered in <title> and used as the RSS feed name
+    type: string
+    default: "My Site"
+    confirm: true
+    order: 0
+
+  - name: base_url
+    description: Canonical base URL of the published site, with a trailing slash
+    type: string
+    default: "https://example.com/"
+    confirm: true
+    order: 1
+    validations:
+      - url
+
+  - name: hugo_version
+    description: Hugo (extended) version for mise to install
+    default: "0.166.0"
+
+  - name: go_version
+    description: Go version for mise to install, used by Hugo modules
+    default: "1.27.1"
+
+  - name: node_version
+    description: Node.js version for mise to install, used by the Lighthouse test
+    default: "26.9.0"
+
+  - name: djlint_version
+    description: djlint version for mise to install
+    default: "1.46.1"
+
+  - name: lighthouse_version
+    description: Lighthouse version used by the smoke test
+    default: "13.5.0"
+
+  - name: puppeteer_version
+    description: Puppeteer version used by the smoke test to drive Chrome
+    default: "25.11.0"
+
+skip_files:
+  # Injected into the base files by the base template instead.
+  - path: "fragments"
+    if: "true"
+  - path: "fragments/*"
+    if: "true"
+
+hooks:
+  after:
+    # The base template merges this into .boilerplate-answers.yaml once every layer ran.
+    - command: sh
+      dir: "{{ outputFolder }}"
+      args:
+        - -c
+        - 'printf "%s\n---\n" "$ANSWERS" >>.boilerplate-answers.parts'
+      env:
+        # Every variable this layer resolved (the inherited base ones included), minus
+        # Boilerplate's own bookkeeping.
+        ANSWERS: '{{ omit . "This" "BoilerplateConfigVars" "BoilerplateConfigDeps" "__each__" | toYaml }}'

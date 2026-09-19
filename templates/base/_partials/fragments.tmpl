@@ -1,0 +1,14 @@
+{{- /*
+  Renders templates/<layer>/fragments/<name> of every enabled layer, in the order of
+  `layers`, with the base variables. Called as:
+    {{ template "fragments" (dict "vars" . "name" "prek.toml") -}}
+  A fragment holds whole lines, each ending with a newline.
+*/ -}}
+{{- define "fragments" -}}
+{{- $vars := .vars -}}
+{{- $name := .name -}}
+{{- range $vars.layers -}}
+{{- $path := printf "%s/../%s/fragments/%s" templateFolder . $name -}}
+{{- if pathExists $path }}{{ include $path $vars }}{{ end -}}
+{{- end -}}
+{{- end -}}

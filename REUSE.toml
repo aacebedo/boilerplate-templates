@@ -1,0 +1,8 @@
+version = 1
+
+[[annotations]]
+path = "**"
+# Override: templates/base/REUSE.toml is a Go template, not an annotation of templates/.
+precedence = "override"
+SPDX-FileCopyrightText = "aacebedo"
+SPDX-License-Identifier = "Apache-2.0"

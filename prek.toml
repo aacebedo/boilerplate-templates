@@ -1,0 +1,175 @@
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "ryl"
+name = "ryl"
+entry = "ryl"
+language = "system"
+types = ["yaml"]
+# Repository-only: templates/ holds Go templates, not YAML, TOML or JSON.
+exclude = '^\.updatecli/manifests/|^templates/'
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "editorconfig-checker"
+name = "editorconfig-checker"
+entry = "editorconfig-checker"
+language = "system"
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "biome-check"
+name = "biome check"
+entry = "biome check --write --files-ignore-unknown=true --no-errors-on-unmatched"
+language = "system"
+files = '\.(js|jsx|mjs|cjs|ts|tsx|json|jsonc|css|html)$'
+exclude = "^templates/"
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "trivy-fs"
+name = "trivy filesystem scan"
+entry = "trivy"
+args = ["fs", "."]
+language = "system"
+pass_filenames = false
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "yamlfmt"
+name = "yamlfmt"
+entry = "yamlfmt"
+language = "system"
+types = ["yaml"]
+exclude = '^\.updatecli/manifests/|^\.boilerplate-answers\.yaml$|^templates/'
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "tombi-format"
+name = "tombi format"
+entry = "tombi format --offline"
+language = "system"
+types = ["toml"]
+exclude = "^templates/"
+
+[[repos.hooks]]
+id = "tombi-lint"
+name = "tombi lint"
+entry = "tombi lint --offline"
+language = "system"
+types = ["toml"]
+exclude = "^templates/"
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "reuse"
+name = "reuse lint"
+entry = "reuse lint"
+language = "system"
+pass_filenames = false
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "codebook"
+name = "codebook spell check"
+entry = "codebook-lsp lint"
+language = "system"
+files = '\.(md|toml|ya?ml|json|jsonc|sh)$|(^|/)Dockerfile$|\.dockerfile$'
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "check-templates"
+name = "check boilerplate templates are up to date"
+# Informational: report missing or outdated templates without failing the run.
+entry = "sh -c 'mise run check-templates || true'"
+language = "system"
+pass_filenames = false
+always_run = true
+verbose = true
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "updatecli-manifest-validate"
+name = "validate updatecli manifests"
+entry = "env"
+args = [
+  "UPDATECLI_GITHUB_TOKEN=validate-only",
+  "updatecli",
+  "manifest",
+  "validate",
+  "--experimental",
+  "--config",
+  ".updatecli/manifests",
+  "--values",
+  ".updatecli/values.yaml",
+]
+language = "system"
+files = '^\.updatecli/(manifests/.*\.ya?ml|values\.yaml)$'
+pass_filenames = false
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "rumdl-check"
+name = "rumdl check"
+entry = "rumdl check"
+language = "system"
+types = ["markdown"]
+require_serial = true
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "shellcheck"
+name = "shellcheck"
+entry = "shellcheck"
+language = "system"
+types = ["shell"]
+exclude_types = ["zsh"]
+require_serial = true
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "shfmt"
+name = "shfmt"
+entry = "shfmt"
+args = ["--write"]
+language = "system"
+types = ["shell"]
+exclude_types = ["csh", "tcsh"]
+stages = ["pre-commit", "pre-merge-commit", "pre-push", "manual"]
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "cog-check"
+name = "cog check"
+entry = "cog"
+args = ["check", "--from-latest-tag"]
+language = "system"
+pass_filenames = false
+stages = ["pre-push"]

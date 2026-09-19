@@ -1,0 +1,6 @@
+# Every task script sources .mise/lib/task.sh through a path computed from $0, which
+# shellcheck cannot resolve unless the library happens to be passed as an input too. The
+# two that also read variables from .mise/lib/templates.sh point at it explicitly.
+external-sources=true
+source-path=SCRIPTDIR/../..
+disable=SC1091

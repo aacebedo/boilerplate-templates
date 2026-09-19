@@ -1,0 +1,49 @@
+---
+# Layer rendered by the base template when "python" is listed in its layers.
+required_version: ">= 0.16.0"
+
+variables:
+  - name: package_name
+    description: Python project name, used in pyproject.toml
+    type: string
+    default: "my_package"
+    confirm: true
+    order: 0
+
+  - name: package_version
+    description: Initial version of the package in pyproject.toml
+    type: string
+    default: "0.1.0"
+    order: 1
+
+  - name: python_version
+    description: Python version for mise to install
+    default: "3.14.7"
+
+  - name: ruff_version
+    description: Ruff version for mise to install
+    default: "0.16.8"
+
+  - name: pytest_version
+    description: pytest version, pinned in pyproject.toml's dev dependency group
+    default: "9.1.1"
+
+skip_files:
+  # Injected into the base files by the base template instead.
+  - path: "fragments"
+    if: "true"
+  - path: "fragments/*"
+    if: "true"
+
+hooks:
+  after:
+    # The base template merges this into .boilerplate-answers.yaml once every layer ran.
+    - command: sh
+      dir: "{{ outputFolder }}"
+      args:
+        - -c
+        - 'printf "%s\n---\n" "$ANSWERS" >>.boilerplate-answers.parts'
+      env:
+        # Every variable this layer resolved (the inherited base ones included), minus
+        # Boilerplate's own bookkeeping.
+        ANSWERS: '{{ omit . "This" "BoilerplateConfigVars" "BoilerplateConfigDeps" "__each__" | toYaml }}'

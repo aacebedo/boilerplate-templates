@@ -1,0 +1,32 @@
+---
+# Layer rendered by the base template when "container" is listed in its layers.
+required_version: ">= 0.16.0"
+
+variables:
+  - name: hadolint_version
+    description: hadolint version for mise to install
+    default: "2.15.1"
+
+  - name: dockerfmt_version
+    description: dockerfmt (Dockerfile formatter) version for mise to install
+    default: "0.5.4"
+
+skip_files:
+  # Injected into the base files by the base template instead.
+  - path: "fragments"
+    if: "true"
+  - path: "fragments/*"
+    if: "true"
+
+hooks:
+  after:
+    # The base template merges this into .boilerplate-answers.yaml once every layer ran.
+    - command: sh
+      dir: "{{ outputFolder }}"
+      args:
+        - -c
+        - 'printf "%s\n---\n" "$ANSWERS" >>.boilerplate-answers.parts'
+      env:
+        # Every variable this layer resolved (the inherited base ones included), minus
+        # Boilerplate's own bookkeeping.
+        ANSWERS: '{{ omit . "This" "BoilerplateConfigVars" "BoilerplateConfigDeps" "__each__" | toYaml }}'

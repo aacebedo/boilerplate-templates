@@ -1,0 +1,2 @@
+# The templates hold their own prek.toml, which is a Go template and not a prek project.
+templates/

@@ -1,0 +1,28 @@
+---
+# Merged over .updatecli/values.yaml by the update-deps task.
+miseDeps:
+  python:
+    - slug: python
+      answerKey: python_version
+      tomlKey: python
+      kind: githubrelease
+      owner: python
+      repo: cpython
+      trimPrefix: true
+      file: .mise/conf.d/10-python.toml
+    - slug: ruff
+      answerKey: ruff_version
+      tomlKey: ruff
+      kind: pypi
+      name: ruff
+      trimPrefix: false
+      file: .mise/conf.d/10-python.toml
+
+# Consumed by .updatecli/manifests/pypi.yaml: every entry is one dependency pinned
+# in pyproject.toml, bumped by its own pull request.
+pyprojectDeps:
+  - slug: pytest
+    answerKey: pytest_version
+    answersFile: .boilerplate-answers.yaml
+    packageName: pytest
+    file: pyproject.toml

@@ -1,0 +1,55 @@
+---
+# Merged over .updatecli/values.yaml by the update-deps task.
+miseDeps:
+  hugo:
+    - slug: go
+      answerKey: go_version
+      tomlKey: go
+      kind: githubrelease
+      owner: golang
+      repo: go
+      trimPrefix: false
+      # Go tags releases as "goMAJOR.MINOR.PATCH", which plain semver cannot parse.
+      versionfilterRegex: '^go(\d+\.\d+\.\d+)$'
+      file: .mise/conf.d/10-hugo.toml
+    - slug: hugoExtended
+      answerKey: hugo_version
+      tomlKey: hugo-extended
+      kind: githubrelease
+      owner: gohugoio
+      repo: hugo
+      trimPrefix: true
+      file: .mise/conf.d/10-hugo.toml
+    - slug: node
+      answerKey: node_version
+      tomlKey: node
+      kind: githubrelease
+      owner: nodejs
+      repo: node
+      trimPrefix: false
+      # Pinned to one major line so a new major never lands unreviewed: the manifest
+      # has no way to express "~26" on a GitHub release source. Bump the major here
+      # by hand when moving to the next one.
+      versionfilterRegex: '^v(26\.\d+\.\d+)$'
+      file: .mise/conf.d/10-hugo.toml
+    - slug: djlint
+      answerKey: djlint_version
+      tomlKey: '"pipx:djlint"'
+      kind: pypi
+      name: djlint
+      trimPrefix: false
+      file: .mise/conf.d/10-hugo.toml
+
+# Consumed by .updatecli/manifests/npm.yaml: every entry is one dependency pinned
+# in a package.json, bumped by its own pull request.
+npmDeps:
+  - slug: lighthouse
+    answerKey: lighthouse_version
+    answersFile: .boilerplate-answers.yaml
+    packageName: lighthouse
+    file: tests/package.json
+  - slug: puppeteer
+    answerKey: puppeteer_version
+    answersFile: .boilerplate-answers.yaml
+    packageName: puppeteer
+    file: tests/package.json

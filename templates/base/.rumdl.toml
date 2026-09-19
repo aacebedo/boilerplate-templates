@@ -1,0 +1,9 @@
+[global]
+line-length = 120
+exclude = ["CHANGELOG.md"]
+# MD041: a file does not have to start with a top-level heading.
+disable = ["MD041"]
+
+[MD013]
+reflow = true
+reflow-mode = "normalize"

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "dependencies": {
+    "lighthouse": "{{ .lighthouse_version }}",
+    "puppeteer": "{{ .puppeteer_version }}"
+  }
+}
