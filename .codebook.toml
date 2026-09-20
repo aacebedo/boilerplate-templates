@@ -50,6 +50,7 @@ words = [
   "goldmark",
   "groupby",
   "hadolint",
+  "helmcharts",
   "inlines",
   "ireduce",
   "jdx",

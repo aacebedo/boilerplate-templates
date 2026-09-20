@@ -26,13 +26,14 @@ main() {
 	templates_committed_answers >"$tmp/old-answers.yaml" || exit 0
 	templates_plan "$tmp" || exit 0
 	templates_patch "$tmp"
+	templates_filter_patch "$tmp"
 
-	if [ ! -s "$tmp/update.patch" ]; then
+	if [ ! -s "$tmp/filtered.patch" ]; then
 		exit 0
 	fi
 
 	printf "\033[31mApplying the templates would change the project - run '%s':\033[0m\n" "mise run update-templates" >&2
-	(cd "$tmp" && git diff --no-index --name-only old new) | sed 's|^new/|  |' >&2
+	templates_patch_files "$tmp/filtered.patch" | sed 's|^|  |' >&2
 	exit 1
 }
 
