@@ -143,6 +143,10 @@ variables:
     description: Git ref of jdx/mise-action used by the setup action
     default: "v4.3.0"
 
+  - name: create_github_app_token_action_version
+    description: Git ref of actions/create-github-app-token used by the dependency update workflow
+    default: "v3.2.0"
+
   - name: devcontainer_image_version
     description: >-
       Tag of ghcr.io/aacebedo/devcontainer-base, used by the devcontainer and by the CI jobs so both run in the same

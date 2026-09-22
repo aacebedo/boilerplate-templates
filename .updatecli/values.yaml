@@ -251,6 +251,11 @@ templateDefaults:
     owner: jdx
     repo: mise-action
   - template: base
+    variable: create_github_app_token_action_version
+    kind: githubrelease
+    owner: actions
+    repo: create-github-app-token
+  - template: base
     variable: devcontainer_image_version
     kind: dockerimage
     image: ghcr.io/aacebedo/devcontainer-base

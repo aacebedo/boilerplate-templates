@@ -11,15 +11,20 @@ jobs:
   update-deps:
     runs-on: ubuntu-{{ .runner_ubuntu_version }}
     permissions:
-      contents: write
-      pull-requests: write
+      contents: read
 
     steps:
+      - name: Generate a token
+        id: generate-token
+        uses: actions/create-github-app-token@{{ .create_github_app_token_action_version }}
+        with:
+          client-id: ${{ "{{" }} secrets.CI_ACTIONS_DEP_UPDATER_CLIENT_ID {{ "}}" }}
+          private-key: ${{ "{{" }} secrets.CI_ACTIONS_DEP_UPDATER_PRIVATE_KEY {{ "}}" }}
       - name: Checkout repository
         uses: actions/checkout@{{ .checkout_action_version }}
         with:
           persist-credentials: false
-          token: ${{ "{{" }} secrets.GITHUB_TOKEN {{ "}}" }}
+          token: ${{ "{{" }} steps.generate-token.outputs.token {{ "}}" }}
           fetch-depth: 0
           fetch-tags: true
       - name: Setup
@@ -27,4 +32,4 @@ jobs:
       - name: Apply update policies
         run: mise run update-deps --apply
         env:
-          UPDATECLI_GITHUB_TOKEN: ${{ "{{" }} secrets.GITHUB_TOKEN {{ "}}" }}
+          UPDATECLI_GITHUB_TOKEN: ${{ "{{" }} steps.generate-token.outputs.token {{ "}}" }}

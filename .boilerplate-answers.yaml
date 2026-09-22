@@ -6,6 +6,7 @@ boilerplate_version: 0.16.0
 checkout_action_version: v7.0.1
 cocogitto_version: 7.0.0
 codebook_version: 0.3.43
+create_github_app_token_action_version: v3.2.0
 devcontainer_image_version: 1.22.0
 editorconfig_checker_version: 4.0.1
 gh_version: 2.101.0
