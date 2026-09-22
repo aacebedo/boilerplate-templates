@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.1.1](https://github.com/aacebedo/boilerplate-templates/compare/547df88392cece6b4d6ead2c299105a7079b5bc5..v0.1.1) - 2026-09-22
+#### Bug Fixes
+- fix udpate-deps workflow - ([547df88](https://github.com/aacebedo/boilerplate-templates/commit/547df88392cece6b4d6ead2c299105a7079b5bc5)) - Alexandre ACEBEDO
+
+- - -
+
 ## [v0.1.0](https://github.com/aacebedo/boilerplate-templates/compare/e43988d81bfc7ffdce5d3e3e2e079b1b95fd6019..v0.1.0) - 2026-09-20
 #### Features
 - initial commit - ([e43988d](https://github.com/aacebedo/boilerplate-templates/commit/e43988d81bfc7ffdce5d3e3e2e079b1b95fd6019)) - Alexandre ACEBEDO
