@@ -63,7 +63,7 @@ variables:
 
   - name: editorconfig_checker_version
     description: editorconfig-checker version for mise to install
-    default: "4.0.1"
+    default: "4.0.2"
 
   - name: trivy_version
     description: Trivy version for mise to install
