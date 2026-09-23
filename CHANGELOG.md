@@ -2,6 +2,20 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.1.6](https://github.com/aacebedo/boilerplate-templates/compare/31f31028eda14c32f8d48e91216e4b2469d484af..v0.1.6) - 2026-09-23
+#### Bug Fixes
+- make cog bump on chore commit - ([5fce61a](https://github.com/aacebedo/boilerplate-templates/commit/5fce61ae5658ccd26dfe6f1002220c41daa5f826)) - Alexandre ACEBEDO
+- make mergify remove merged branch - ([c990698](https://github.com/aacebedo/boilerplate-templates/commit/c99069829b4d4f4a740fc8b547a94bde78cd0c86)) - Alexandre ACEBEDO
+- update the updatecli commit message - ([9ecae03](https://github.com/aacebedo/boilerplate-templates/commit/9ecae03cd5fca287f8b4e522d9fccbac04ceffed)) - Alexandre ACEBEDO
+#### Miscellaneous Chores
+- Update the editorconfig_checker_version default in templates/b... - ([f727e99](https://github.com/aacebedo/boilerplate-templates/commit/f727e995993c26c4968134084df1fcdb0f1acacb)) - ci-actions-dep-updater[bot]
+- Update the djlint_version default in templates/hugo/boilerplat... - ([00578c7](https://github.com/aacebedo/boilerplate-templates/commit/00578c7b764ade0c44e16e7638d1c394734e384e)) - ci-actions-dep-updater[bot]
+- Update the uv_version default in templates/base/boilerplate.yml - ([b0473f2](https://github.com/aacebedo/boilerplate-templates/commit/b0473f2333818d1610edd2b8a23e3f67bfcae4a9)) - ci-actions-dep-updater[bot]
+- Update the devcontainer_image_version default in templates/bas... - ([e15acae](https://github.com/aacebedo/boilerplate-templates/commit/e15acae2dcd21818c5536ab38afbb684f3dfa365)) - ci-actions-dep-updater[bot]
+- Update the node_version default in templates/hugo/boilerplate.yml - ([31f3102](https://github.com/aacebedo/boilerplate-templates/commit/31f31028eda14c32f8d48e91216e4b2469d484af)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.1.5](https://github.com/aacebedo/boilerplate-templates/compare/f56ed7925bfd94ab0b87b4385c15732c4dce7e2e..v0.1.5) - 2026-09-23
 #### Bug Fixes
 - change rebase mergify merge method - ([f56ed79](https://github.com/aacebedo/boilerplate-templates/commit/f56ed7925bfd94ab0b87b4385c15732c4dce7e2e)) - Alexandre ACEBEDO
