@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.1.2](https://github.com/aacebedo/boilerplate-templates/compare/7410ad6c6728796ac1c4e023f7052d639c7888a5..v0.1.2) - 2026-09-23
+#### Bug Fixes
+- fix container options in workflow - ([7410ad6](https://github.com/aacebedo/boilerplate-templates/commit/7410ad6c6728796ac1c4e023f7052d639c7888a5)) - Alexandre ACEBEDO
+
+- - -
+
 ## [v0.1.1](https://github.com/aacebedo/boilerplate-templates/compare/547df88392cece6b4d6ead2c299105a7079b5bc5..v0.1.1) - 2026-09-22
 #### Bug Fixes
 - fix udpate-deps workflow - ([547df88](https://github.com/aacebedo/boilerplate-templates/commit/547df88392cece6b4d6ead2c299105a7079b5bc5)) - Alexandre ACEBEDO
