@@ -28,7 +28,7 @@ variables:
 
   - name: node_version
     description: Node.js version for mise to install, used by the Lighthouse test
-    default: "26.9.0"
+    default: "26.10.0"
 
   - name: djlint_version
     description: djlint version for mise to install
