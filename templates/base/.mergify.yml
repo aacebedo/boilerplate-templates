@@ -3,7 +3,6 @@ queue_rules:
   - merge_method: merge
     name: default
     branch_protection_injection_mode: merge
-    autoqueue: true
     queue_conditions:
       - or:
           - label = reviewed
