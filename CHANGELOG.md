@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.1.5](https://github.com/aacebedo/boilerplate-templates/compare/f56ed7925bfd94ab0b87b4385c15732c4dce7e2e..v0.1.5) - 2026-09-23
+#### Bug Fixes
+- change rebase mergify merge method - ([f56ed79](https://github.com/aacebedo/boilerplate-templates/commit/f56ed7925bfd94ab0b87b4385c15732c4dce7e2e)) - Alexandre ACEBEDO
+
+- - -
+
 ## [v0.1.4](https://github.com/aacebedo/boilerplate-templates/compare/ea441bda0b976baf460db348539bf5f90231529d..v0.1.4) - 2026-09-23
 #### Bug Fixes
 - fix change the refs when applying the template update - ([a8d0ec7](https://github.com/aacebedo/boilerplate-templates/commit/a8d0ec776adc0a65546be94028563e1218d28d08)) - Alexandre ACEBEDO
