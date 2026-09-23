@@ -32,7 +32,7 @@ variables:
 
   - name: djlint_version
     description: djlint version for mise to install
-    default: "1.46.1"
+    default: "1.46.2"
 
   - name: lighthouse_version
     description: Lighthouse version used by the smoke test
