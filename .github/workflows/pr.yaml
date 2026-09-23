@@ -15,6 +15,9 @@ jobs:
     runs-on: ubuntu-26.04
     container:
       image: ghcr.io/aacebedo/devcontainer-base:1.22.0
+      options: >-
+        --user root
+
     permissions:
       contents: read
       packages: read

@@ -1,1 +1,1 @@
-      options: --user root --privileged --cgroupns=host --security-opt apparmor=unconfined --device /dev/fuse
+        --privileged --cgroupns=host --security-opt apparmor=unconfined --device /dev/fuse

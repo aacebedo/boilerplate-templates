@@ -15,6 +15,8 @@ jobs:
     runs-on: ubuntu-{{ .runner_ubuntu_version }}
     container:
       image: ghcr.io/aacebedo/devcontainer-base:{{ .devcontainer_image_version }}
+      options: >-
+        --user root
 {{ template "fragments" (dict "vars" . "name" "pr-job-container-options.yaml") }}
     permissions:
       contents: read
