@@ -151,7 +151,7 @@ variables:
     description: >-
       Tag of ghcr.io/aacebedo/devcontainer-base, used by the devcontainer and by the CI jobs so both run in the same
       environment
-    default: "1.22.0"
+    default: "1.23.0"
 
 partials:
   - "_partials/*.tmpl"
