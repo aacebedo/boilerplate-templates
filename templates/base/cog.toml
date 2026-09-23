@@ -10,6 +10,10 @@ ignore_merge_commits = true
   "rm -f /tmp/cog-release-notes-{{version}}.md",
 ]
 `}}
+[commit_types.chore]
+bump_patch = true
+changelog_title = "Miscellaneous Chores"
+
 [commit_types.perf]
 bump_patch = true
 changelog_title = "Performance Improvements"
