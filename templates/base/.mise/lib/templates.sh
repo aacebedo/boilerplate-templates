@@ -27,9 +27,25 @@ templates_vars() {
 	yq 'del(.template_url, .template_ref)' "$1"
 }
 
+templates_ensure_ref() {
+	local ref="$1"
+	case "$templates_url" in
+	.* | /*) ;;
+	*) return 0 ;;
+	esac
+	if git -C "$templates_url" show-ref --quiet --verify "refs/heads/$ref" 2>/dev/null; then
+		return 0
+	fi
+	if ! git -C "$templates_url" show-ref --quiet --verify "refs/remotes/origin/$ref" 2>/dev/null; then
+		return 0
+	fi
+	git -C "$templates_url" branch --quiet --force "$ref" "refs/remotes/origin/$ref"
+}
+
 templates_render() {
 	local ref="$1" out="$2" vars="$3"
 	shift 3
+	templates_ensure_ref "$ref"
 	boilerplate --template-url "git::${templates_url}//templates/base?ref=${ref}" --output-folder "$out" \
 		--var-file "$vars" --non-interactive --no-hooks "$@" >/dev/null
 }
