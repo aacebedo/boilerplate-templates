@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.1.4](https://github.com/aacebedo/boilerplate-templates/compare/ea441bda0b976baf460db348539bf5f90231529d..v0.1.4) - 2026-09-23
+#### Bug Fixes
+- fix change the refs when applying the template update - ([a8d0ec7](https://github.com/aacebedo/boilerplate-templates/commit/a8d0ec776adc0a65546be94028563e1218d28d08)) - Alexandre ACEBEDO
+#### Miscellaneous Chores
+- Update the rumdl_version default in templates/base/boilerplate... - ([ea441bd](https://github.com/aacebedo/boilerplate-templates/commit/ea441bda0b976baf460db348539bf5f90231529d)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.1.3](https://github.com/aacebedo/boilerplate-templates/compare/3cf258dd80566dc2b4d72ee697a1f0c9f987b7cb..v0.1.3) - 2026-09-23
 #### Bug Fixes
 - fix mergify config - ([3cf258d](https://github.com/aacebedo/boilerplate-templates/commit/3cf258dd80566dc2b4d72ee697a1f0c9f987b7cb)) - Alexandre ACEBEDO
