@@ -115,7 +115,7 @@ variables:
 
   - name: uv_version
     description: uv version for mise to install, also used by mise to install the pipx:* tools
-    default: "0.12.16"
+    default: "0.12.18"
 
   - name: reuse_version
     description: REUSE tool version for mise to install
