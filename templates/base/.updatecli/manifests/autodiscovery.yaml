@@ -10,6 +10,10 @@ scms:
       token: '{{ requiredEnv "UPDATECLI_GITHUB_TOKEN" }}'
       branch: "{{ .github.branch }}"
       commitusingapi: true
+      commitmessage:
+        type: chore
+        scope: deps
+        hidecredit: true
 
 autodiscovery:
   scmid: default
