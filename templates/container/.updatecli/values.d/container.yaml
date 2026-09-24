@@ -9,13 +9,14 @@ miseDeps:
       repo: hadolint
       trimPrefix: true
       file: .mise/conf.d/20-container.toml
-    - slug: dockerfmt
-      answerKey: dockerfmt_version
-      tomlKey: '"github:reteps/dockerfmt"'
-      kind: githubrelease
-      owner: reteps
-      repo: dockerfmt
-      trimPrefix: true
-      file: .mise/conf.d/20-container.toml
 
 dockerfileDeps: []
+
+dprintPlugins:
+  container:
+    - slug: dockerfile
+      answerKey: dprint_dockerfile_version
+      owner: dprint
+      repo: dprint-plugin-dockerfile
+      urlPrefix: dockerfile-
+      file: .dprint/container.json

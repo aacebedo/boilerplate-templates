@@ -8,14 +8,3 @@ name = "hadolint"
 entry = "hadolint"
 language = "system"
 types = ["dockerfile"]
-
-[[repos]]
-repo = "local"
-
-[[repos.hooks]]
-id = "dockerfmt"
-name = "dockerfmt"
-entry = "dockerfmt"
-args = ["--write", "--newline"]
-language = "system"
-types = ["dockerfile"]

@@ -1,7 +1,6 @@
   "apparmor",
   "cgroupns",
   "dockerfile",
-  "dockerfmt",
   "dockerimage",
   "hadolint",
   "nofile",

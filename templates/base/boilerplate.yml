@@ -15,7 +15,7 @@ variables:
     description: >-
       Slug used in image names, URLs, etc. Derived from the project name, lowercased with spaces replaced by dashes.
     type: string
-    default: 'my-project'
+    default: "my-project"
     confirm: true
     order: 1
 
@@ -81,9 +81,25 @@ variables:
     description: shfmt version for mise to install
     default: "3.14.1"
 
-  - name: yamlfmt_version
-    description: yamlfmt version for mise to install
-    default: "0.21.0"
+  - name: dprint_version
+    description: dprint version for mise to install
+    default: "0.57.4"
+
+  - name: dprint_json_version
+    description: dprint JSON plugin version, pinned in .dprint/base.json
+    default: "0.24.0"
+
+  - name: dprint_markdown_version
+    description: dprint Markdown plugin version, pinned in .dprint/base.json
+    default: "0.24.0"
+
+  - name: dprint_toml_version
+    description: dprint TOML plugin version, pinned in .dprint/base.json
+    default: "0.8.0"
+
+  - name: dprint_pretty_yaml_version
+    description: pretty_yaml (YAML) dprint plugin version, pinned in .dprint/base.json
+    default: "0.6.0"
 
   - name: tombi_version
     description: Tombi version for mise to install

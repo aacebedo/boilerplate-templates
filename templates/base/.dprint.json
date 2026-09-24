@@ -1,0 +1,17 @@
+{
+  "$schema": "https://dprint.dev/schemas/v0.json",
+  "lineWidth": 120,
+  "indentWidth": 2,
+  "useTabs": false,
+  "newLineKind": "lf",
+  "excludes": [
+    "**/node_modules",
+    "**/*-lock.json",
+    ".boilerplate-answers.yaml",
+    ".updatecli/manifests/**",
+    "CHANGELOG.md"
+  ],
+  "extends": [
+{{ template "fragments" (dict "vars" . "name" "dprint-extends.json") }}    ".dprint/base.json"
+  ]
+}

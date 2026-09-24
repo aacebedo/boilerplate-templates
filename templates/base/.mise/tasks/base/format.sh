@@ -7,8 +7,5 @@ set -euo pipefail
 
 . "${0%/.mise/tasks/*}/.mise/lib/task.sh"
 
-biome format --write .
-tombi format
-yamlfmt
-rumdl fmt .
+dprint fmt --config-discovery=ignore-descendants
 prek run shfmt --all-files

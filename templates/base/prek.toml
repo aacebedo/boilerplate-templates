@@ -4,7 +4,7 @@ repo = "local"
 [[repos.hooks]]
 id = "ryl"
 name = "ryl"
-entry = "ryl"
+entry = "ryl --config-file .ryl.toml"
 language = "system"
 types = ["yaml"]
 exclude = '^\.updatecli/manifests/'
@@ -22,9 +22,9 @@ language = "system"
 repo = "local"
 
 [[repos.hooks]]
-id = "biome-check"
-name = "biome check"
-entry = "biome check --write --files-ignore-unknown=true --no-errors-on-unmatched"
+id = "biome-lint"
+name = "biome lint"
+entry = "biome lint --write --files-ignore-unknown=true --no-errors-on-unmatched"
 language = "system"
 files = '\.(js|jsx|mjs|cjs|ts|tsx|json|jsonc|css|html)$'
 
@@ -43,22 +43,13 @@ pass_filenames = false
 repo = "local"
 
 [[repos.hooks]]
-id = "yamlfmt"
-name = "yamlfmt"
-entry = "yamlfmt"
+id = "dprint"
+name = "dprint fmt"
+entry = "dprint fmt --config-discovery=ignore-descendants --allow-no-files"
 language = "system"
-types = ["yaml"]
-exclude = '^\.updatecli/manifests/|^\.boilerplate-answers\.yaml$'
 
 [[repos]]
 repo = "local"
-
-[[repos.hooks]]
-id = "tombi-format"
-name = "tombi format"
-entry = "tombi format --offline"
-language = "system"
-types = ["toml"]
 
 [[repos.hooks]]
 id = "tombi-lint"

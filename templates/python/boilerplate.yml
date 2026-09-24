@@ -23,6 +23,10 @@ variables:
     description: Ruff version for mise to install
     default: "0.16.8"
 
+  - name: dprint_ruff_version
+    description: dprint Ruff (Python) plugin version, pinned in .dprint/python.json
+    default: "0.8.8"
+
   - name: pytest_version
     description: pytest version, pinned in pyproject.toml's dev dependency group
     default: "9.1.1"

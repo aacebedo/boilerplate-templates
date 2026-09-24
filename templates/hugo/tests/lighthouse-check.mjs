@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import { mkdirSync, writeFileSync } from "node:fs";
-import path from "node:path";
 import lighthouse from "lighthouse";
 import desktopConfig from "lighthouse/core/config/desktop-config.js";
+import { mkdirSync, writeFileSync } from "node:fs";
+import path from "node:path";
 import puppeteer from "puppeteer";
 
 const [, , url, thresholdArg, outDir] = process.argv;

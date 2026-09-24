@@ -8,6 +8,11 @@ cocogitto_version: 7.0.0
 codebook_version: 0.3.43
 create_github_app_token_action_version: v3.2.0
 devcontainer_image_version: 1.22.0
+dprint_json_version: 0.24.0
+dprint_markdown_version: 0.24.0
+dprint_pretty_yaml_version: 0.6.0
+dprint_toml_version: 0.8.0
+dprint_version: 0.57.4
 editorconfig_checker_version: 4.0.1
 gh_version: 2.101.0
 github_owner: aacebedo
@@ -28,5 +33,4 @@ tombi_version: 1.5.5
 trivy_version: 0.74.0
 updatecli_version: 0.121.0
 uv_version: 0.12.16
-yamlfmt_version: 0.21.0
 yq_version: 4.53.6

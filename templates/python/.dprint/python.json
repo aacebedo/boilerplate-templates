@@ -1,0 +1,6 @@
+{
+  "ruff": {},
+  "plugins": [
+    "https://plugins.dprint.dev/ruff-{{ .dprint_ruff_version }}.wasm"
+  ]
+}

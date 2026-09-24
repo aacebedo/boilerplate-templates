@@ -6,9 +6,9 @@ variables:
     description: hadolint version for mise to install
     default: "2.15.1"
 
-  - name: dockerfmt_version
-    description: dockerfmt (Dockerfile formatter) version for mise to install
-    default: "0.5.4"
+  - name: dprint_dockerfile_version
+    description: dprint Dockerfile plugin version, pinned in .dprint/container.json
+    default: "0.6.0"
 
 skip_files:
   - path: "fragments"

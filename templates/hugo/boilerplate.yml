@@ -34,6 +34,22 @@ variables:
     description: djlint version for mise to install
     default: "1.46.2"
 
+  - name: dprint_gofumpt_version
+    description: gofumpt (Go) dprint plugin version, pinned in .dprint/hugo.json
+    default: "0.0.18"
+
+  - name: dprint_typescript_version
+    description: dprint TypeScript/JavaScript plugin version, pinned in .dprint/hugo.json
+    default: "0.96.1"
+
+  - name: dprint_malva_version
+    description: Malva (CSS) dprint plugin version, pinned in .dprint/hugo.json
+    default: "0.16.0"
+
+  - name: dprint_markup_fmt_version
+    description: markup_fmt (HTML) dprint plugin version, pinned in .dprint/hugo.json
+    default: "0.27.3"
+
   - name: lighthouse_version
     description: Lighthouse version used by the smoke test
     default: "13.5.0"

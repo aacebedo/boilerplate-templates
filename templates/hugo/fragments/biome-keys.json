@@ -1,2 +1,0 @@
-  "files": { "includes": ["**", "!src/layouts"] },
-  "html": { "linter": { "enabled": false }, "formatter": { "enabled": false } },

@@ -1,0 +1,82 @@
+{{- /* dprintPlugins maps each template to the dprint plugins pinned in its
+  .dprint/<template>.json, one values file per template like miseDeps. */}}
+{{- $first := true }}
+{{- range $template, $deps := .dprintPlugins }}
+{{- range $dep := $deps }}
+{{- if not $first }}
+---
+{{- end }}
+{{- $first = false }}
+{{- $file := ".dprint/base.json" }}
+{{- if $dep.file }}{{ $file = $dep.file }}{{ end }}
+{{- $answers := ".boilerplate-answers.yaml" }}
+name: "Bump the {{ $dep.slug }} dprint plugin in {{ $file }}"
+
+scms:
+  default:
+    kind: github
+    spec:
+      owner: "{{ $.github.owner }}"
+      repository: "{{ $.github.repository }}"
+      token: '{{ requiredEnv "UPDATECLI_GITHUB_TOKEN" }}'
+      branch: "{{ $.github.branch }}"
+      commitusingapi: true
+      commitmessage:
+        type: chore
+        scope: deps
+        hidecredit: true
+
+sources:
+  {{ $dep.slug }}:
+    name: "Get latest {{ $dep.slug }} dprint plugin release"
+    kind: githubrelease
+    spec:
+      owner: {{ $dep.owner }}
+      repository: {{ $dep.repo }}
+      token: '{{ requiredEnv "UPDATECLI_GITHUB_TOKEN" }}'
+      versionfilter:
+        kind: semver
+    transformers:
+      - trimprefix: "v"
+
+conditions:
+  answerRecorded:
+    name: "{{ $dep.answerKey }} is recorded in {{ $answers }}"
+    kind: file
+    scmid: default
+    disablesourceinput: true
+    spec:
+      file: {{ $answers }}
+      matchpattern: '(?m)^{{ $dep.answerKey }}: '
+
+targets:
+  {{ $dep.slug }}:
+    name: "Update the {{ $dep.slug }} dprint plugin in {{ $file }}"
+    kind: file
+    scmid: default
+    sourceid: {{ $dep.slug }}
+    disableconditions: true
+    spec:
+      file: {{ $file }}
+      matchpattern: '("https://plugins\.dprint\.dev/{{ $dep.urlPrefix }})[^"]*(\.wasm")'
+      replacepattern: '${1}{{ "{{" }} source "{{ $dep.slug }}" {{ "}}" }}${2}'
+  {{ $dep.slug }}Answer:
+    name: "Update {{ $dep.answerKey }} in {{ $answers }}"
+    kind: file
+    scmid: default
+    sourceid: {{ $dep.slug }}
+    spec:
+      file: {{ $answers }}
+      matchpattern: '(?m)^({{ $dep.answerKey }}: ).*$'
+      replacepattern: '${1}''{{ "{{" }} source "{{ $dep.slug }}" {{ "}}" }}'''
+
+actions:
+  default:
+    kind: github/pullrequest
+    scmid: default
+    title: 'chore(deps): bump the {{ $dep.slug }} dprint plugin to {{ "{{" }} source "{{ $dep.slug }}" {{ "}}" }}'
+    spec:
+      labels:
+        - dependencies
+{{- end }}
+{{- end }}

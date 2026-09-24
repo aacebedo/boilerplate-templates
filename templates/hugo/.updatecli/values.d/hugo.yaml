@@ -46,3 +46,30 @@ npmDeps:
     answersFile: .boilerplate-answers.yaml
     packageName: puppeteer
     file: tests/package.json
+
+dprintPlugins:
+  hugo:
+    - slug: gofumpt
+      answerKey: dprint_gofumpt_version
+      owner: jakebailey
+      repo: dprint-plugin-gofumpt
+      urlPrefix: jakebailey/gofumpt-v
+      file: .dprint/hugo.json
+    - slug: typescript
+      answerKey: dprint_typescript_version
+      owner: dprint
+      repo: dprint-plugin-typescript
+      urlPrefix: typescript-
+      file: .dprint/hugo.json
+    - slug: malva
+      answerKey: dprint_malva_version
+      owner: g-plane
+      repo: malva
+      urlPrefix: g-plane/malva-v
+      file: .dprint/hugo.json
+    - slug: markupFmt
+      answerKey: dprint_markup_fmt_version
+      owner: g-plane
+      repo: markup_fmt
+      urlPrefix: g-plane/markup_fmt-v
+      file: .dprint/hugo.json

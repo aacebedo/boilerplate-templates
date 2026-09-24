@@ -1,17 +1,24 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.5.14/schema.json",
-  "files": { "includes": ["**", "!templates"] },
+  "files": {
+    "includes": [
+      "**",
+      "!templates/*/fragments",
+      "!templates/*/.dprint",
+      "!templates/base/.biome.json",
+      "!templates/base/.devcontainer/devcontainer.json",
+      "!templates/base/.dprint.json",
+      "!templates/hugo/src/layouts",
+      "!templates/hugo/tests/package.json"
+    ]
+  },
   "vcs": {
     "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true
   },
   "formatter": {
-    "enabled": true,
-    "indentStyle": "space",
-    "indentWidth": 2,
-    "lineWidth": 120,
-    "lineEnding": "lf"
+    "enabled": false
   },
   "linter": {
     "enabled": true

@@ -1,13 +1,48 @@
+exclude = { glob = [
+  "templates/*/fragments/**",
+  "templates/*/.dprint/**",
+  "templates/*/.mise/conf.d/**",
+  "templates/*/.updatecli/manifests/**",
+  "templates/base/_partials/**",
+  "templates/base/.biome.json",
+  "templates/base/.codebook.toml",
+  "templates/base/.devcontainer/devcontainer.json",
+  "templates/base/.dprint.json",
+  "templates/base/.github/actions/setup/action.yml",
+  "templates/base/.github/workflows/pr.yaml",
+  "templates/base/.github/workflows/release.yaml",
+  "templates/base/.github/workflows/update-deps.yaml",
+  "templates/base/.gitignore",
+  "templates/base/.ryl.toml",
+  "templates/base/.updatecli/values.yaml",
+  "templates/base/README.md",
+  "templates/base/REUSE.toml",
+  "templates/base/cog.toml",
+  "templates/base/prek.toml",
+  "templates/container/.github/workflows/release-container.yaml",
+  "templates/container/.mise/tasks/container/build.sh",
+  "templates/container/.mise/tasks/container/publish.sh",
+  "templates/container/.mise/tasks/container/security-scan.sh",
+  "templates/helmcharts/.mise/tasks/helmcharts/install-plugins.sh",
+  "templates/hugo/src/go.mod",
+  "templates/hugo/src/hugo.yaml",
+  "templates/hugo/src/layouts/home.html",
+  "templates/hugo/tests/package.json",
+  "templates/python/pyproject.toml",
+  "templates/rust/.rustfmt.toml",
+  "templates/rust/Cargo.toml",
+] }
+
 [[repos]]
 repo = "local"
 
 [[repos.hooks]]
 id = "ryl"
 name = "ryl"
-entry = "ryl"
+entry = "ryl --config-file .ryl.toml"
 language = "system"
 types = ["yaml"]
-exclude = '^\.updatecli/manifests/|^templates/'
+exclude = '^\.updatecli/manifests/'
 
 [[repos]]
 repo = "local"
@@ -22,12 +57,11 @@ language = "system"
 repo = "local"
 
 [[repos.hooks]]
-id = "biome-check"
-name = "biome check"
-entry = "biome check --write --files-ignore-unknown=true --no-errors-on-unmatched"
+id = "biome-lint"
+name = "biome lint"
+entry = "biome lint --write --files-ignore-unknown=true --no-errors-on-unmatched"
 language = "system"
 files = '\.(js|jsx|mjs|cjs|ts|tsx|json|jsonc|css|html)$'
-exclude = "^templates/"
 
 [[repos]]
 repo = "local"
@@ -44,23 +78,13 @@ pass_filenames = false
 repo = "local"
 
 [[repos.hooks]]
-id = "yamlfmt"
-name = "yamlfmt"
-entry = "yamlfmt"
+id = "dprint"
+name = "dprint fmt"
+entry = "dprint fmt --config-discovery=ignore-descendants --allow-no-files"
 language = "system"
-types = ["yaml"]
-exclude = '^\.updatecli/manifests/|^\.boilerplate-answers\.yaml$|^templates/'
 
 [[repos]]
 repo = "local"
-
-[[repos.hooks]]
-id = "tombi-format"
-name = "tombi format"
-entry = "tombi format --offline"
-language = "system"
-types = ["toml"]
-exclude = "^templates/"
 
 [[repos.hooks]]
 id = "tombi-lint"
@@ -68,7 +92,6 @@ name = "tombi lint"
 entry = "tombi lint --offline"
 language = "system"
 types = ["toml"]
-exclude = "^templates/"
 
 [[repos]]
 repo = "local"

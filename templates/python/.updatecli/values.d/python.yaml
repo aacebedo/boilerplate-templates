@@ -23,3 +23,12 @@ pyprojectDeps:
     answersFile: .boilerplate-answers.yaml
     packageName: pytest
     file: pyproject.toml
+
+dprintPlugins:
+  python:
+    - slug: ruff
+      answerKey: dprint_ruff_version
+      owner: dprint
+      repo: dprint-plugin-ruff
+      urlPrefix: ruff-
+      file: .dprint/python.json

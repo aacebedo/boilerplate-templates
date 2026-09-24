@@ -48,12 +48,12 @@ miseDeps:
       owner: mvdan
       repo: sh
       trimPrefix: true
-    - slug: yamlfmt
-      answerKey: yamlfmt_version
-      tomlKey: yamlfmt
+    - slug: dprint
+      answerKey: dprint_version
+      tomlKey: dprint
       kind: githubrelease
-      owner: google
-      repo: yamlfmt
+      owner: dprint
+      repo: dprint
       trimPrefix: true
     - slug: tombi
       answerKey: tombi_version
@@ -172,10 +172,34 @@ templateDefaults:
     repo: sh
     trimPrefix: true
   - template: base
-    variable: yamlfmt_version
+    variable: dprint_version
     kind: githubrelease
-    owner: google
-    repo: yamlfmt
+    owner: dprint
+    repo: dprint
+    trimPrefix: true
+  - template: base
+    variable: dprint_json_version
+    kind: githubrelease
+    owner: dprint
+    repo: dprint-plugin-json
+    trimPrefix: true
+  - template: base
+    variable: dprint_markdown_version
+    kind: githubrelease
+    owner: dprint
+    repo: dprint-plugin-markdown
+    trimPrefix: true
+  - template: base
+    variable: dprint_toml_version
+    kind: githubrelease
+    owner: dprint
+    repo: dprint-plugin-toml
+    trimPrefix: true
+  - template: base
+    variable: dprint_pretty_yaml_version
+    kind: githubrelease
+    owner: g-plane
+    repo: pretty_yaml
     trimPrefix: true
   - template: base
     variable: tombi_version
@@ -278,6 +302,12 @@ templateDefaults:
     kind: pypi
     name: ruff
   - template: python
+    variable: dprint_ruff_version
+    kind: githubrelease
+    owner: dprint
+    repo: dprint-plugin-ruff
+    trimPrefix: true
+  - template: python
     variable: pytest_version
     kind: pypi
     name: pytest
@@ -305,6 +335,30 @@ templateDefaults:
     kind: pypi
     name: djlint
   - template: hugo
+    variable: dprint_typescript_version
+    kind: githubrelease
+    owner: dprint
+    repo: dprint-plugin-typescript
+    trimPrefix: true
+  - template: hugo
+    variable: dprint_malva_version
+    kind: githubrelease
+    owner: g-plane
+    repo: malva
+    trimPrefix: true
+  - template: hugo
+    variable: dprint_markup_fmt_version
+    kind: githubrelease
+    owner: g-plane
+    repo: markup_fmt
+    trimPrefix: true
+  - template: hugo
+    variable: dprint_gofumpt_version
+    kind: githubrelease
+    owner: jakebailey
+    repo: dprint-plugin-gofumpt
+    trimPrefix: true
+  - template: hugo
     variable: lighthouse_version
     kind: npm
     name: lighthouse
@@ -320,8 +374,31 @@ templateDefaults:
     repo: hadolint
     trimPrefix: true
   - template: container
-    variable: dockerfmt_version
+    variable: dprint_dockerfile_version
     kind: githubrelease
-    owner: reteps
-    repo: dockerfmt
+    owner: dprint
+    repo: dprint-plugin-dockerfile
     trimPrefix: true
+
+dprintPlugins:
+  base:
+    - slug: json
+      answerKey: dprint_json_version
+      owner: dprint
+      repo: dprint-plugin-json
+      urlPrefix: json-
+    - slug: markdown
+      answerKey: dprint_markdown_version
+      owner: dprint
+      repo: dprint-plugin-markdown
+      urlPrefix: markdown-
+    - slug: toml
+      answerKey: dprint_toml_version
+      owner: dprint
+      repo: dprint-plugin-toml
+      urlPrefix: toml-
+    - slug: prettyYaml
+      answerKey: dprint_pretty_yaml_version
+      owner: g-plane
+      repo: pretty_yaml
+      urlPrefix: g-plane/pretty_yaml-v

@@ -8,13 +8,3 @@ name = "ruff check"
 entry = "ruff check --fix"
 language = "system"
 types_or = ["python", "pyi"]
-
-[[repos]]
-repo = "local"
-
-[[repos.hooks]]
-id = "ruff-format"
-name = "ruff format"
-entry = "ruff format"
-language = "system"
-types_or = ["python", "pyi"]

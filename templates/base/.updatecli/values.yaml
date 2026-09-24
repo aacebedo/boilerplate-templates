@@ -48,12 +48,12 @@ miseDeps:
       owner: mvdan
       repo: sh
       trimPrefix: true
-    - slug: yamlfmt
-      answerKey: yamlfmt_version
-      tomlKey: yamlfmt
+    - slug: dprint
+      answerKey: dprint_version
+      tomlKey: dprint
       kind: githubrelease
-      owner: google
-      repo: yamlfmt
+      owner: dprint
+      repo: dprint
       trimPrefix: true
     - slug: tombi
       answerKey: tombi_version
@@ -132,3 +132,26 @@ miseDeps:
       owner: mikefarah
       repo: yq
       trimPrefix: true
+
+dprintPlugins:
+  base:
+    - slug: json
+      answerKey: dprint_json_version
+      owner: dprint
+      repo: dprint-plugin-json
+      urlPrefix: json-
+    - slug: markdown
+      answerKey: dprint_markdown_version
+      owner: dprint
+      repo: dprint-plugin-markdown
+      urlPrefix: markdown-
+    - slug: toml
+      answerKey: dprint_toml_version
+      owner: dprint
+      repo: dprint-plugin-toml
+      urlPrefix: toml-
+    - slug: prettyYaml
+      answerKey: dprint_pretty_yaml_version
+      owner: g-plane
+      repo: pretty_yaml
+      urlPrefix: g-plane/pretty_yaml-v
