@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.2.0](https://github.com/aacebedo/boilerplate-templates/compare/bbcbe2ec26047d236fcab8fc0f0d104f42f5d62e..v0.2.0) - 2026-09-24
+#### Features
+- switch back to dprint and splitted templates answers - ([bbcbe2e](https://github.com/aacebedo/boilerplate-templates/commit/bbcbe2ec26047d236fcab8fc0f0d104f42f5d62e)) - Alexandre ACEBEDO
+
+- - -
+
 ## [v0.1.6](https://github.com/aacebedo/boilerplate-templates/compare/31f31028eda14c32f8d48e91216e4b2469d484af..v0.1.6) - 2026-09-23
 #### Bug Fixes
 - make cog bump on chore commit - ([5fce61a](https://github.com/aacebedo/boilerplate-templates/commit/5fce61ae5658ccd26dfe6f1002220c41daa5f826)) - Alexandre ACEBEDO
