@@ -1,0 +1,74 @@
+{{- range $i, $dep := .npmDeps }}
+{{- if $i }}
+---
+{{- end }}
+name: "Bump {{ $dep.slug }} version in {{ $dep.file }}"
+
+scms:
+  default:
+    kind: github
+    spec:
+      owner: "{{ $.github.owner }}"
+      repository: "{{ $.github.repository }}"
+      token: '{{ requiredEnv "UPDATECLI_GITHUB_TOKEN" }}'
+      branch: "{{ $.github.branch }}"
+      commitusingapi: true
+      commitmessage:
+        type: chore
+        scope: deps
+        hidecredit: true
+
+sources:
+  {{ $dep.slug }}:
+    name: "Get latest {{ $dep.packageName }} release"
+    kind: npm
+    spec:
+      name: '{{ $dep.packageName }}'
+      versionfilter:
+        kind: semver
+        pattern: '{{ if $dep.versionfilterPattern }}{{ $dep.versionfilterPattern }}{{ else }}*{{ end }}'
+{{- if $dep.answerKey }}
+
+conditions:
+  answerRecorded:
+    name: "{{ $dep.answerKey }} is recorded in {{ $dep.answersFile }}"
+    kind: file
+    scmid: default
+    disablesourceinput: true
+    spec:
+      file: {{ $dep.answersFile }}
+      matchpattern: '(?m)^{{ $dep.answerKey }}: '
+{{- end }}
+
+targets:
+  {{ $dep.slug }}:
+    name: "Update {{ $dep.packageName }} in {{ $dep.file }}"
+    kind: file
+    scmid: default
+    sourceid: {{ $dep.slug }}
+    disableconditions: true
+    spec:
+      file: '{{ $dep.file }}'
+      matchpattern: '("{{ $dep.packageName }}": )"[^"]*"'
+      replacepattern: '${1}"{{ "{{" }} source "{{ $dep.slug }}" {{ "}}" }}"'
+  {{- if $dep.answerKey }}
+  {{ $dep.slug }}Answer:
+    name: "Update {{ $dep.answerKey }} in {{ $dep.answersFile }}"
+    kind: file
+    scmid: default
+    sourceid: {{ $dep.slug }}
+    spec:
+      file: {{ $dep.answersFile }}
+      matchpattern: '(?m)^({{ $dep.answerKey }}: ).*$'
+      replacepattern: '${1}''{{ "{{" }} source "{{ $dep.slug }}" {{ "}}" }}'''
+  {{- end }}
+
+actions:
+  default:
+    kind: github/pullrequest
+    scmid: default
+    title: 'chore(deps): bump {{ $dep.packageName }} to {{ "{{" }} source "{{ $dep.slug }}" {{ "}}" }}'
+    spec:
+      labels:
+        - dependencies
+{{- end }}

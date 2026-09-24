@@ -10,15 +10,13 @@
     ".boilerplate-answers.yaml",
     ".updatecli/manifests/**",
     "templates/*/fragments/**",
-    "templates/*/.dprint/**",
     "templates/*/.mise/conf.d/**",
-    "templates/*/.updatecli/manifests/**",
+    "static_files/updatecli/*/manifests/**",
     "templates/base/_partials/**",
     "templates/base/.biome.json",
     "templates/base/.codebook.toml",
     "templates/base/.devcontainer/devcontainer.json",
     "templates/base/.dprint.json",
-    "templates/base/.github/actions/setup/action.yml",
     "templates/base/.github/workflows/pr.yaml",
     "templates/base/.github/workflows/release.yaml",
     "templates/base/.github/workflows/update-deps.yaml",
@@ -29,11 +27,6 @@
     "templates/base/REUSE.toml",
     "templates/base/cog.toml",
     "templates/base/prek.toml",
-    "templates/container/.github/workflows/release-container.yaml",
-    "templates/container/.mise/tasks/container/build.sh",
-    "templates/container/.mise/tasks/container/publish.sh",
-    "templates/container/.mise/tasks/container/security-scan.sh",
-    "templates/helmcharts/.mise/tasks/helmcharts/install-plugins.sh",
     "templates/hugo/src/go.mod",
     "templates/hugo/src/hugo.yaml",
     "templates/hugo/src/layouts/home.html",
@@ -44,6 +37,6 @@
     "CHANGELOG.md"
   ],
   "extends": [
-    ".dprint/base.json"
+    "static_files/dprint/base.json"
   ]
 }

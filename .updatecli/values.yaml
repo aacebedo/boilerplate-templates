@@ -4,135 +4,6 @@ github:
   repository: boilerplate-templates
   branch: main
 
-miseDeps:
-  base:
-    - slug: shellcheck
-      answerKey: shellcheck_version
-      tomlKey: shellcheck
-      kind: githubrelease
-      owner: koalaman
-      repo: shellcheck
-      trimPrefix: true
-    - slug: editorconfig-checker
-      answerKey: editorconfig_checker_version
-      tomlKey: '"github:editorconfig-checker/editorconfig-checker"'
-      kind: githubrelease
-      owner: editorconfig-checker
-      repo: editorconfig-checker
-      trimPrefix: true
-    - slug: trivy
-      answerKey: trivy_version
-      tomlKey: trivy
-      kind: githubrelease
-      owner: aquasecurity
-      repo: trivy
-      trimPrefix: true
-    - slug: ryl
-      answerKey: ryl_version
-      tomlKey: '"github:owenlamont/ryl"'
-      kind: githubrelease
-      owner: owenlamont
-      repo: ryl
-      trimPrefix: true
-    - slug: prek
-      answerKey: prek_version
-      tomlKey: prek
-      kind: githubrelease
-      owner: j178
-      repo: prek
-      trimPrefix: true
-    - slug: shfmt
-      answerKey: shfmt_version
-      tomlKey: shfmt
-      kind: githubrelease
-      owner: mvdan
-      repo: sh
-      trimPrefix: true
-    - slug: dprint
-      answerKey: dprint_version
-      tomlKey: dprint
-      kind: githubrelease
-      owner: dprint
-      repo: dprint
-      trimPrefix: true
-    - slug: tombi
-      answerKey: tombi_version
-      tomlKey: '"github:tombi-toml/tombi"'
-      kind: githubrelease
-      owner: tombi-toml
-      repo: tombi
-      trimPrefix: true
-    - slug: cocogitto
-      answerKey: cocogitto_version
-      tomlKey: '"github:cocogitto/cocogitto"'
-      kind: githubrelease
-      owner: cocogitto
-      repo: cocogitto
-      trimPrefix: true
-    - slug: gh
-      answerKey: gh_version
-      tomlKey: gh
-      kind: githubrelease
-      owner: cli
-      repo: cli
-      trimPrefix: true
-    - slug: rumdl
-      answerKey: rumdl_version
-      tomlKey: rumdl
-      kind: githubrelease
-      owner: rvben
-      repo: rumdl
-      trimPrefix: true
-    - slug: updatecli
-      answerKey: updatecli_version
-      tomlKey: updatecli
-      kind: githubrelease
-      owner: updatecli
-      repo: updatecli
-      trimPrefix: true
-    - slug: codebook
-      answerKey: codebook_version
-      tomlKey: '"github:blopker/codebook"'
-      kind: githubrelease
-      owner: blopker
-      repo: codebook
-      trimPrefix: true
-    - slug: biome
-      answerKey: biome_version
-      tomlKey: biome
-      kind: githubrelease
-      owner: biomejs
-      repo: biome
-      trimPrefix: false
-      versionfilterRegex: '@biomejs/biome@(\d+\.\d+\.\d+)'
-    - slug: uv
-      answerKey: uv_version
-      tomlKey: uv
-      kind: pypi
-      name: uv
-      trimPrefix: false
-    - slug: reuse
-      answerKey: reuse_version
-      tomlKey: '"pipx:reuse"'
-      kind: pypi
-      name: reuse
-      trimPrefix: false
-      inlineTable: true
-    - slug: boilerplate
-      answerKey: boilerplate_version
-      tomlKey: boilerplate
-      kind: githubrelease
-      owner: gruntwork-io
-      repo: boilerplate
-      trimPrefix: true
-    - slug: yq
-      answerKey: yq_version
-      tomlKey: yq
-      kind: githubrelease
-      owner: mikefarah
-      repo: yq
-      trimPrefix: true
-
 templateDefaults:
   # --- base: mise tools ---
   - template: base
@@ -176,30 +47,6 @@ templateDefaults:
     kind: githubrelease
     owner: dprint
     repo: dprint
-    trimPrefix: true
-  - template: base
-    variable: dprint_json_version
-    kind: githubrelease
-    owner: dprint
-    repo: dprint-plugin-json
-    trimPrefix: true
-  - template: base
-    variable: dprint_markdown_version
-    kind: githubrelease
-    owner: dprint
-    repo: dprint-plugin-markdown
-    trimPrefix: true
-  - template: base
-    variable: dprint_toml_version
-    kind: githubrelease
-    owner: dprint
-    repo: dprint-plugin-toml
-    trimPrefix: true
-  - template: base
-    variable: dprint_pretty_yaml_version
-    kind: githubrelease
-    owner: g-plane
-    repo: pretty_yaml
     trimPrefix: true
   - template: base
     variable: tombi_version
@@ -265,21 +112,6 @@ templateDefaults:
     trimPrefix: true
   # --- base: CI ---
   - template: base
-    variable: checkout_action_version
-    kind: githubrelease
-    owner: actions
-    repo: checkout
-  - template: base
-    variable: mise_action_version
-    kind: githubrelease
-    owner: jdx
-    repo: mise-action
-  - template: base
-    variable: create_github_app_token_action_version
-    kind: githubrelease
-    owner: actions
-    repo: create-github-app-token
-  - template: base
     variable: devcontainer_image_version
     kind: dockerimage
     image: ghcr.io/aacebedo/devcontainer-base
@@ -301,12 +133,6 @@ templateDefaults:
     variable: ruff_version
     kind: pypi
     name: ruff
-  - template: python
-    variable: dprint_ruff_version
-    kind: githubrelease
-    owner: dprint
-    repo: dprint-plugin-ruff
-    trimPrefix: true
   - template: python
     variable: pytest_version
     kind: pypi
@@ -335,30 +161,6 @@ templateDefaults:
     kind: pypi
     name: djlint
   - template: hugo
-    variable: dprint_typescript_version
-    kind: githubrelease
-    owner: dprint
-    repo: dprint-plugin-typescript
-    trimPrefix: true
-  - template: hugo
-    variable: dprint_malva_version
-    kind: githubrelease
-    owner: g-plane
-    repo: malva
-    trimPrefix: true
-  - template: hugo
-    variable: dprint_markup_fmt_version
-    kind: githubrelease
-    owner: g-plane
-    repo: markup_fmt
-    trimPrefix: true
-  - template: hugo
-    variable: dprint_gofumpt_version
-    kind: githubrelease
-    owner: jakebailey
-    repo: dprint-plugin-gofumpt
-    trimPrefix: true
-  - template: hugo
     variable: lighthouse_version
     kind: npm
     name: lighthouse
@@ -373,32 +175,49 @@ templateDefaults:
     owner: hadolint
     repo: hadolint
     trimPrefix: true
-  - template: container
-    variable: dprint_dockerfile_version
-    kind: githubrelease
-    owner: dprint
-    repo: dprint-plugin-dockerfile
-    trimPrefix: true
 
 dprintPlugins:
   base:
     - slug: json
-      answerKey: dprint_json_version
       owner: dprint
       repo: dprint-plugin-json
       urlPrefix: json-
     - slug: markdown
-      answerKey: dprint_markdown_version
       owner: dprint
       repo: dprint-plugin-markdown
       urlPrefix: markdown-
     - slug: toml
-      answerKey: dprint_toml_version
       owner: dprint
       repo: dprint-plugin-toml
       urlPrefix: toml-
     - slug: prettyYaml
-      answerKey: dprint_pretty_yaml_version
       owner: g-plane
       repo: pretty_yaml
       urlPrefix: g-plane/pretty_yaml-v
+  container:
+    - slug: dockerfile
+      owner: dprint
+      repo: dprint-plugin-dockerfile
+      urlPrefix: dockerfile-
+  hugo:
+    - slug: gofumpt
+      owner: jakebailey
+      repo: dprint-plugin-gofumpt
+      urlPrefix: jakebailey/gofumpt-v
+    - slug: typescript
+      owner: dprint
+      repo: dprint-plugin-typescript
+      urlPrefix: typescript-
+    - slug: malva
+      owner: g-plane
+      repo: malva
+      urlPrefix: g-plane/malva-v
+    - slug: markupFmt
+      owner: g-plane
+      repo: markup_fmt
+      urlPrefix: g-plane/markup_fmt-v
+  python:
+    - slug: ruff
+      owner: dprint
+      repo: dprint-plugin-ruff
+      urlPrefix: ruff-

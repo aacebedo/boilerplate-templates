@@ -12,6 +12,6 @@
     "CHANGELOG.md"
   ],
   "extends": [
-{{ template "fragments" (dict "vars" . "name" "dprint-extends.json") }}    ".dprint/base.json"
+{{ shell "sh" (printf "%s/_partials/static-files.sh" templateFolder) (env "PWD" "") .layers "dprint" | trim | indent 4 }}
   ]
 }

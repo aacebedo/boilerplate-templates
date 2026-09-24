@@ -1,6 +1,0 @@
-{
-  "dockerfile": {},
-  "plugins": [
-    "https://plugins.dprint.dev/dockerfile-{{ .dprint_dockerfile_version }}.wasm"
-  ]
-}

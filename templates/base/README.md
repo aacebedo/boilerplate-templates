@@ -14,7 +14,9 @@ mise run format             # format the repository
 mise run update-deps        # diff pinned dependency updates (add --apply to open PRs)
 mise run release            # bump the version with cog and publish a GitHub release
 ```
+{{- if .devcontainer }}
 
 ### Using the devcontainer
 
 Open this project in VS Code and "Reopen in Container" to get a fully configured environment.
+{{- end }}

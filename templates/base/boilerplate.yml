@@ -85,22 +85,6 @@ variables:
     description: dprint version for mise to install
     default: "0.57.4"
 
-  - name: dprint_json_version
-    description: dprint JSON plugin version, pinned in .dprint/base.json
-    default: "0.24.0"
-
-  - name: dprint_markdown_version
-    description: dprint Markdown plugin version, pinned in .dprint/base.json
-    default: "0.24.0"
-
-  - name: dprint_toml_version
-    description: dprint TOML plugin version, pinned in .dprint/base.json
-    default: "0.8.0"
-
-  - name: dprint_pretty_yaml_version
-    description: pretty_yaml (YAML) dprint plugin version, pinned in .dprint/base.json
-    default: "0.6.0"
-
   - name: tombi_version
     description: Tombi version for mise to install
     default: "1.5.5"
@@ -145,23 +129,14 @@ variables:
     description: yq version for mise to install, used to read and write the answers file
     default: "4.53.6"
 
-  # --- CI (GitHub Actions refs and the container image the jobs run in) ---
+  # --- CI (the container image the jobs run in) ---
 
-  - name: runner_ubuntu_version
-    description: Ubuntu version of the GitHub-hosted runner every workflow job runs on (runs-on)
-    default: "26.04"
-
-  - name: checkout_action_version
-    description: Git ref of actions/checkout used by every workflow
-    default: "v7.0.1"
-
-  - name: mise_action_version
-    description: Git ref of jdx/mise-action used by the setup action
-    default: "v4.3.0"
-
-  - name: create_github_app_token_action_version
-    description: Git ref of actions/create-github-app-token used by the dependency update workflow
-    default: "v3.2.0"
+  - name: devcontainer
+    description: >-
+      Whether the project gets a devcontainer and its CI jobs run in ghcr.io/aacebedo/devcontainer-base. Turn it off for
+      a project that devcontainer-base itself depends on, such as devcontainer-base.
+    type: bool
+    default: true
 
   - name: devcontainer_image_version
     description: >-
@@ -199,6 +174,10 @@ skip_files:
     if: "true"
   - path: "_partials/*"
     if: "true"
+  - path: ".devcontainer"
+    if: "{{ not .devcontainer }}"
+  - path: ".devcontainer/*"
+    if: "{{ not .devcontainer }}"
 
 hooks:
   after:

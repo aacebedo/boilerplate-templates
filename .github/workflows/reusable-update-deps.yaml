@@ -1,0 +1,48 @@
+---
+name: Reusable dependency update
+
+# yamllint disable-line rule:truthy
+on:
+  workflow_call:
+    secrets:
+      CI_ACTIONS_DEP_UPDATER_CLIENT_ID:
+        description: Client ID of the GitHub App that opens the update pull requests
+        required: true
+      CI_ACTIONS_DEP_UPDATER_PRIVATE_KEY:
+        description: Private key of the GitHub App that opens the update pull requests
+        required: true
+
+jobs:
+  update-deps:
+    runs-on: ubuntu-26.04
+
+    steps:
+      - name: Generate a token
+        id: generate-token
+        uses: actions/create-github-app-token@v3.2.0
+        with:
+          client-id: ${{ secrets.CI_ACTIONS_DEP_UPDATER_CLIENT_ID }}
+          private-key: ${{ secrets.CI_ACTIONS_DEP_UPDATER_PRIVATE_KEY }}
+      - name: Checkout repository
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+          token: ${{ steps.generate-token.outputs.token }}
+          fetch-depth: 0
+          fetch-tags: true
+      - name: Checkout the templates
+        uses: actions/checkout@v7.0.1
+        with:
+          repository: ${{ job.workflow_repository }}
+          ref: ${{ job.workflow_sha }}
+          path: .boilerplate-templates
+          persist-credentials: false
+      - name: Setup
+        uses: ./.boilerplate-templates/static_files/github/actions/setup
+      - name: Remove the templates checkout
+        shell: bash
+        run: rm -rf .boilerplate-templates
+      - name: Apply update policies
+        run: mise run update-deps --apply
+        env:
+          UPDATECLI_GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}

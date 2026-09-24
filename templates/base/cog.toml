@@ -2,14 +2,15 @@ tag_prefix = "v"
 branch_whitelist = ["main"]
 ignore_merge_commits = true
 
-{{`post_bump_hooks = [
-  "git push",
+post_bump_hooks = [
+{{ template "fragments" (dict "vars" . "name" "cog-post-bump-hooks.toml") -}}
+{{`  "git push",
   "git push origin {{version_tag}}",
   "cog changelog --at {{version_tag}} --template full_hash > /tmp/cog-release-notes-{{version}}.md",
   "gh release create {{version_tag}} --title {{version_tag}} --notes-file /tmp/cog-release-notes-{{version}}.md",
-  "rm -f /tmp/cog-release-notes-{{version}}.md",
+  "rm -f /tmp/cog-release-notes-{{version}}.md",`}}
 ]
-`}}
+
 [commit_types.chore]
 bump_patch = true
 changelog_title = "Miscellaneous Chores"

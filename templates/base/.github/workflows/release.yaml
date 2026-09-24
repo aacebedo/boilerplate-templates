@@ -6,34 +6,19 @@ on:
   push:
     branches:
       - main
+
 permissions: {}
+
 jobs:
   release:
-    runs-on: ubuntu-{{ .runner_ubuntu_version }}
+    uses: {{ shell "sh" (printf "%s/_partials/static-files.sh" templateFolder) (env "PWD" "") .layers "github" "reusable-release.yaml" }}
     permissions:
       contents: write
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@{{ .checkout_action_version }}
-        with:
-          persist-credentials: false
-          token: ${{ "{{" }} secrets.GITHUB_TOKEN {{ "}}" }}
-          fetch-depth: 0
-          fetch-tags: true
-      - name: Setup
-        uses: ./.github/actions/setup
-      - name: Configure git remote and user info
-        shell: bash
-        run: |
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          git remote set-url origin "https://${REPO_OWNER}:${TOKEN}@github.com/${REPO}.git"
-        env:
-          REPO_OWNER: ${{ "{{" }} github.repository_owner {{ "}}" }}
-          TOKEN: ${{ "{{" }} secrets.GITHUB_TOKEN {{ "}}" }}
-          REPO: ${{ "{{" }} github.repository {{ "}}" }}
-      - name: Perform release
-        run: mise run release
-        env:
-          GITHUB_TOKEN: ${{ "{{" }} secrets.GITHUB_TOKEN {{ "}}" }}
+{{ template "fragments" (dict "vars" . "name" "release-job-permissions.yaml") -}}
+{{- if .devcontainer }}
+    with:
+      container-image: ghcr.io/aacebedo/devcontainer-base:{{ .devcontainer_image_version }}
+      container-options: >-
+        --user root
+{{ template "fragments" (dict "vars" . "name" "job-container-options.yaml") }}
+{{- end -}}

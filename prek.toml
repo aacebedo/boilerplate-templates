@@ -1,14 +1,12 @@
 exclude = { glob = [
   "templates/*/fragments/**",
-  "templates/*/.dprint/**",
   "templates/*/.mise/conf.d/**",
-  "templates/*/.updatecli/manifests/**",
-  "templates/base/_partials/**",
+  "static_files/updatecli/*/manifests/**",
+  "templates/base/_partials/*.tmpl",
   "templates/base/.biome.json",
   "templates/base/.codebook.toml",
   "templates/base/.devcontainer/devcontainer.json",
   "templates/base/.dprint.json",
-  "templates/base/.github/actions/setup/action.yml",
   "templates/base/.github/workflows/pr.yaml",
   "templates/base/.github/workflows/release.yaml",
   "templates/base/.github/workflows/update-deps.yaml",
@@ -19,11 +17,6 @@ exclude = { glob = [
   "templates/base/REUSE.toml",
   "templates/base/cog.toml",
   "templates/base/prek.toml",
-  "templates/container/.github/workflows/release-container.yaml",
-  "templates/container/.mise/tasks/container/build.sh",
-  "templates/container/.mise/tasks/container/publish.sh",
-  "templates/container/.mise/tasks/container/security-scan.sh",
-  "templates/helmcharts/.mise/tasks/helmcharts/install-plugins.sh",
   "templates/hugo/src/go.mod",
   "templates/hugo/src/hugo.yaml",
   "templates/hugo/src/layouts/home.html",
@@ -42,7 +35,7 @@ name = "ryl"
 entry = "ryl --config-file .ryl.toml"
 language = "system"
 types = ["yaml"]
-exclude = '^\.updatecli/manifests/'
+exclude = '^(\.updatecli|static_files/updatecli/[^/]+)/manifests/'
 
 [[repos]]
 repo = "local"
@@ -70,7 +63,7 @@ repo = "local"
 id = "trivy-fs"
 name = "trivy filesystem scan"
 entry = "trivy"
-args = ["fs", "."]
+args = ["fs", "--scanners", "vuln,secret,misconfig,license", "."]
 language = "system"
 pass_filenames = false
 
@@ -133,17 +126,14 @@ name = "validate updatecli manifests"
 entry = "env"
 args = [
   "UPDATECLI_GITHUB_TOKEN=validate-only",
-  "updatecli",
-  "manifest",
-  "validate",
-  "--experimental",
-  "--config",
-  ".updatecli/manifests",
-  "--values",
-  ".updatecli/values.yaml",
+  "mise",
+  "run",
+  "--quiet",
+  "update-deps",
+  "--validate",
 ]
 language = "system"
-files = '^\.updatecli/(manifests/.*\.ya?ml|values\.yaml)$'
+files = '^(\.updatecli|static_files/updatecli)/'
 pass_filenames = false
 
 [[repos]]

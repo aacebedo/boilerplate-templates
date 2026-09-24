@@ -33,3 +33,9 @@ repo_name = '''{{ exec(command="git remote get-url origin 2>/dev/null |
 # editorconfig-checker-enable
 repo_url = "https://{{vars.repo_host}}/{{vars.repo_owner}}/{{vars.repo_name}}"
 commit_sha = '''{{ exec(command="git rev-parse HEAD 2>/dev/null || echo ''") | trim }}'''
+
+[task_config]
+includes = [
+  "static_files/mise/tasks/base",
+  ".mise/tasks",
+]

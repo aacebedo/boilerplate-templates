@@ -35,7 +35,7 @@ repo = "local"
 id = "trivy-fs"
 name = "trivy filesystem scan"
 entry = "trivy"
-args = ["fs", "."]
+args = ["fs", "--scanners", "vuln,secret,misconfig,license", "."]
 language = "system"
 pass_filenames = false
 
@@ -98,17 +98,14 @@ name = "validate updatecli manifests"
 entry = "env"
 args = [
   "UPDATECLI_GITHUB_TOKEN=validate-only",
-  "updatecli",
-  "manifest",
-  "validate",
-  "--experimental",
-  "--config",
-  ".updatecli/manifests",
-  "--values",
-  ".updatecli/values.yaml",
+  "mise",
+  "run",
+  "--quiet",
+  "update-deps",
+  "--validate",
 ]
 language = "system"
-files = '^\.updatecli/(manifests/.*\.ya?ml|values\.yaml)$'
+files = '^\.updatecli/'
 pass_filenames = false
 
 [[repos]]

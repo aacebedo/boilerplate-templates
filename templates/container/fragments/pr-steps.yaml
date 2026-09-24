@@ -1,2 +1,0 @@
-      - name: Build and scan the container image
-        run: mise run container:run:security-scan

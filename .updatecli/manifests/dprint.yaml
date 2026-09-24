@@ -1,5 +1,5 @@
 {{- /* dprintPlugins maps each template to the dprint plugins pinned in its
-  .dprint/<template>.json, one values file per template like miseDeps. */}}
+  static_files/dprint/<template>.json. */}}
 {{- $first := true }}
 {{- range $template, $deps := .dprintPlugins }}
 {{- range $dep := $deps }}
@@ -7,9 +7,7 @@
 ---
 {{- end }}
 {{- $first = false }}
-{{- $file := ".dprint/base.json" }}
-{{- if $dep.file }}{{ $file = $dep.file }}{{ end }}
-{{- $answers := ".boilerplate-answers.yaml" }}
+{{- $file := printf "static_files/dprint/%s.json" $template }}
 name: "Bump the {{ $dep.slug }} dprint plugin in {{ $file }}"
 
 scms:
@@ -39,36 +37,16 @@ sources:
     transformers:
       - trimprefix: "v"
 
-conditions:
-  answerRecorded:
-    name: "{{ $dep.answerKey }} is recorded in {{ $answers }}"
-    kind: file
-    scmid: default
-    disablesourceinput: true
-    spec:
-      file: {{ $answers }}
-      matchpattern: '(?m)^{{ $dep.answerKey }}: '
-
 targets:
   {{ $dep.slug }}:
     name: "Update the {{ $dep.slug }} dprint plugin in {{ $file }}"
     kind: file
     scmid: default
     sourceid: {{ $dep.slug }}
-    disableconditions: true
     spec:
       file: {{ $file }}
       matchpattern: '("https://plugins\.dprint\.dev/{{ $dep.urlPrefix }})[^"]*(\.wasm")'
       replacepattern: '${1}{{ "{{" }} source "{{ $dep.slug }}" {{ "}}" }}${2}'
-  {{ $dep.slug }}Answer:
-    name: "Update {{ $dep.answerKey }} in {{ $answers }}"
-    kind: file
-    scmid: default
-    sourceid: {{ $dep.slug }}
-    spec:
-      file: {{ $answers }}
-      matchpattern: '(?m)^({{ $dep.answerKey }}: ).*$'
-      replacepattern: '${1}''{{ "{{" }} source "{{ $dep.slug }}" {{ "}}" }}'''
 
 actions:
   default:

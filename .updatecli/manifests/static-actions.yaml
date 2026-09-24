@@ -1,0 +1,37 @@
+---
+name: "Autodiscover GitHub Actions updates in static_files/github"
+
+scms:
+  default:
+    kind: github
+    spec:
+      owner: "{{ .github.owner }}"
+      repository: "{{ .github.repository }}"
+      token: '{{ requiredEnv "UPDATECLI_GITHUB_TOKEN" }}'
+      branch: "{{ .github.branch }}"
+      commitusingapi: true
+      commitmessage:
+        type: chore
+        scope: deps
+        hidecredit: true
+
+autodiscovery:
+  scmid: default
+  actionid: default
+  groupby: individual
+  crawlers:
+    github/action:
+      rootdir: "static_files/github"
+      digest: false
+      credentials:
+        "github.com":
+          kind: github
+          token: '{{ requiredEnv "UPDATECLI_GITHUB_TOKEN" }}'
+
+actions:
+  default:
+    kind: github/pullrequest
+    scmid: default
+    spec:
+      labels:
+        - dependencies

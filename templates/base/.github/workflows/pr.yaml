@@ -12,28 +12,16 @@ permissions: {}
 
 jobs:
   pr-checks:
-    runs-on: ubuntu-{{ .runner_ubuntu_version }}
-    container:
-      image: ghcr.io/aacebedo/devcontainer-base:{{ .devcontainer_image_version }}
-      options: >-
-        --user root
-{{ template "fragments" (dict "vars" . "name" "pr-job-container-options.yaml") }}
+    uses: {{ shell "sh" (printf "%s/_partials/static-files.sh" templateFolder) (env "PWD" "") .layers "github" "reusable-pr.yaml" }}
     permissions:
       contents: read
       packages: read
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@{{ .checkout_action_version }}
-        with:
-          persist-credentials: false
-          token: ${{ "{{" }} secrets.GITHUB_TOKEN {{ "}}" }}
-          fetch-depth: 0
-          fetch-tags: true
-      - name: Setup
-        uses: ./.github/actions/setup
-      - name: Lint
-        run: mise run lint
-      - name: Test
-        run: mise run test
-{{ template "fragments" (dict "vars" . "name" "pr-steps.yaml") -}}
+    with:
+{{- if .devcontainer }}
+      container-image: ghcr.io/aacebedo/devcontainer-base:{{ .devcontainer_image_version }}
+      container-options: >-
+        --user root
+{{ template "fragments" (dict "vars" . "name" "job-container-options.yaml") }}
+{{- end }}
+      extra-tasks: >-
+{{ template "fragments" (dict "vars" . "name" "pr-extra-tasks.yaml") -}}

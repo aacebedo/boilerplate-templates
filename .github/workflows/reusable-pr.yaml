@@ -1,0 +1,60 @@
+---
+name: Reusable PR
+
+# yamllint disable-line rule:truthy
+on:
+  workflow_call:
+    inputs:
+      container-image:
+        description: Image of the container the job runs in, empty to run it on the runner
+        type: string
+        default: ""
+      container-options:
+        description: Options of the container the job runs in
+        type: string
+        default: ""
+      extra-tasks:
+        description: mise tasks to run after lint and test, separated by spaces
+        type: string
+        default: ""
+
+jobs:
+  pr-checks:
+    runs-on: ubuntu-26.04
+    container: >-
+      ${{ inputs.container-image != '' && fromJSON(format('{{"image":{0},"options":{1}}}',
+      toJSON(inputs.container-image), toJSON(inputs.container-options))) || '' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+          token: ${{ github.token }}
+          fetch-depth: 0
+          fetch-tags: true
+      - name: Checkout the templates
+        uses: actions/checkout@v7.0.1
+        with:
+          repository: ${{ job.workflow_repository }}
+          ref: ${{ job.workflow_sha }}
+          path: .boilerplate-templates
+          persist-credentials: false
+      - name: Setup
+        uses: ./.boilerplate-templates/static_files/github/actions/setup
+      - name: Remove the templates checkout
+        shell: bash
+        run: rm -rf .boilerplate-templates
+      - name: Lint
+        run: mise run lint
+      - name: Test
+        run: mise run test
+      - name: Run the extra tasks
+        if: inputs.extra-tasks != ''
+        shell: bash
+        run: |
+          for task in ${EXTRA_TASKS}; do
+            mise run "${task}"
+          done
+        env:
+          EXTRA_TASKS: ${{ inputs.extra-tasks }}

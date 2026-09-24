@@ -3,3 +3,8 @@ hadolint = "{{ .hadolint_version }}"
 
 [vars]
 image_name = "ghcr.io/{{`{{vars.repo_owner}}/{{vars.repo_name}}`}}"
+image_description = {{ .project_description | toJson }}
+image_licenses = {{ .license | toJson }}
+
+[env]
+IMAGE_NAME = "{{`{{vars.image_name}}`}}"

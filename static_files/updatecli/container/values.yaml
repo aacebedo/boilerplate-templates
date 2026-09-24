@@ -1,0 +1,13 @@
+---
+miseDeps:
+  container:
+    - slug: hadolint
+      answerKey: hadolint_version
+      tomlKey: hadolint
+      kind: githubrelease
+      owner: hadolint
+      repo: hadolint
+      trimPrefix: true
+      file: .mise/conf.d/20-container.toml
+
+dockerfileDeps: []

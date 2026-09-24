@@ -12,27 +12,13 @@ permissions: {}
 
 jobs:
   pr-checks:
-    runs-on: ubuntu-26.04
-    container:
-      image: ghcr.io/aacebedo/devcontainer-base:1.22.0
-      options: >-
-        --user root
-
+    uses: ./.github/workflows/reusable-pr.yaml
     permissions:
       contents: read
       packages: read
+    with:
+      container-image: ghcr.io/aacebedo/devcontainer-base:1.22.0
+      container-options: >-
+        --user root
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v7.0.1
-        with:
-          persist-credentials: false
-          token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0
-          fetch-tags: true
-      - name: Setup
-        uses: ./.github/actions/setup
-      - name: Lint
-        run: mise run lint
-      - name: Test
-        run: mise run test
+      extra-tasks: >-

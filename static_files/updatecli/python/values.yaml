@@ -1,0 +1,25 @@
+---
+miseDeps:
+  python:
+    - slug: python
+      answerKey: python_version
+      tomlKey: python
+      kind: githubrelease
+      owner: python
+      repo: cpython
+      trimPrefix: true
+      file: .mise/conf.d/10-python.toml
+    - slug: ruff
+      answerKey: ruff_version
+      tomlKey: ruff
+      kind: pypi
+      name: ruff
+      trimPrefix: false
+      file: .mise/conf.d/10-python.toml
+
+pyprojectDeps:
+  - slug: pytest
+    answerKey: pytest_version
+    answersFile: .boilerplate-answers.yaml
+    packageName: pytest
+    file: pyproject.toml
