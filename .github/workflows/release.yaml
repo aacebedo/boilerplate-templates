@@ -12,6 +12,7 @@ permissions: {}
 jobs:
   release:
     uses: ./.github/workflows/reusable-release.yaml
+    secrets: inherit
     permissions:
       contents: write
 

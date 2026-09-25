@@ -1,5 +1,5 @@
   "mise run container:security-scan",
-  'printenv GITHUB_TOKEN | podman login "${IMAGE_NAME%%/*}" --username "$GITHUB_ACTOR" --password-stdin',
+  'printenv CONTAINER_REGISTRY_TOKEN | podman login "${IMAGE_NAME%%/*}" --username "$GITHUB_ACTOR" --password-stdin',
   {{`'podman tag "$IMAGE_NAME:$(git rev-parse HEAD)" "$IMAGE_NAME:{{version}}"',
   'podman tag "$IMAGE_NAME:$(git rev-parse HEAD)" "$IMAGE_NAME:latest"',
   'podman push "$IMAGE_NAME:{{version}}"',`}}

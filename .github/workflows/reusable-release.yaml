@@ -13,6 +13,13 @@ on:
         description: Options of the container the job runs in
         type: string
         default: ""
+    secrets:
+      CI_ACTIONS_RELEASER_CLIENT_ID:
+        description: Client ID of the GitHub App pushing the release commit and tag
+        required: true
+      CI_ACTIONS_RELEASER_PRIVATE_KEY:
+        description: Private key of the GitHub App pushing the release commit and tag
+        required: true
 
 jobs:
   release:
@@ -22,11 +29,17 @@ jobs:
       toJSON(inputs.container-image), toJSON(inputs.container-options))) || '' }}
 
     steps:
+      - name: Generate a token
+        id: generate-token
+        uses: actions/create-github-app-token@v3.2.0
+        with:
+          client-id: ${{ secrets.CI_ACTIONS_RELEASER_CLIENT_ID }}
+          private-key: ${{ secrets.CI_ACTIONS_RELEASER_PRIVATE_KEY }}
       - name: Checkout repository
         uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
-          token: ${{ github.token }}
+          token: ${{ steps.generate-token.outputs.token }}
           fetch-depth: 0
           fetch-tags: true
       - name: Checkout the templates
@@ -49,9 +62,10 @@ jobs:
           git remote set-url origin "https://${REPO_OWNER}:${TOKEN}@github.com/${REPO}.git"
         env:
           REPO_OWNER: ${{ github.repository_owner }}
-          TOKEN: ${{ github.token }}
+          TOKEN: ${{ steps.generate-token.outputs.token }}
           REPO: ${{ github.repository }}
       - name: Perform release
         run: mise run release
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
+          CONTAINER_REGISTRY_TOKEN: ${{ github.token }}

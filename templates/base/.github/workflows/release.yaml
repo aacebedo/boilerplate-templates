@@ -12,6 +12,7 @@ permissions: {}
 jobs:
   release:
     uses: {{ shell "sh" (printf "%s/_partials/static-files.sh" templateFolder) (env "PWD" "") .layers "github" "reusable-release.yaml" }}
+    secrets: inherit
     permissions:
       contents: write
 {{ template "fragments" (dict "vars" . "name" "release-job-permissions.yaml") -}}
