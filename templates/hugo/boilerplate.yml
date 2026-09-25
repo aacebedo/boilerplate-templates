@@ -40,7 +40,7 @@ variables:
 
   - name: puppeteer_version
     description: Puppeteer version used by the smoke test to drive Chrome
-    default: "25.11.0"
+    default: "25.12.0"
 
 skip_files:
   - path: "fragments"
