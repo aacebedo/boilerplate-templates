@@ -17,6 +17,6 @@ jobs:
       contents: write
 
     with:
-      container-image: ghcr.io/aacebedo/devcontainer-base:1.22.0
+      container-image: ghcr.io/aacebedo/devcontainer-base:1.24.1
       container-options: >-
         --user root
