@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.3.2](https://github.com/aacebedo/boilerplate-templates/compare/66dd618d8e2f939c7a701fc79a5476b0131afc32..v0.3.2) - 2026-09-25
+#### Bug Fixes
+- use the releaser app for token generation - ([66dd618](https://github.com/aacebedo/boilerplate-templates/commit/66dd618d8e2f939c7a701fc79a5476b0131afc32)) - Alexandre ACEBEDO
+
+- - -
+
 ## [v0.3.1](https://github.com/aacebedo/boilerplate-templates/compare/8a0b7a585685ee9d2b96289247cbc45f598cc3da..v0.3.1) - 2026-09-25
 #### Bug Fixes
 - fix trivy call in prek - ([8a0b7a5](https://github.com/aacebedo/boilerplate-templates/commit/8a0b7a585685ee9d2b96289247cbc45f598cc3da)) - Alexandre ACEBEDO
