@@ -35,7 +35,17 @@ repo = "local"
 id = "trivy-fs"
 name = "trivy filesystem scan"
 entry = "trivy"
-args = ["fs", "--scanners", "vuln,secret,misconfig,license", "."]
+args = [
+  "fs",
+  "--scanners",
+  "vuln,secret,misconfig,license",
+  "--exit-code",
+  "1",
+  "--severity",
+  "CRITICAL",
+  "--skip-version-check",
+  ".",
+]
 language = "system"
 pass_filenames = false
 
