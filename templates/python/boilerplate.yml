@@ -21,7 +21,7 @@ variables:
 
   - name: ruff_version
     description: Ruff version for mise to install
-    default: "0.16.8"
+    default: "0.16.9"
 
   - name: pytest_version
     description: pytest version, pinned in pyproject.toml's dev dependency group
