@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.3.0](https://github.com/aacebedo/boilerplate-templates/compare/12df2f65399de325bfa6f28b568708155e5e5754..v0.3.0) - 2026-09-25
+#### Features
+- switch to reference based system instead of templating everything - ([12df2f6](https://github.com/aacebedo/boilerplate-templates/commit/12df2f65399de325bfa6f28b568708155e5e5754)) - Alexandre ACEBEDO
+
+- - -
+
 ## [v0.2.0](https://github.com/aacebedo/boilerplate-templates/compare/bbcbe2ec26047d236fcab8fc0f0d104f42f5d62e..v0.2.0) - 2026-09-24
 #### Features
 - switch back to dprint and splitted templates answers - ([bbcbe2e](https://github.com/aacebedo/boilerplate-templates/commit/bbcbe2ec26047d236fcab8fc0f0d104f42f5d62e)) - Alexandre ACEBEDO
