@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.3.1](https://github.com/aacebedo/boilerplate-templates/compare/8a0b7a585685ee9d2b96289247cbc45f598cc3da..v0.3.1) - 2026-09-25
+#### Bug Fixes
+- fix trivy call in prek - ([8a0b7a5](https://github.com/aacebedo/boilerplate-templates/commit/8a0b7a585685ee9d2b96289247cbc45f598cc3da)) - Alexandre ACEBEDO
+
+- - -
+
 ## [v0.3.0](https://github.com/aacebedo/boilerplate-templates/compare/12df2f65399de325bfa6f28b568708155e5e5754..v0.3.0) - 2026-09-25
 #### Features
 - switch to reference based system instead of templating everything - ([12df2f6](https://github.com/aacebedo/boilerplate-templates/commit/12df2f65399de325bfa6f28b568708155e5e5754)) - Alexandre ACEBEDO
