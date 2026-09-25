@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.3.3](https://github.com/aacebedo/boilerplate-templates/compare/80ebc4129c87a37196a9a821260be51584d4dcfa..v0.3.3) - 2026-09-25
+#### Bug Fixes
+- remove deprecated mergify config - ([80ebc41](https://github.com/aacebedo/boilerplate-templates/commit/80ebc4129c87a37196a9a821260be51584d4dcfa)) - Alexandre ACEBEDO
+
+- - -
+
 ## [v0.3.2](https://github.com/aacebedo/boilerplate-templates/compare/66dd618d8e2f939c7a701fc79a5476b0131afc32..v0.3.2) - 2026-09-25
 #### Bug Fixes
 - use the releaser app for token generation - ([66dd618](https://github.com/aacebedo/boilerplate-templates/commit/66dd618d8e2f939c7a701fc79a5476b0131afc32)) - Alexandre ACEBEDO
