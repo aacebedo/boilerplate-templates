@@ -1,0 +1,57 @@
+{{- range $i, $action := .reusableWorkflowActions }}
+{{- if $i }}
+---
+{{- end }}
+{{- $name := printf "%s/%s" $action.owner $action.repo }}
+name: "Bump {{ $name }} in the reusable workflows"
+
+scms:
+  default:
+    kind: github
+    spec:
+      owner: "{{ $.github.owner }}"
+      repository: "{{ $.github.repository }}"
+      token: '{{ requiredEnv "UPDATECLI_GITHUB_TOKEN" }}'
+      branch: "{{ $.github.branch }}"
+      commitusingapi: true
+      commitmessage:
+        type: chore
+        scope: deps
+        hidecredit: true
+
+sources:
+  action:
+    name: "Get latest {{ $name }} release"
+    kind: githubrelease
+    spec:
+      owner: {{ $action.owner }}
+      repository: {{ $action.repo }}
+      token: '{{ requiredEnv "UPDATECLI_GITHUB_TOKEN" }}'
+      versionfilter:
+        kind: semver
+
+targets:
+  action:
+    name: "Update {{ $name }} in .github/workflows/reusable-*.yaml"
+    kind: shell
+    scmid: default
+    disablesourceinput: true
+    spec:
+      command: |
+        set -eu
+        version='{{ "{{" }} source "action" {{ "}}" }}'
+        grep -hoE 'uses: {{ $name }}@[^ ]+' .github/workflows/reusable-*.yaml |
+          grep -vqxF "uses: {{ $name }}@$version" || exit 0
+        [ "$DRY_RUN" = true ] ||
+          sed -i -E "s#(uses: {{ $name }}@)[^ ]+#\1$version#" .github/workflows/reusable-*.yaml
+        echo "Bump {{ $name }} to $version in the reusable workflows"
+
+actions:
+  default:
+    kind: github/pullrequest
+    scmid: default
+    title: 'chore(deps): bump {{ $name }} to {{ "{{" }} source "action" {{ "}}" }} in the reusable workflows'
+    spec:
+      labels:
+        - dependencies
+{{- end }}

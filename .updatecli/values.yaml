@@ -4,6 +4,12 @@ github:
   repository: boilerplate-templates
   branch: main
 
+reusableWorkflowActions:
+  - owner: actions
+    repo: checkout
+  - owner: actions
+    repo: create-github-app-token
+
 templateDefaults:
   # --- base: mise tools ---
   - template: base
