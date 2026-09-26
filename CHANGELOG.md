@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.4.1](https://github.com/aacebedo/boilerplate-templates/compare/4aab67709ab46b380496267fe46aad0639cf68a9..v0.4.1) - 2026-09-26
+#### Miscellaneous Chores
+- (**deps**) Update the puppeteer_version default in templates/hugo/b... - ([6d7ed53](https://github.com/aacebedo/boilerplate-templates/commit/6d7ed53f8c6c0d8881d394c7e88d550616f3ab8e)) - ci-actions-dep-updater[bot]
+- (**deps**) Update the ruff_version default in templates/python/boil... - ([da89e00](https://github.com/aacebedo/boilerplate-templates/commit/da89e00c9f9903ebcfb1ad574100175085e6e476)) - ci-actions-dep-updater[bot]
+- (**deps**) Update the devcontainer_image_version default in templat... - ([3c3f31a](https://github.com/aacebedo/boilerplate-templates/commit/3c3f31af141affd9bef086786ecb04081a56f4f2)) - ci-actions-dep-updater[bot]
+- (**deps**) Update the uv_version default in templates/base/boilerpl... - ([206e4f1](https://github.com/aacebedo/boilerplate-templates/commit/206e4f156cf4e6c7ba995cb39215e316f27ac27c)) - ci-actions-dep-updater[bot]
+- (**deps**) Update the codebook_version default in templates/base/bo... - ([c27599d](https://github.com/aacebedo/boilerplate-templates/commit/c27599ddafc2f223ac0f3a9f04005deb77dbd7c1)) - ci-actions-dep-updater[bot]
+- (**deps**) Update the rumdl_version default in templates/base/boile... - ([4aab677](https://github.com/aacebedo/boilerplate-templates/commit/4aab67709ab46b380496267fe46aad0639cf68a9)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.4.0](https://github.com/aacebedo/boilerplate-templates/compare/8deebf24b88b498302737255ee0825acb87e2935..v0.4.0) - 2026-09-26
 #### Features
 - move static_files to static - ([8deebf2](https://github.com/aacebedo/boilerplate-templates/commit/8deebf24b88b498302737255ee0825acb87e2935)) - Alexandre ACEBEDO
