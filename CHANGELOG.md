@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.4.2](https://github.com/aacebedo/boilerplate-templates/compare/d56c7f9387e75f00633d394f006037022d96f81e..v0.4.2) - 2026-09-26
+#### Miscellaneous Chores
+- (**deps**) Update the markupFmt dprint plugin in static_files/dprin... - ([d56c7f9](https://github.com/aacebedo/boilerplate-templates/commit/d56c7f9387e75f00633d394f006037022d96f81e)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.4.1](https://github.com/aacebedo/boilerplate-templates/compare/4aab67709ab46b380496267fe46aad0639cf68a9..v0.4.1) - 2026-09-26
 #### Miscellaneous Chores
 - (**deps**) Update the puppeteer_version default in templates/hugo/b... - ([6d7ed53](https://github.com/aacebedo/boilerplate-templates/commit/6d7ed53f8c6c0d8881d394c7e88d550616f3ab8e)) - ci-actions-dep-updater[bot]
