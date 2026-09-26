@@ -1,6 +1,6 @@
 [tools]
 shellcheck = "0.11.0"
-"github:editorconfig-checker/editorconfig-checker" = "4.0.1"
+"github:editorconfig-checker/editorconfig-checker" = "4.0.2"
 trivy = "0.74.0"
 "github:owenlamont/ryl" = "0.22.0"
 prek = "0.5.3"
