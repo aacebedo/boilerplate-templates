@@ -1,29 +1,12 @@
+# The answers the Boilerplate templates were applied with, and the template
+# version they were rendered from. Rewritten by "mise run update-templates".
 ---
 template_url: .
 template_ref: main
-biome_version: 2.5.14
-boilerplate_version: 0.16.0
-cocogitto_version: 7.0.0
-codebook_version: 0.3.43
 devcontainer: true
-devcontainer_image_version: 1.24.1
-dprint_version: 0.57.4
-editorconfig_checker_version: 4.0.1
-gh_version: 2.101.0
 github_owner: aacebedo
 layers: ""
 license: Apache-2.0
-prek_version: 0.5.3
 project_description: Stackable Boilerplate templates
 project_name: boilerplate-templates
 project_slug: boilerplate-templates
-reuse_version: 6.2.0
-rumdl_version: 0.2.73
-ryl_version: 0.22.0
-shellcheck_version: 0.11.0
-shfmt_version: 3.14.1
-tombi_version: 1.5.5
-trivy_version: 0.74.0
-updatecli_version: 0.121.0
-uv_version: 0.12.16
-yq_version: 4.53.6

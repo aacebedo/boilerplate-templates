@@ -50,6 +50,22 @@ templates_render() {
 		--var-file "$vars" --non-interactive --no-hooks "$@" >/dev/null
 }
 
+templates_keep_declared() {
+	local ref="$1" vars="$2" dir="$3"
+	mkdir -p "$dir"
+	case "$templates_url" in
+	.* | /*) git -C "$templates_url" archive "$ref" templates | tar -x -C "$dir" ;;
+	*)
+		git -C "$dir" init -q
+		git -C "$dir" fetch -q --depth 1 "$templates_url" "$ref"
+		git -C "$dir" checkout -q FETCH_HEAD
+		;;
+	esac
+	yq ea '.variables[]?.name' "$dir"/templates/*/boilerplate.yml | sort -u >"$dir.names"
+	NAMES="$(yq -n -o=json -I=0 "[load_str(\"$dir.names\") | split(\"\n\")[] | select(. != \"\")]")" \
+		yq -i "with_entries(select(.key as \$k | env(NAMES) | any_c(. == \$k)))" "$vars"
+}
+
 templates_committed_answers() {
 	git show "HEAD:./$templates_answers" 2>/dev/null
 }
@@ -74,6 +90,7 @@ templates_plan_is_empty() {
 templates_patch() {
 	local tmp="$1"
 	templates_render "$templates_old_ref" "$tmp/old" "$tmp/old-vars.yaml"
+	templates_keep_declared "$templates_new_ref" "$tmp/new-vars.yaml" "$tmp/templates"
 	templates_render "$templates_new_ref" "$tmp/new" "$tmp/new-vars.yaml" --manifest-file "$tmp/manifest.yaml"
 	(cd "$tmp" && git diff --no-index --binary old new) >"$tmp/update.patch" || true
 }

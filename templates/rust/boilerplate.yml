@@ -25,10 +25,6 @@ variables:
     default: "0.1.0"
     order: 2
 
-  - name: rust_version
-    description: Rust toolchain version for mise to install
-    default: "1.98.1"
-
 skip_files:
   - path: "fragments"
     if: "true"

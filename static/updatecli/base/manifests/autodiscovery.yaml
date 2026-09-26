@@ -11,7 +11,7 @@ scms:
       branch: "{{ .github.branch }}"
       commitusingapi: true
       commitmessage:
-        type: chore
+        type: build
         scope: deps
         hidecredit: true
 
@@ -23,6 +23,11 @@ autodiscovery:
     github/action:
       rootdir: ".github"
       digest: false
+      ignore:
+        - path: ".github/workflows/reusable-*.yaml"
+        - path: ".github/workflows/pr-checks.yaml"
+        - path: ".github/workflows/release.yaml"
+        - path: ".github/workflows/update-deps.yaml"
       credentials:
         "github.com":
           kind: github

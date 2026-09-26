@@ -10,177 +10,257 @@ reusableWorkflowActions:
   - owner: actions
     repo: create-github-app-token
 
-templateDefaults:
-  # --- base: mise tools ---
-  - template: base
-    variable: shellcheck_version
+templateTools:
+  - slug: shellcheck
     kind: githubrelease
     owner: koalaman
     repo: shellcheck
     trimPrefix: true
-  - template: base
-    variable: editorconfig_checker_version
+    targets:
+      - file: templates/base/.mise/conf.d/00-base.toml
+        prefix: ^shellcheck = "
+  - slug: editorconfig-checker
     kind: githubrelease
     owner: editorconfig-checker
     repo: editorconfig-checker
     trimPrefix: true
-  - template: base
-    variable: trivy_version
+    targets:
+      - file: templates/base/.mise/conf.d/00-base.toml
+        prefix: ^"github:editorconfig-checker/editorconfig-checker" = "
+  - slug: trivy
     kind: githubrelease
     owner: aquasecurity
     repo: trivy
     trimPrefix: true
-  - template: base
-    variable: ryl_version
+    targets:
+      - file: templates/base/.mise/conf.d/00-base.toml
+        prefix: ^trivy = "
+  - slug: ryl
     kind: githubrelease
     owner: owenlamont
     repo: ryl
     trimPrefix: true
-  - template: base
-    variable: prek_version
+    targets:
+      - file: templates/base/.mise/conf.d/00-base.toml
+        prefix: ^"github:owenlamont/ryl" = "
+  - slug: prek
     kind: githubrelease
     owner: j178
     repo: prek
     trimPrefix: true
-  - template: base
-    variable: shfmt_version
+    targets:
+      - file: templates/base/.mise/conf.d/00-base.toml
+        prefix: ^prek = "
+  - slug: shfmt
     kind: githubrelease
     owner: mvdan
     repo: sh
     trimPrefix: true
-  - template: base
-    variable: dprint_version
+    targets:
+      - file: templates/base/.mise/conf.d/00-base.toml
+        prefix: ^shfmt = "
+  - slug: dprint
     kind: githubrelease
     owner: dprint
     repo: dprint
     trimPrefix: true
-  - template: base
-    variable: tombi_version
+    targets:
+      - file: templates/base/.mise/conf.d/00-base.toml
+        prefix: ^dprint = "
+  - slug: tombi
     kind: githubrelease
     owner: tombi-toml
     repo: tombi
     trimPrefix: true
-  - template: base
-    variable: cocogitto_version
+    targets:
+      - file: templates/base/.mise/conf.d/00-base.toml
+        prefix: ^"github:tombi-toml/tombi" = "
+  - slug: cocogitto
     kind: githubrelease
     owner: cocogitto
     repo: cocogitto
     trimPrefix: true
-  - template: base
-    variable: gh_version
+    targets:
+      - file: templates/base/.mise/conf.d/00-base.toml
+        prefix: ^"github:cocogitto/cocogitto" = "
+  - slug: gh
     kind: githubrelease
     owner: cli
     repo: cli
     trimPrefix: true
-  - template: base
-    variable: rumdl_version
+    targets:
+      - file: templates/base/.mise/conf.d/00-base.toml
+        prefix: ^gh = "
+  - slug: rumdl
     kind: githubrelease
     owner: rvben
     repo: rumdl
     trimPrefix: true
-  - template: base
-    variable: updatecli_version
+    targets:
+      - file: templates/base/.mise/conf.d/00-base.toml
+        prefix: ^rumdl = "
+  - slug: updatecli
     kind: githubrelease
     owner: updatecli
     repo: updatecli
     trimPrefix: true
-  - template: base
-    variable: biome_version
+    targets:
+      - file: templates/base/.mise/conf.d/00-base.toml
+        prefix: ^updatecli = "
+  - slug: biome
     kind: githubrelease
     owner: biomejs
     repo: biome
     versionfilterRegex: '@biomejs/biome@(\d+\.\d+\.\d+)'
-  - template: base
-    variable: codebook_version
+    targets:
+      - file: templates/base/.mise/conf.d/00-base.toml
+        prefix: ^biome = "
+      - file: templates/base/.biome.json
+        prefix: '"\$schema": "https://biomejs\.dev/schemas/'
+  - slug: codebook
     kind: githubrelease
     owner: blopker
     repo: codebook
     trimPrefix: true
-  - template: base
-    variable: uv_version
+    targets:
+      - file: templates/base/.mise/conf.d/00-base.toml
+        prefix: ^"github:blopker/codebook" = "
+  - slug: uv
     kind: pypi
     name: uv
-  - template: base
-    variable: reuse_version
+    targets:
+      - file: templates/base/.mise/conf.d/00-base.toml
+        prefix: ^uv = "
+  - slug: reuse
     kind: pypi
     name: reuse
-  - template: base
-    variable: boilerplate_version
+    targets:
+      - file: templates/base/.mise/conf.d/00-base.toml
+        prefix: ^"pipx:reuse" = \{ version = "
+  - slug: boilerplate
     kind: githubrelease
     owner: gruntwork-io
     repo: boilerplate
     trimPrefix: true
-  - template: base
-    variable: yq_version
+    targets:
+      - file: templates/base/.mise/conf.d/00-base.toml
+        prefix: ^boilerplate = "
+  - slug: yq
     kind: githubrelease
     owner: mikefarah
     repo: yq
     trimPrefix: true
-  # --- base: CI ---
-  - template: base
-    variable: devcontainer_image_version
+    targets:
+      - file: templates/base/.mise/conf.d/00-base.toml
+        prefix: ^yq = "
+  - slug: devcontainer-base
     kind: dockerimage
     image: ghcr.io/aacebedo/devcontainer-base
-    tagfilter: '^\d+\.\d+\.\d+$'
-  # --- rust ---
-  - template: rust
-    variable: rust_version
-    kind: githubrelease
-    owner: rust-lang
-    repo: rust
-  # --- python ---
-  - template: python
-    variable: python_version
-    kind: githubrelease
-    owner: python
-    repo: cpython
-    trimPrefix: true
-  - template: python
-    variable: ruff_version
-    kind: pypi
-    name: ruff
-  - template: python
-    variable: pytest_version
-    kind: pypi
-    name: pytest
-  # --- hugo ---
-  - template: hugo
-    variable: hugo_version
-    kind: githubrelease
-    owner: gohugoio
-    repo: hugo
-    trimPrefix: true
-  - template: hugo
-    variable: go_version
-    kind: githubrelease
-    owner: golang
-    repo: go
-    versionfilterRegex: '^go(\d+\.\d+\.\d+)$'
-  - template: hugo
-    variable: node_version
-    kind: githubrelease
-    owner: nodejs
-    repo: node
-    versionfilterRegex: '^v(26\.\d+\.\d+)$'
-  - template: hugo
-    variable: djlint_version
-    kind: pypi
-    name: djlint
-  - template: hugo
-    variable: lighthouse_version
-    kind: npm
-    name: lighthouse
-  - template: hugo
-    variable: puppeteer_version
-    kind: npm
-    name: puppeteer
-  # --- container ---
-  - template: container
-    variable: hadolint_version
+    tagfilter: ^\d+\.\d+\.\d+$
+    targets:
+      - file: templates/base/.devcontainer/devcontainer.json
+        prefix: 'ghcr\.io/aacebedo/devcontainer-base:'
+      - file: templates/base/.github/workflows/pr-checks.yaml
+        prefix: 'ghcr\.io/aacebedo/devcontainer-base:'
+      - file: templates/base/.github/workflows/release.yaml
+        prefix: 'ghcr\.io/aacebedo/devcontainer-base:'
+  - slug: hadolint
     kind: githubrelease
     owner: hadolint
     repo: hadolint
     trimPrefix: true
+    targets:
+      - file: templates/container/.mise/conf.d/20-container.toml
+        prefix: ^hadolint = "
+  - slug: helm
+    kind: githubrelease
+    owner: helm
+    repo: helm
+    trimPrefix: true
+    targets:
+      - file: templates/helmcharts/.mise/conf.d/30-helmcharts.toml
+        prefix: ^helm = "
+  - slug: helm-unittest
+    kind: githubrelease
+    owner: helm-unittest
+    repo: helm-unittest
+    trimPrefix: true
+    targets:
+      - file: templates/helmcharts/.mise/conf.d/30-helmcharts.toml
+        prefix: ^helm_unittest_version = "
+  - slug: hugo
+    kind: githubrelease
+    owner: gohugoio
+    repo: hugo
+    trimPrefix: true
+    targets:
+      - file: templates/hugo/.mise/conf.d/10-hugo.toml
+        prefix: ^hugo-extended = "
+  - slug: go
+    kind: githubrelease
+    owner: golang
+    repo: go
+    versionfilterRegex: ^go(\d+\.\d+\.\d+)$
+    targets:
+      - file: templates/hugo/.mise/conf.d/10-hugo.toml
+        prefix: ^go = "
+      - file: templates/hugo/src/go.mod
+        prefix: "^go "
+  - slug: node
+    kind: githubrelease
+    owner: nodejs
+    repo: node
+    versionfilterRegex: ^v(26\.\d+\.\d+)$
+    targets:
+      - file: templates/hugo/.mise/conf.d/10-hugo.toml
+        prefix: ^node = "
+  - slug: djlint
+    kind: pypi
+    name: djlint
+    targets:
+      - file: templates/hugo/.mise/conf.d/10-hugo.toml
+        prefix: ^"pipx:djlint" = "
+  - slug: lighthouse
+    kind: npm
+    name: lighthouse
+    targets:
+      - file: templates/hugo/tests/package.json
+        prefix: '"lighthouse": "'
+  - slug: puppeteer
+    kind: npm
+    name: puppeteer
+    targets:
+      - file: templates/hugo/tests/package.json
+        prefix: '"puppeteer": "'
+  - slug: python
+    kind: githubrelease
+    owner: python
+    repo: cpython
+    trimPrefix: true
+    targets:
+      - file: templates/python/.mise/conf.d/10-python.toml
+        prefix: ^python = "
+      - file: templates/python/pyproject.toml
+        prefix: \$python := "
+  - slug: ruff
+    kind: pypi
+    name: ruff
+    targets:
+      - file: templates/python/.mise/conf.d/10-python.toml
+        prefix: ^ruff = "
+  - slug: pytest
+    kind: pypi
+    name: pytest
+    targets:
+      - file: templates/python/pyproject.toml
+        prefix: '"pytest=='
+  - slug: rust
+    kind: githubrelease
+    owner: rust-lang
+    repo: rust
+    targets:
+      - file: templates/rust/.mise/conf.d/10-rust.toml
+        prefix: ^rust = "
 
 dprintPlugins:
   base:

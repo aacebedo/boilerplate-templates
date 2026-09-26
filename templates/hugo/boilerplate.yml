@@ -18,30 +18,6 @@ variables:
     validations:
       - url
 
-  - name: hugo_version
-    description: Hugo (extended) version for mise to install
-    default: "0.166.0"
-
-  - name: go_version
-    description: Go version for mise to install, used by Hugo modules
-    default: "1.27.1"
-
-  - name: node_version
-    description: Node.js version for mise to install, used by the Lighthouse test
-    default: "26.10.0"
-
-  - name: djlint_version
-    description: djlint version for mise to install
-    default: "1.46.2"
-
-  - name: lighthouse_version
-    description: Lighthouse version used by the smoke test
-    default: "13.5.0"
-
-  - name: puppeteer_version
-    description: Puppeteer version used by the smoke test to drive Chrome
-    default: "25.12.0"
-
 skip_files:
   - path: "fragments"
     if: "true"

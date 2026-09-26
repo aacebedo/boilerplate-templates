@@ -55,80 +55,6 @@ variables:
     confirm: true
     order: 5
 
-  # --- Tools installed by mise (.mise/conf.d/00-base.toml) ---
-
-  - name: shellcheck_version
-    description: shellcheck version for mise to install
-    default: "0.11.0"
-
-  - name: editorconfig_checker_version
-    description: editorconfig-checker version for mise to install
-    default: "4.0.2"
-
-  - name: trivy_version
-    description: Trivy version for mise to install
-    default: "0.74.0"
-
-  - name: ryl_version
-    description: ryl (YAML linter) version for mise to install
-    default: "0.22.0"
-
-  - name: prek_version
-    description: prek version for mise to install
-    default: "0.5.3"
-
-  - name: shfmt_version
-    description: shfmt version for mise to install
-    default: "3.14.1"
-
-  - name: dprint_version
-    description: dprint version for mise to install
-    default: "0.57.4"
-
-  - name: tombi_version
-    description: Tombi version for mise to install
-    default: "1.5.5"
-
-  - name: cocogitto_version
-    description: Cocogitto version for mise to install
-    default: "7.0.0"
-
-  - name: gh_version
-    description: GitHub CLI version for mise to install
-    default: "2.101.0"
-
-  - name: rumdl_version
-    description: rumdl version for mise to install
-    default: "0.2.77"
-
-  - name: updatecli_version
-    description: Updatecli version for mise to install
-    default: "0.121.0"
-
-  - name: biome_version
-    description: Biome version for mise to install, also used for the .biome.json schema URL
-    default: "2.5.14"
-
-  - name: codebook_version
-    description: Codebook version for mise to install
-    default: "0.3.42"
-
-  - name: uv_version
-    description: uv version for mise to install, also used by mise to install the pipx:* tools
-    default: "0.12.19"
-
-  - name: reuse_version
-    description: REUSE tool version for mise to install
-    default: "6.2.0"
-
-  - name: boilerplate_version
-    description: Boilerplate version for mise to install, used to apply and update the templates
-    default: "0.16.0"
-
-  - name: yq_version
-    description: yq version for mise to install, used to read and write the answers file
-    default: "4.53.6"
-
   # --- CI (the container image the jobs run in) ---
 
   - name: devcontainer
@@ -137,12 +63,6 @@ variables:
       a project that devcontainer-base itself depends on, such as devcontainer-base.
     type: bool
     default: true
-
-  - name: devcontainer_image_version
-    description: >-
-      Tag of ghcr.io/aacebedo/devcontainer-base, used by the devcontainer and by the CI jobs so both run in the same
-      environment
-    default: "1.24.1"
 
 partials:
   - "_partials/*.tmpl"

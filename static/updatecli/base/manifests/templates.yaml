@@ -1,0 +1,58 @@
+---
+name: "Apply the latest boilerplate templates"
+
+scms:
+  default:
+    kind: github
+    spec:
+      owner: "{{ .github.owner }}"
+      repository: "{{ .github.repository }}"
+      token: '{{ requiredEnv "UPDATECLI_GITHUB_TOKEN" }}'
+      branch: "{{ .github.branch }}"
+      commitusingapi: true
+      commitmessage:
+        type: build
+        scope: deps
+        hidecredit: true
+
+sources:
+  templates:
+    name: "Get latest aacebedo/boilerplate-templates release"
+    kind: githubrelease
+    spec:
+      owner: aacebedo
+      repository: boilerplate-templates
+      token: '{{ requiredEnv "UPDATECLI_GITHUB_TOKEN" }}'
+      versionfilter:
+        kind: semver
+
+targets:
+  templates:
+    name: "Apply the templates at the latest release"
+    kind: shell
+    scmid: default
+    disablesourceinput: true
+    spec:
+      environments:
+        - name: PATH
+        - name: HOME
+        - name: UPDATE_TEMPLATES_TASK
+      command: |
+        set -eu
+        ref='{{ "{{" }} source "templates" {{ "}}" }}'
+        current="$(yq -r '.template_ref' .boilerplate-answers.yaml)"
+        [ "$current" != "$ref" ] || exit 0
+        if [ "$DRY_RUN" != true ]; then
+          sed -i "s/^template_ref: .*/template_ref: $ref/" .boilerplate-answers.yaml
+          "$UPDATE_TEMPLATES_TASK" >&2
+        fi
+        echo "Apply the templates at $ref instead of $current"
+
+actions:
+  default:
+    kind: github/pullrequest
+    scmid: default
+    title: 'build(deps): apply the templates at {{ "{{" }} source "templates" {{ "}}" }}'
+    spec:
+      labels:
+        - dependencies

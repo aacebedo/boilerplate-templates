@@ -41,18 +41,6 @@ sources:
       - trimprefix: "v"
   {{- end }}
   {{- end }}
-{{- if $dep.answerKey }}
-
-conditions:
-  answerRecorded:
-    name: "{{ $dep.answerKey }} is recorded in {{ $dep.answersFile }}"
-    kind: file
-    scmid: default
-    disablesourceinput: true
-    spec:
-      file: {{ $dep.answersFile }}
-      matchpattern: '(?m)^{{ $dep.answerKey }}: '
-{{- end }}
 
 targets:
   {{ $dep.slug }}:
@@ -60,23 +48,11 @@ targets:
     kind: dockerfile
     scmid: default
     sourceid: {{ $dep.slug }}
-    disableconditions: true
     spec:
       file: {{ $dep.file }}
       instruction:
         keyword: ARG
         matcher: {{ $dep.arg }}
-  {{- if $dep.answerKey }}
-  {{ $dep.slug }}Answer:
-    name: "Update {{ $dep.answerKey }} in {{ $dep.answersFile }}"
-    kind: file
-    scmid: default
-    sourceid: {{ $dep.slug }}
-    spec:
-      file: {{ $dep.answersFile }}
-      matchpattern: '(?m)^({{ $dep.answerKey }}: ).*$'
-      replacepattern: '${1}{{ "{{" }} source "{{ $dep.slug }}" {{ "}}" }}'
-  {{- end }}
 
 actions:
   default:

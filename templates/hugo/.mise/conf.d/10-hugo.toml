@@ -1,5 +1,5 @@
 [tools]
-go = "{{ .go_version }}"
-hugo-extended = "{{ .hugo_version }}"
-node = "{{ .node_version }}"
-"pipx:djlint" = "{{ .djlint_version }}"
+go = "1.27.1"
+hugo-extended = "0.166.0"
+node = "26.10.0"
+"pipx:djlint" = "1.46.2"

@@ -10,6 +10,8 @@
 set -euo pipefail
 
 static="$(dirname "$0")/../../../updatecli"
+UPDATE_TEMPLATES_TASK="$(realpath "$(dirname "$0")/update-templates.sh")"
+export UPDATE_TEMPLATES_TASK
 
 command=(pipeline diff)
 if [ "${usage_validate:-false}" = "true" ]; then

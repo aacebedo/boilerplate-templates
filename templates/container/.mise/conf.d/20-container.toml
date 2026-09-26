@@ -1,5 +1,5 @@
 [tools]
-hadolint = "{{ .hadolint_version }}"
+hadolint = "2.15.1"
 
 [vars]
 image_name = "ghcr.io/{{`{{vars.repo_owner}}/{{vars.repo_name}}`}}"

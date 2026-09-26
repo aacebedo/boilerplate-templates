@@ -35,6 +35,7 @@ words = [
   "cron",
   "devcontainer",
   "devcontaineruser",
+  "disablesourceinput",
   "djlint",
   "dockerfile's",
   "dockerimage",

@@ -15,18 +15,6 @@ variables:
     default: "0.1.0"
     order: 1
 
-  - name: python_version
-    description: Python version for mise to install
-    default: "3.14.7"
-
-  - name: ruff_version
-    description: Ruff version for mise to install
-    default: "0.16.9"
-
-  - name: pytest_version
-    description: pytest version, pinned in pyproject.toml's dev dependency group
-    default: "9.1.1"
-
 skip_files:
   - path: "fragments"
     if: "true"

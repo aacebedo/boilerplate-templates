@@ -1,2 +1,2 @@
 [tools]
-rust = "{{ .rust_version }}"
+rust = "1.98.1"

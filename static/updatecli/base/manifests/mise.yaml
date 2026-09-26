@@ -1,14 +1,8 @@
-{{- /* miseDeps maps each template to its tools, one values file per template
-  (.updatecli/values.yaml for base, .updatecli/values.d/<template>.yaml for the
-  others): updatecli merges maps across values files but would replace a list. */}}
-{{- $first := true }}
-{{- range $template, $deps := .miseDeps }}
-{{- range $dep := $deps }}
-{{- if not $first }}
+{{- range $i, $dep := .miseDeps }}
+{{- if $i }}
 ---
 {{- end }}
-{{- $first = false }}
-{{- $file := ".mise/conf.d/00-base.toml" }}
+{{- $file := ".mise/config.toml" }}
 {{- if $dep.file }}{{ $file = $dep.file }}{{ end }}
 name: "Bump {{ $dep.slug }} version in {{ $file }}"
 
@@ -22,7 +16,7 @@ scms:
       branch: "{{ $.github.branch }}"
       commitusingapi: true
       commitmessage:
-        type: chore
+        type: build
         scope: deps
         hidecredit: true
 
@@ -67,19 +61,6 @@ sources:
       - trimprefix: "v"
   {{- end }}
   {{- end }}
-{{- $answers := ".boilerplate-answers.yaml" }}
-{{- if $dep.answerKey }}
-
-conditions:
-  answerRecorded:
-    name: "{{ $dep.answerKey }} is recorded in {{ $answers }}"
-    kind: file
-    scmid: default
-    disablesourceinput: true
-    spec:
-      file: {{ $answers }}
-      matchpattern: '(?m)^{{ $dep.answerKey }}: '
-{{- end }}
 
 targets:
   {{ $dep.slug }}:
@@ -87,7 +68,6 @@ targets:
     kind: file
     scmid: default
     sourceid: {{ $dep.slug }}
-    disableconditions: true
     spec:
       file: {{ $file }}
   {{- if $dep.inlineTable }}
@@ -97,25 +77,13 @@ targets:
       matchpattern: '(?m)^{{ $dep.tomlKey }} = ".*"$'
       replacepattern: '{{ $dep.tomlKey }} = "{{ "{{" }} source "{{ $dep.slug }}" {{ "}}" }}"'
   {{- end }}
-  {{- if $dep.answerKey }}
-  {{ $dep.slug }}Answer:
-    name: "Update {{ $dep.answerKey }} in {{ $answers }}"
-    kind: file
-    scmid: default
-    sourceid: {{ $dep.slug }}
-    spec:
-      file: {{ $answers }}
-      matchpattern: '(?m)^({{ $dep.answerKey }}: ).*$'
-      replacepattern: '${1}{{ "{{" }} source "{{ $dep.slug }}" {{ "}}" }}'
-  {{- end }}
 
 actions:
   default:
     kind: github/pullrequest
     scmid: default
-    title: 'chore(deps): bump {{ $dep.slug }} to {{ "{{" }} source "{{ $dep.slug }}" {{ "}}" }}'
+    title: 'build(deps): bump {{ $dep.slug }} to {{ "{{" }} source "{{ $dep.slug }}" {{ "}}" }}'
     spec:
       labels:
         - dependencies
-{{- end }}
 {{- end }}

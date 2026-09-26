@@ -1,3 +1,3 @@
 module {{ .base_url | trimPrefixSprig "https://" | trimPrefixSprig "http://" | trimSuffixSprig "/" }}
 
-go {{ .go_version }}
+go 1.27.1

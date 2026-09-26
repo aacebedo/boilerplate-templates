@@ -1,9 +1,8 @@
-{{- range $i, $dep := .templateDefaults }}
+{{- range $i, $dep := .templateTools }}
 {{- if $i }}
 ---
 {{- end }}
-{{- $file := printf "templates/%s/boilerplate.yml" $dep.template }}
-name: "Bump {{ $dep.variable }} default in {{ $file }}"
+name: "Bump {{ $dep.slug }} in the templates"
 
 scms:
   default:
@@ -20,8 +19,8 @@ scms:
         hidecredit: true
 
 sources:
-  {{ $dep.variable }}:
-    name: "Get latest {{ $dep.variable }}"
+  tool:
+    name: "Get latest {{ $dep.slug }}"
     kind: {{ $dep.kind }}
     spec:
   {{- if eq $dep.kind "githubrelease" }}
@@ -67,23 +66,23 @@ sources:
   {{- end }}
 
 targets:
-  {{ $dep.variable }}:
-    name: "Update the {{ $dep.variable }} default in {{ $file }}"
+{{- range $j, $target := $dep.targets }}
+  tool{{ $j }}:
+    name: "Update {{ $dep.slug }} in {{ $target.file }}"
     kind: file
     scmid: default
-    sourceid: {{ $dep.variable }}
+    sourceid: tool
     spec:
-      file: {{ $file }}
-      matchpattern: '(?m)^(  - name: {{ $dep.variable }}\n(?:    .*\n)*?    default: )"[^"]*"'
-      replacepattern: '${1}"{{ "{{" }} source "{{ $dep.variable }}" {{ "}}" }}"'
+      file: {{ $target.file }}
+      matchpattern: '(?m)({{ $target.prefix }})[0-9A-Za-z][0-9A-Za-z.+-]*'
+      replacepattern: '${1}{{ "{{" }} source "tool" {{ "}}" }}'
+{{- end }}
 
 actions:
   default:
     kind: github/pullrequest
     scmid: default
-    title: >-
-      chore(deps): bump {{ $dep.template }} {{ $dep.variable }} default to
-      {{ "{{" }} source "{{ $dep.variable }}" {{ "}}" }}
+    title: 'chore(deps): bump {{ $dep.slug }} to {{ "{{" }} source "tool" {{ "}}" }} in the templates'
     spec:
       labels:
         - dependencies

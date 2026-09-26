@@ -1,11 +1,6 @@
 ---
 required_version: ">= 0.16.0"
 
-variables:
-  - name: hadolint_version
-    description: hadolint version for mise to install
-    default: "2.15.1"
-
 skip_files:
   - path: "fragments"
     if: "true"

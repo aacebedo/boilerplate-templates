@@ -18,7 +18,7 @@ jobs:
       packages: read
     with:
 {{- if .devcontainer }}
-      container-image: ghcr.io/aacebedo/devcontainer-base:{{ .devcontainer_image_version }}
+      container-image: ghcr.io/aacebedo/devcontainer-base:1.24.1
       container-options: >-
         --user root
 {{ template "fragments" (dict "vars" . "name" "job-container-options.yaml") }}
