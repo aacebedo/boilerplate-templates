@@ -13,7 +13,7 @@ gh_version: 2.101.0
 github_owner: aacebedo
 layers: ""
 license: Apache-2.0
-prek_version: 0.5.3
+prek_version: '0.5.3'
 project_description: Stackable Boilerplate templates
 project_name: boilerplate-templates
 project_slug: boilerplate-templates
