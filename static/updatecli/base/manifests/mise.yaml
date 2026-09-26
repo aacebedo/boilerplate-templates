@@ -106,7 +106,7 @@ targets:
     spec:
       file: {{ $answers }}
       matchpattern: '(?m)^({{ $dep.answerKey }}: ).*$'
-      replacepattern: '${1}''{{ "{{" }} source "{{ $dep.slug }}" {{ "}}" }}'''
+      replacepattern: '${1}{{ "{{" }} source "{{ $dep.slug }}" {{ "}}" }}'
   {{- end }}
 
 actions:
