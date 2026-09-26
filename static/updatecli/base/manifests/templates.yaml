@@ -11,7 +11,7 @@ scms:
       branch: "{{ .github.branch }}"
       commitusingapi: true
       commitmessage:
-        type: build
+        type: chore
         scope: deps
         hidecredit: true
 
@@ -52,7 +52,7 @@ actions:
   default:
     kind: github/pullrequest
     scmid: default
-    title: 'build(deps): apply the templates at {{ "{{" }} source "templates" {{ "}}" }}'
+    title: 'chore(deps): apply the templates at {{ "{{" }} source "templates" {{ "}}" }}'
     spec:
       labels:
         - dependencies

@@ -16,7 +16,7 @@ scms:
       branch: "{{ $.github.branch }}"
       commitusingapi: true
       commitmessage:
-        type: build
+        type: chore
         scope: deps
         hidecredit: true
 
@@ -82,7 +82,7 @@ actions:
   default:
     kind: github/pullrequest
     scmid: default
-    title: 'build(deps): bump {{ $dep.slug }} to {{ "{{" }} source "{{ $dep.slug }}" {{ "}}" }}'
+    title: 'chore(deps): bump {{ $dep.slug }} to {{ "{{" }} source "{{ $dep.slug }}" {{ "}}" }}'
     spec:
       labels:
         - dependencies

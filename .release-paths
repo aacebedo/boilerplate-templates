@@ -1,0 +1,3 @@
+templates/
+static/
+.github/workflows/reusable-*.yaml

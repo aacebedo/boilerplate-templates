@@ -1,0 +1,1 @@
+{{ template "fragments" (dict "vars" . "name" "release-paths") -}}

@@ -11,7 +11,7 @@ scms:
       branch: "{{ .github.branch }}"
       commitusingapi: true
       commitmessage:
-        type: build
+        type: chore
         scope: deps
         hidecredit: true
 
