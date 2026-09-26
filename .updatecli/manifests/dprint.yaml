@@ -1,5 +1,5 @@
 {{- /* dprintPlugins maps each template to the dprint plugins pinned in its
-  static_files/dprint/<template>.json. */}}
+  static/dprint/<template>.json. */}}
 {{- $first := true }}
 {{- range $template, $deps := .dprintPlugins }}
 {{- range $dep := $deps }}
@@ -7,7 +7,7 @@
 ---
 {{- end }}
 {{- $first = false }}
-{{- $file := printf "static_files/dprint/%s.json" $template }}
+{{- $file := printf "static/dprint/%s.json" $template }}
 name: "Bump the {{ $dep.slug }} dprint plugin in {{ $file }}"
 
 scms:

@@ -11,7 +11,7 @@
     ".updatecli/manifests/**",
     "templates/*/fragments/**",
     "templates/*/.mise/conf.d/**",
-    "static_files/updatecli/*/manifests/**",
+    "static/updatecli/*/manifests/**",
     "templates/base/_partials/**",
     "templates/base/.biome.json",
     "templates/base/.codebook.toml",
@@ -37,6 +37,6 @@
     "CHANGELOG.md"
   ],
   "extends": [
-    "static_files/dprint/base.json"
+    "static/dprint/base.json"
   ]
 }

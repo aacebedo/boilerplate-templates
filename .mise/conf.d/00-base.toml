@@ -36,6 +36,6 @@ commit_sha = '''{{ exec(command="git rev-parse HEAD 2>/dev/null || echo ''") | t
 
 [task_config]
 includes = [
-  "static_files/mise/tasks/base",
+  "static/mise/tasks/base",
   ".mise/tasks",
 ]

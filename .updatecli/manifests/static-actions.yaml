@@ -1,5 +1,5 @@
 ---
-name: "Autodiscover GitHub Actions updates in static_files/github"
+name: "Autodiscover GitHub Actions updates in static/github"
 
 scms:
   default:
@@ -21,7 +21,7 @@ autodiscovery:
   groupby: individual
   crawlers:
     github/action:
-      rootdir: "static_files/github"
+      rootdir: "static/github"
       digest: false
       credentials:
         "github.com":

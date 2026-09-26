@@ -6,7 +6,7 @@
 
 set -euo pipefail
 
-# shellcheck source=static_files/mise/lib/templates.sh
+# shellcheck source=static/mise/lib/templates.sh
 . "$(dirname "$0")/../../lib/templates.sh"
 
 main() {

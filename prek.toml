@@ -1,7 +1,7 @@
 exclude = { glob = [
   "templates/*/fragments/**",
   "templates/*/.mise/conf.d/**",
-  "static_files/updatecli/*/manifests/**",
+  "static/updatecli/*/manifests/**",
   "templates/base/_partials/*.tmpl",
   "templates/base/.biome.json",
   "templates/base/.codebook.toml",
@@ -35,7 +35,7 @@ name = "ryl"
 entry = "ryl --config-file .ryl.toml"
 language = "system"
 types = ["yaml"]
-exclude = '^(\.updatecli|static_files/updatecli/[^/]+)/manifests/'
+exclude = '^(\.updatecli|static/updatecli/[^/]+)/manifests/'
 
 [[repos]]
 repo = "local"
@@ -143,7 +143,7 @@ args = [
   "--validate",
 ]
 language = "system"
-files = '^(\.updatecli|static_files/updatecli)/'
+files = '^(\.updatecli|static/updatecli)/'
 pass_filenames = false
 
 [[repos]]

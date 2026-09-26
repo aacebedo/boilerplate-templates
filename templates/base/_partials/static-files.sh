@@ -40,12 +40,12 @@ fi
 
 reference() {
 	if [ "$self" = true ]; then
-		printf 'static_files/%s' "$1"
+		printf 'static/%s' "$1"
 	elif [ "$kind" = dprint ]; then
 		path="${url#https://github.com/}"
-		printf 'https://raw.githubusercontent.com/%s/%s/static_files/%s' "${path%.git}" "$ref" "$1"
+		printf 'https://raw.githubusercontent.com/%s/%s/static/%s' "${path%.git}" "$ref" "$1"
 	else
-		printf 'git::%s//static_files/%s?ref=%s' "$url" "$1" "$ref"
+		printf 'git::%s//static/%s?ref=%s' "$url" "$1" "$ref"
 	fi
 }
 
@@ -59,7 +59,7 @@ mise)
 	;;
 dprint)
 	for layer in $(printf '%s' "$layers" | tr , ' '); do
-		[ ! -f "$root/static_files/dprint/$layer.json" ] || printf '"%s",\n' "$(reference "dprint/$layer.json")"
+		[ ! -f "$root/static/dprint/$layer.json" ] || printf '"%s",\n' "$(reference "dprint/$layer.json")"
 	done
 	printf '"%s"\n' "$(reference dprint/base.json)"
 	;;

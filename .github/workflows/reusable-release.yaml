@@ -50,7 +50,7 @@ jobs:
           path: .boilerplate-templates
           persist-credentials: false
       - name: Setup
-        uses: ./.boilerplate-templates/static_files/github/actions/setup
+        uses: ./.boilerplate-templates/static/github/actions/setup
       - name: Remove the templates checkout
         shell: bash
         run: rm -rf .boilerplate-templates
