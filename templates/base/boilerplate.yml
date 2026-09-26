@@ -111,7 +111,7 @@ variables:
 
   - name: codebook_version
     description: Codebook version for mise to install
-    default: "0.3.43"
+    default: "0.3.42"
 
   - name: uv_version
     description: uv version for mise to install, also used by mise to install the pipx:* tools
