@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.4.0](https://github.com/aacebedo/boilerplate-templates/compare/8deebf24b88b498302737255ee0825acb87e2935..v0.4.0) - 2026-09-26
+#### Features
+- move static_files to static - ([8deebf2](https://github.com/aacebedo/boilerplate-templates/commit/8deebf24b88b498302737255ee0825acb87e2935)) - Alexandre ACEBEDO
+#### Bug Fixes
+- match the reusable workflow check name in mergify queue rules - ([75574e1](https://github.com/aacebedo/boilerplate-templates/commit/75574e10951d27544ead0d47c350d7ab985114ae)) - Alexandre ACEBEDO
+- write answer versions unquoted so unchanged versions do not open PRs - ([8c49a2d](https://github.com/aacebedo/boilerplate-templates/commit/8c49a2df668f0c5f3b0186bfc4ce84423b231dcf)) - Alexandre ACEBEDO
+#### Refactoring
+- rename the pr workflows to pr-checks - ([c51b9dc](https://github.com/aacebedo/boilerplate-templates/commit/c51b9dc4958a9836696a6440d1c2aa342316d284)) - Alexandre ACEBEDO
+
+- - -
+
 ## [v0.3.3](https://github.com/aacebedo/boilerplate-templates/compare/80ebc4129c87a37196a9a821260be51584d4dcfa..v0.3.3) - 2026-09-25
 #### Bug Fixes
 - remove deprecated mergify config - ([80ebc41](https://github.com/aacebedo/boilerplate-templates/commit/80ebc4129c87a37196a9a821260be51584d4dcfa)) - Alexandre ACEBEDO
