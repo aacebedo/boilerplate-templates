@@ -99,7 +99,7 @@ variables:
 
   - name: rumdl_version
     description: rumdl version for mise to install
-    default: "0.2.76"
+    default: "0.2.77"
 
   - name: updatecli_version
     description: Updatecli version for mise to install
