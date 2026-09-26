@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.4.4](https://github.com/aacebedo/boilerplate-templates/compare/9d9fca46ef5e0dbb938fd4475febeacf98140921..v0.4.4) - 2026-09-26
+#### Miscellaneous Chores
+- (**deps**) Update devcontainer_image_version in .boilerplate-answer... - ([9d9fca4](https://github.com/aacebedo/boilerplate-templates/commit/9d9fca46ef5e0dbb938fd4475febeacf98140921)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.4.3](https://github.com/aacebedo/boilerplate-templates/compare/0cb756a622c34a6b5e18dfa9a2984053888ba0e0..v0.4.3) - 2026-09-26
 #### Miscellaneous Chores
 - (**deps**) Update the ruff dprint plugin in static_files/dprint/pyt... - ([0cb756a](https://github.com/aacebedo/boilerplate-templates/commit/0cb756a622c34a6b5e18dfa9a2984053888ba0e0)) - ci-actions-dep-updater[bot]
