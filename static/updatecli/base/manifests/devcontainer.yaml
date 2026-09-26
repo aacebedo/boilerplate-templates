@@ -53,7 +53,7 @@ targets:
     spec:
       files:
         - .devcontainer/devcontainer.json
-        - .github/workflows/pr.yaml
+        - .github/workflows/pr-checks.yaml
         - .github/workflows/release.yaml
       matchpattern: '(ghcr\.io/aacebedo/devcontainer-base:)[0-9A-Za-z.\-]+'
       replacepattern: '${1}{{ "{{" }} source "devcontainerImage" {{ "}}" }}'

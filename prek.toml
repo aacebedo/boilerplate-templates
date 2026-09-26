@@ -7,7 +7,7 @@ exclude = { glob = [
   "templates/base/.codebook.toml",
   "templates/base/.devcontainer/devcontainer.json",
   "templates/base/.dprint.json",
-  "templates/base/.github/workflows/pr.yaml",
+  "templates/base/.github/workflows/pr-checks.yaml",
   "templates/base/.github/workflows/release.yaml",
   "templates/base/.github/workflows/update-deps.yaml",
   "templates/base/.gitignore",

@@ -12,7 +12,7 @@ permissions: {}
 
 jobs:
   pr-checks:
-    uses: ./.github/workflows/reusable-pr.yaml
+    uses: ./.github/workflows/reusable-pr-checks.yaml
     permissions:
       contents: read
       packages: read
