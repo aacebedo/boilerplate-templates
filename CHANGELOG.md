@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.5.1](https://github.com/aacebedo/boilerplate-templates/compare/33ddbfa987a7191cfefa3625428e081aee6a7426..v0.5.1) - 2026-09-26
+#### Bug Fixes
+- fix node dependency and hugo warning - ([33ddbfa](https://github.com/aacebedo/boilerplate-templates/commit/33ddbfa987a7191cfefa3625428e081aee6a7426)) - Alexandre ACEBEDO
+
+- - -
+
 ## [v0.5.0](https://github.com/aacebedo/boilerplate-templates/compare/4efd83831128e422fa0a005712353fcca0a848a6..v0.5.0) - 2026-09-26
 #### Features
 - release only when the paths listed in .release-paths change - ([c577154](https://github.com/aacebedo/boilerplate-templates/commit/c5771548afac963b522eb6b117847c67a05732ea)) - Alexandre ACEBEDO
