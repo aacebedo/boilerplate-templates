@@ -6,6 +6,9 @@ params:
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
 
+disableKinds:
+  - taxonomy
+
 publishDir: ../.build/site
 resourceDir: ../.build/resources
 

@@ -3,3 +3,6 @@ go = "1.27.1"
 hugo-extended = "0.166.0"
 node = "26.10.0"
 "pipx:djlint" = "1.46.2"
+
+[bootstrap.packages]
+"apt:libatomic1" = "latest"
