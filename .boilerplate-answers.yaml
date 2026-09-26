@@ -8,7 +8,7 @@ codebook_version: 0.3.43
 devcontainer: true
 devcontainer_image_version: 1.24.1
 dprint_version: 0.57.4
-editorconfig_checker_version: 4.0.1
+editorconfig_checker_version: '4.0.2'
 gh_version: 2.101.0
 github_owner: aacebedo
 layers: ""
