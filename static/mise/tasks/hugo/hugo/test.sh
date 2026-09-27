@@ -2,6 +2,7 @@
 
 #MISE description = "Build and smoke-test the site with a local server"
 #MISE depends = ["hugo:build"]
+#MISE hide = true
 
 set -euo pipefail
 

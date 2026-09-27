@@ -267,6 +267,13 @@ templateTools:
     targets:
       - file: templates/rust/.mise/conf.d/10-rust.toml
         prefix: ^rust = "
+  - slug: alejandra
+    kind: githubrelease
+    owner: kamadorueda
+    repo: alejandra
+    targets:
+      - file: templates/nix/.mise/conf.d/10-nix.toml
+        prefix: ^"github:kamadorueda/alejandra" = "
 
 dprintPlugins:
   base:

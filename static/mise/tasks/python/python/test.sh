@@ -2,6 +2,7 @@
 
 #MISE description = "Run the tests with pytest"
 #MISE depends = ["python:build"]
+#MISE hide = true
 
 set -euo pipefail
 

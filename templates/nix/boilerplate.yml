@@ -1,0 +1,18 @@
+---
+required_version: ">= 0.16.0"
+
+skip_files:
+  - path: "fragments"
+    if: "true"
+  - path: "fragments/*"
+    if: "true"
+
+hooks:
+  after:
+    - command: sh
+      dir: "{{ outputFolder }}"
+      args:
+        - -c
+        - 'printf "%s\n---\n" "$ANSWERS" >>.boilerplate-answers.parts'
+      env:
+        ANSWERS: '{{ omit . "This" "BoilerplateConfigVars" "BoilerplateConfigDeps" "__each__" | toYaml }}'

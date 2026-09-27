@@ -1,0 +1,10 @@
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "alejandra"
+name = "alejandra"
+entry = "alejandra --quiet"
+language = "system"
+files = '\.nix$'

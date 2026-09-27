@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 #MISE description = "Build the container image"
+#MISE hide = true
 #MISE env.COMMIT_SHA = "{{vars.commit_sha}}"
 #MISE env.REPO_URL = "{{vars.repo_url}}"
 #MISE env.REPO_NAME = "{{vars.repo_name}}"

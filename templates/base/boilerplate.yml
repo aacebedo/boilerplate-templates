@@ -49,7 +49,7 @@ variables:
   - name: layers
     description: >-
       Layers to stack on top of the base tooling, comma separated, e.g. "rust,container". Each one is a sibling template
-      directory: container, helmcharts, hugo, python, rust.
+      directory: container, helmcharts, hugo, nix, python, rust.
     type: string
     default: ""
     confirm: true
@@ -80,6 +80,10 @@ dependencies:
     template-url: "../hugo"
     output-folder: "."
     skip: '{{ not (has "hugo" (splitList "," .layers)) }}'
+  - name: nix
+    template-url: "../nix"
+    output-folder: "."
+    skip: '{{ not (has "nix" (splitList "," .layers)) }}'
   - name: python
     template-url: "../python"
     output-folder: "."

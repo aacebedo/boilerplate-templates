@@ -2,6 +2,7 @@
 
 #MISE description = "Run the helm-unittest suites of every chart under charts/"
 #MISE depends = ["helmcharts:install-plugins"]
+#MISE hide = true
 
 set -euo pipefail
 
