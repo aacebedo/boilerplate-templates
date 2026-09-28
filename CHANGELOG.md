@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.5.3](https://github.com/aacebedo/boilerplate-templates/compare/683dde7130b2e917e79a934041caa784c7fc528c..v0.5.3) - 2026-09-28
+#### Miscellaneous Chores
+- (**deps**) Update devcontainer-base in templates/base/.github/workf... - ([346c5d1](https://github.com/aacebedo/boilerplate-templates/commit/346c5d13e9972ea72bf409589461b200111cf40c)) - ci-actions-dep-updater[bot]
+- (**deps**) Update devcontainer-base in templates/base/.devcontainer... - ([2899632](https://github.com/aacebedo/boilerplate-templates/commit/28996326c77e24791453311b11251c305641295f)) - ci-actions-dep-updater[bot]
+- (**deps**) Update devcontainer-base in templates/base/.github/workf... - ([44c60c6](https://github.com/aacebedo/boilerplate-templates/commit/44c60c66c7e40f7e19aa64ffd5b0c9cccefc663c)) - ci-actions-dep-updater[bot]
+- (**deps**) Update updatecli in templates/base/.mise/conf.d/00-base.... - ([2d5c0bb](https://github.com/aacebedo/boilerplate-templates/commit/2d5c0bb62eafef73377ab14b469458ef38dd017f)) - ci-actions-dep-updater[bot]
+- (**deps**) Update tombi in templates/base/.mise/conf.d/00-base.toml - ([683dde7](https://github.com/aacebedo/boilerplate-templates/commit/683dde7130b2e917e79a934041caa784c7fc528c)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.5.2](https://github.com/aacebedo/boilerplate-templates/compare/bcd913f97071fd70ee7faedcfb38c94eda55fa21..v0.5.2) - 2026-09-28
 #### Miscellaneous Chores
 - (**deps**) Update prek in templates/base/.mise/conf.d/00-base.toml - ([a9046d8](https://github.com/aacebedo/boilerplate-templates/commit/a9046d8e96f40f2d97006cd51670312c3129a188)) - ci-actions-dep-updater[bot]
