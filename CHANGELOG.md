@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.6.0](https://github.com/aacebedo/boilerplate-templates/compare/136c46e560c64cfa98fd9f1ffd9856abbcb9455e..v0.6.0) - 2026-09-28
+#### Features
+- (**helmcharts**) scan charts with checkov - ([136c46e](https://github.com/aacebedo/boilerplate-templates/commit/136c46e560c64cfa98fd9f1ffd9856abbcb9455e)) - Alexandre ACEBEDO
+- add nix layer - ([dd5b50c](https://github.com/aacebedo/boilerplate-templates/commit/dd5b50c565da983d995daa1bae18274c502f5e5b)) - Alexandre ACEBEDO
+#### Build system
+- apply the templates - ([fe3af76](https://github.com/aacebedo/boilerplate-templates/commit/fe3af76a4f0171d7223dffb0ceb083ef947a8b0b)) - Alexandre ACEBEDO
+
+- - -
+
 ## [v0.5.3](https://github.com/aacebedo/boilerplate-templates/compare/683dde7130b2e917e79a934041caa784c7fc528c..v0.5.3) - 2026-09-28
 #### Miscellaneous Chores
 - (**deps**) Update devcontainer-base in templates/base/.github/workf... - ([346c5d1](https://github.com/aacebedo/boilerplate-templates/commit/346c5d13e9972ea72bf409589461b200111cf40c)) - ci-actions-dep-updater[bot]
