@@ -180,6 +180,12 @@ templateTools:
     targets:
       - file: templates/helmcharts/.mise/conf.d/30-helmcharts.toml
         prefix: ^helm = "
+  - slug: checkov
+    kind: pypi
+    name: checkov
+    targets:
+      - file: templates/helmcharts/.mise/conf.d/30-helmcharts.toml
+        prefix: ^"pipx:checkov" = "
   - slug: helm-unittest
     kind: githubrelease
     owner: helm-unittest
