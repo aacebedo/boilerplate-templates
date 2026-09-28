@@ -1,6 +1,6 @@
 {
   "name": "{{ .project_name }} development container",
-  "image": "ghcr.io/aacebedo/devcontainer-base:1.24.1",
+  "image": "ghcr.io/aacebedo/devcontainer-base:1.24.4",
   "containerEnv": {
     "MISE_TRUSTED_CONFIG_PATHS": "${containerWorkspaceFolder}",
     "MISE_GITHUB_TOKEN": "${localEnv:MISE_GITHUB_TOKEN}"
