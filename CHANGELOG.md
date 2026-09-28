@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.5.2](https://github.com/aacebedo/boilerplate-templates/compare/bcd913f97071fd70ee7faedcfb38c94eda55fa21..v0.5.2) - 2026-09-28
+#### Miscellaneous Chores
+- (**deps**) Update prek in templates/base/.mise/conf.d/00-base.toml - ([a9046d8](https://github.com/aacebedo/boilerplate-templates/commit/a9046d8e96f40f2d97006cd51670312c3129a188)) - ci-actions-dep-updater[bot]
+- (**deps**) Update the json dprint plugin in static/dprint/base.json - ([aaace74](https://github.com/aacebedo/boilerplate-templates/commit/aaace749abe4b4d2b38bb875484636a79f00e0a4)) - ci-actions-dep-updater[bot]
+- (**deps**) Apply the templates at the latest release - ([bcd913f](https://github.com/aacebedo/boilerplate-templates/commit/bcd913f97071fd70ee7faedcfb38c94eda55fa21)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.5.1](https://github.com/aacebedo/boilerplate-templates/compare/33ddbfa987a7191cfefa3625428e081aee6a7426..v0.5.1) - 2026-09-26
 #### Bug Fixes
 - fix node dependency and hugo warning - ([33ddbfa](https://github.com/aacebedo/boilerplate-templates/commit/33ddbfa987a7191cfefa3625428e081aee6a7426)) - Alexandre ACEBEDO
