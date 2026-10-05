@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.6.6](https://github.com/aacebedo/boilerplate-templates/compare/afa60a20a386bdf4667a5b31b7d763edfd60d3cd..v0.6.6) - 2026-10-05
+#### Miscellaneous Chores
+- (**deps**) Update uv in templates/base/.mise/conf.d/00-base.toml - ([689ed71](https://github.com/aacebedo/boilerplate-templates/commit/689ed71da291efd61d951a24b75e2c3849734a2a)) - ci-actions-dep-updater[bot]
+- (**deps**) Update updatecli in templates/base/.mise/conf.d/00-base.... - ([41b7b86](https://github.com/aacebedo/boilerplate-templates/commit/41b7b86fa24e449bcf4dc1740a16b5d938173213)) - ci-actions-dep-updater[bot]
+- (**deps**) Update rust in templates/rust/.mise/conf.d/10-rust.toml - ([afa60a2](https://github.com/aacebedo/boilerplate-templates/commit/afa60a20a386bdf4667a5b31b7d763edfd60d3cd)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.6.5](https://github.com/aacebedo/boilerplate-templates/compare/c9c302e289aea18f9c75f0b222810466a6382342..v0.6.5) - 2026-10-05
 #### Miscellaneous Chores
 - (**deps**) Update python in templates/python/pyproject.toml - ([e9f4ac1](https://github.com/aacebedo/boilerplate-templates/commit/e9f4ac11e730413892bc218c1f180d73106f9009)) - ci-actions-dep-updater[bot]
