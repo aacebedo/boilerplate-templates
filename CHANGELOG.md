@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.6.3](https://github.com/aacebedo/boilerplate-templates/compare/dc8479f620a56c0de9869343fcc64f9ee86fb791..v0.6.3) - 2026-10-05
+#### Miscellaneous Chores
+- (**deps**) Update yq in templates/base/.mise/conf.d/00-base.toml - ([cd2cf69](https://github.com/aacebedo/boilerplate-templates/commit/cd2cf696286d4a76305dcfca17d05806bc09845d)) - ci-actions-dep-updater[bot]
+- (**deps**) Update the ruff dprint plugin in static/dprint/python.json - ([d1d73d8](https://github.com/aacebedo/boilerplate-templates/commit/d1d73d84bbc06fa9b02aa72dbd94e2675a6eb1ad)) - ci-actions-dep-updater[bot]
+- (**deps**) Update trivy in templates/base/.mise/conf.d/00-base.toml - ([2639b90](https://github.com/aacebedo/boilerplate-templates/commit/2639b90e13e94c90e4c792f22e4da1f30d18e139)) - ci-actions-dep-updater[bot]
+- (**deps**) Update the dockerfile dprint plugin in static/dprint/con... - ([3db9fd2](https://github.com/aacebedo/boilerplate-templates/commit/3db9fd21a626ef6242e4952a860c8cce0ae69afe)) - ci-actions-dep-updater[bot]
+- (**deps**) Update the toml dprint plugin in static/dprint/base.json - ([dc8479f](https://github.com/aacebedo/boilerplate-templates/commit/dc8479f620a56c0de9869343fcc64f9ee86fb791)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.6.2](https://github.com/aacebedo/boilerplate-templates/compare/73f1295429e24a68299b42400e58719947e512ee..v0.6.2) - 2026-10-05
 #### Miscellaneous Chores
 - (**deps**) Update gh in templates/base/.mise/conf.d/00-base.toml - ([5cf7444](https://github.com/aacebedo/boilerplate-templates/commit/5cf7444dc84b5ee5c0e6d6c260dd14fb061a9854)) - ci-actions-dep-updater[bot]
