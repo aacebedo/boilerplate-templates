@@ -2,6 +2,18 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.6.4](https://github.com/aacebedo/boilerplate-templates/compare/849d3eddf0ee86a5e642b9e1016e09a3b2c64352..v0.6.4) - 2026-10-05
+#### Miscellaneous Chores
+- (**deps**) Update helm-unittest in templates/helmcharts/.mise/conf.... - ([da9b9b7](https://github.com/aacebedo/boilerplate-templates/commit/da9b9b7f840ae4471ef41daab526ed8189125798)) - ci-actions-dep-updater[bot]
+- (**deps**) Update checkov in templates/helmcharts/.mise/conf.d/30-h... - ([0dce7b3](https://github.com/aacebedo/boilerplate-templates/commit/0dce7b37bd2eae296da6af3c49f8d8d02a8ccda5)) - ci-actions-dep-updater[bot]
+- (**deps**) Update dprint in templates/base/.mise/conf.d/00-base.toml - ([c5f1c3b](https://github.com/aacebedo/boilerplate-templates/commit/c5f1c3b786f4092765ad93d41b369c39a17bd955)) - ci-actions-dep-updater[bot]
+- (**deps**) Update prek in templates/base/.mise/conf.d/00-base.toml - ([5fb046f](https://github.com/aacebedo/boilerplate-templates/commit/5fb046fd55323ba893dd435cea9f8c724c28b085)) - ci-actions-dep-updater[bot]
+- (**deps**) Update devcontainer-base in templates/base/.github/workf... - ([a7a1de6](https://github.com/aacebedo/boilerplate-templates/commit/a7a1de6106a494038f9a4366f75e274638407178)) - ci-actions-dep-updater[bot]
+- (**deps**) Update devcontainer-base in templates/base/.devcontainer... - ([37f8372](https://github.com/aacebedo/boilerplate-templates/commit/37f83727f97fba0bd1162802b73eaff3f724f27f)) - ci-actions-dep-updater[bot]
+- (**deps**) Update devcontainer-base in templates/base/.github/workf... - ([849d3ed](https://github.com/aacebedo/boilerplate-templates/commit/849d3eddf0ee86a5e642b9e1016e09a3b2c64352)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.6.3](https://github.com/aacebedo/boilerplate-templates/compare/dc8479f620a56c0de9869343fcc64f9ee86fb791..v0.6.3) - 2026-10-05
 #### Miscellaneous Chores
 - (**deps**) Update yq in templates/base/.mise/conf.d/00-base.toml - ([cd2cf69](https://github.com/aacebedo/boilerplate-templates/commit/cd2cf696286d4a76305dcfca17d05806bc09845d)) - ci-actions-dep-updater[bot]
