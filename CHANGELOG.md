@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.6.1](https://github.com/aacebedo/boilerplate-templates/compare/299f49471bfaf2daf91e70cd4b647e587d833ec4..v0.6.1) - 2026-10-05
+#### Miscellaneous Chores
+- (**deps**) Update the json dprint plugin in static/dprint/base.json - ([299f494](https://github.com/aacebedo/boilerplate-templates/commit/299f49471bfaf2daf91e70cd4b647e587d833ec4)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.6.0](https://github.com/aacebedo/boilerplate-templates/compare/136c46e560c64cfa98fd9f1ffd9856abbcb9455e..v0.6.0) - 2026-09-28
 #### Features
 - (**helmcharts**) scan charts with checkov - ([136c46e](https://github.com/aacebedo/boilerplate-templates/commit/136c46e560c64cfa98fd9f1ffd9856abbcb9455e)) - Alexandre ACEBEDO
