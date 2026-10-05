@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.6.2](https://github.com/aacebedo/boilerplate-templates/compare/73f1295429e24a68299b42400e58719947e512ee..v0.6.2) - 2026-10-05
+#### Miscellaneous Chores
+- (**deps**) Update gh in templates/base/.mise/conf.d/00-base.toml - ([5cf7444](https://github.com/aacebedo/boilerplate-templates/commit/5cf7444dc84b5ee5c0e6d6c260dd14fb061a9854)) - ci-actions-dep-updater[bot]
+- (**deps**) Apply the templates at the latest release - ([73f1295](https://github.com/aacebedo/boilerplate-templates/commit/73f1295429e24a68299b42400e58719947e512ee)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.6.1](https://github.com/aacebedo/boilerplate-templates/compare/299f49471bfaf2daf91e70cd4b647e587d833ec4..v0.6.1) - 2026-10-05
 #### Miscellaneous Chores
 - (**deps**) Update the json dprint plugin in static/dprint/base.json - ([299f494](https://github.com/aacebedo/boilerplate-templates/commit/299f49471bfaf2daf91e70cd4b647e587d833ec4)) - ci-actions-dep-updater[bot]
