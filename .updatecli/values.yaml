@@ -17,7 +17,7 @@ templateTools:
     repo: shellcheck
     trimPrefix: true
     targets:
-      - file: templates/base/.mise/conf.d/00-base.toml
+      - file: static/mise/config/base.toml
         prefix: ^shellcheck = "
   - slug: editorconfig-checker
     kind: githubrelease
@@ -25,7 +25,7 @@ templateTools:
     repo: editorconfig-checker
     trimPrefix: true
     targets:
-      - file: templates/base/.mise/conf.d/00-base.toml
+      - file: static/mise/config/base.toml
         prefix: ^"github:editorconfig-checker/editorconfig-checker" = "
   - slug: trivy
     kind: githubrelease
@@ -33,7 +33,7 @@ templateTools:
     repo: trivy
     trimPrefix: true
     targets:
-      - file: templates/base/.mise/conf.d/00-base.toml
+      - file: static/mise/config/base.toml
         prefix: ^trivy = "
   - slug: ryl
     kind: githubrelease
@@ -41,7 +41,7 @@ templateTools:
     repo: ryl
     trimPrefix: true
     targets:
-      - file: templates/base/.mise/conf.d/00-base.toml
+      - file: static/mise/config/base.toml
         prefix: ^"github:owenlamont/ryl" = "
   - slug: prek
     kind: githubrelease
@@ -49,7 +49,7 @@ templateTools:
     repo: prek
     trimPrefix: true
     targets:
-      - file: templates/base/.mise/conf.d/00-base.toml
+      - file: static/mise/config/base.toml
         prefix: ^prek = "
   - slug: shfmt
     kind: githubrelease
@@ -57,7 +57,7 @@ templateTools:
     repo: sh
     trimPrefix: true
     targets:
-      - file: templates/base/.mise/conf.d/00-base.toml
+      - file: static/mise/config/base.toml
         prefix: ^shfmt = "
   - slug: dprint
     kind: githubrelease
@@ -65,7 +65,7 @@ templateTools:
     repo: dprint
     trimPrefix: true
     targets:
-      - file: templates/base/.mise/conf.d/00-base.toml
+      - file: static/mise/config/base.toml
         prefix: ^dprint = "
   - slug: tombi
     kind: githubrelease
@@ -73,7 +73,7 @@ templateTools:
     repo: tombi
     trimPrefix: true
     targets:
-      - file: templates/base/.mise/conf.d/00-base.toml
+      - file: static/mise/config/base.toml
         prefix: ^"github:tombi-toml/tombi" = "
   - slug: cocogitto
     kind: githubrelease
@@ -81,7 +81,7 @@ templateTools:
     repo: cocogitto
     trimPrefix: true
     targets:
-      - file: templates/base/.mise/conf.d/00-base.toml
+      - file: static/mise/config/base.toml
         prefix: ^"github:cocogitto/cocogitto" = "
   - slug: gh
     kind: githubrelease
@@ -89,7 +89,7 @@ templateTools:
     repo: cli
     trimPrefix: true
     targets:
-      - file: templates/base/.mise/conf.d/00-base.toml
+      - file: static/mise/config/base.toml
         prefix: ^gh = "
   - slug: rumdl
     kind: githubrelease
@@ -97,7 +97,7 @@ templateTools:
     repo: rumdl
     trimPrefix: true
     targets:
-      - file: templates/base/.mise/conf.d/00-base.toml
+      - file: static/mise/config/base.toml
         prefix: ^rumdl = "
   - slug: updatecli
     kind: githubrelease
@@ -105,7 +105,7 @@ templateTools:
     repo: updatecli
     trimPrefix: true
     targets:
-      - file: templates/base/.mise/conf.d/00-base.toml
+      - file: static/mise/config/base.toml
         prefix: ^updatecli = "
   - slug: biome
     kind: githubrelease
@@ -113,7 +113,7 @@ templateTools:
     repo: biome
     versionfilterRegex: '@biomejs/biome@(\d+\.\d+\.\d+)'
     targets:
-      - file: templates/base/.mise/conf.d/00-base.toml
+      - file: static/mise/config/base.toml
         prefix: ^biome = "
       - file: templates/base/.biome.json
         prefix: '"\$schema": "https://biomejs\.dev/schemas/'
@@ -123,19 +123,19 @@ templateTools:
     repo: codebook
     trimPrefix: true
     targets:
-      - file: templates/base/.mise/conf.d/00-base.toml
+      - file: static/mise/config/base.toml
         prefix: ^"github:blopker/codebook" = "
   - slug: uv
     kind: pypi
     name: uv
     targets:
-      - file: templates/base/.mise/conf.d/00-base.toml
+      - file: static/mise/config/base.toml
         prefix: ^uv = "
   - slug: reuse
     kind: pypi
     name: reuse
     targets:
-      - file: templates/base/.mise/conf.d/00-base.toml
+      - file: static/mise/config/base.toml
         prefix: ^"pipx:reuse" = \{ version = "
   - slug: boilerplate
     kind: githubrelease
@@ -143,7 +143,7 @@ templateTools:
     repo: boilerplate
     trimPrefix: true
     targets:
-      - file: templates/base/.mise/conf.d/00-base.toml
+      - file: static/mise/config/base.toml
         prefix: ^boilerplate = "
   - slug: yq
     kind: githubrelease
@@ -151,7 +151,7 @@ templateTools:
     repo: yq
     trimPrefix: true
     targets:
-      - file: templates/base/.mise/conf.d/00-base.toml
+      - file: static/mise/config/base.toml
         prefix: ^yq = "
   - slug: devcontainer-base
     kind: dockerimage
@@ -170,7 +170,7 @@ templateTools:
     repo: hadolint
     trimPrefix: true
     targets:
-      - file: templates/container/.mise/conf.d/20-container.toml
+      - file: static/mise/config/container.toml
         prefix: ^hadolint = "
   - slug: helm
     kind: githubrelease
@@ -178,13 +178,13 @@ templateTools:
     repo: helm
     trimPrefix: true
     targets:
-      - file: templates/helmcharts/.mise/conf.d/30-helmcharts.toml
+      - file: static/mise/config/helmcharts.toml
         prefix: ^helm = "
   - slug: checkov
     kind: pypi
     name: checkov
     targets:
-      - file: templates/helmcharts/.mise/conf.d/30-helmcharts.toml
+      - file: static/mise/config/helmcharts.toml
         prefix: ^"pipx:checkov" = "
   - slug: helm-unittest
     kind: githubrelease
@@ -192,7 +192,7 @@ templateTools:
     repo: helm-unittest
     trimPrefix: true
     targets:
-      - file: templates/helmcharts/.mise/conf.d/30-helmcharts.toml
+      - file: static/mise/config/helmcharts.toml
         prefix: ^helm_unittest_version = "
   - slug: hugo
     kind: githubrelease
@@ -200,7 +200,7 @@ templateTools:
     repo: hugo
     trimPrefix: true
     targets:
-      - file: templates/hugo/.mise/conf.d/10-hugo.toml
+      - file: static/mise/config/hugo.toml
         prefix: ^hugo-extended = "
   - slug: go
     kind: githubrelease
@@ -208,7 +208,7 @@ templateTools:
     repo: go
     versionfilterRegex: ^go(\d+\.\d+\.\d+)$
     targets:
-      - file: templates/hugo/.mise/conf.d/10-hugo.toml
+      - file: static/mise/config/hugo.toml
         prefix: ^go = "
       - file: templates/hugo/src/go.mod
         prefix: "^go "
@@ -218,13 +218,13 @@ templateTools:
     repo: node
     versionfilterRegex: ^v(26\.\d+\.\d+)$
     targets:
-      - file: templates/hugo/.mise/conf.d/10-hugo.toml
+      - file: static/mise/config/hugo.toml
         prefix: ^node = "
   - slug: djlint
     kind: pypi
     name: djlint
     targets:
-      - file: templates/hugo/.mise/conf.d/10-hugo.toml
+      - file: static/mise/config/hugo.toml
         prefix: ^"pipx:djlint" = "
   - slug: lighthouse
     kind: npm
@@ -244,7 +244,7 @@ templateTools:
     repo: cpython
     trimPrefix: true
     targets:
-      - file: templates/python/.mise/conf.d/10-python.toml
+      - file: static/mise/config/python.toml
         prefix: ^python = "
       - file: templates/python/pyproject.toml
         prefix: \$python := "
@@ -252,7 +252,7 @@ templateTools:
     kind: pypi
     name: ruff
     targets:
-      - file: templates/python/.mise/conf.d/10-python.toml
+      - file: static/mise/config/python.toml
         prefix: ^ruff = "
   - slug: pytest
     kind: pypi
@@ -265,14 +265,14 @@ templateTools:
     owner: rust-lang
     repo: rust
     targets:
-      - file: templates/rust/.mise/conf.d/10-rust.toml
+      - file: static/mise/config/rust.toml
         prefix: ^rust = "
   - slug: alejandra
     kind: githubrelease
     owner: kamadorueda
     repo: alejandra
     targets:
-      - file: templates/nix/.mise/conf.d/10-nix.toml
+      - file: static/mise/config/nix.toml
         prefix: ^"github:kamadorueda/alejandra" = "
 
 dprintPlugins:

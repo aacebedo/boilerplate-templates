@@ -1,0 +1,5 @@
+min_version = "2026.10.6"
+{{ shell "sh" (printf "%s/_partials/static-files.sh" templateFolder) (env "PWD" "") .layers "mise" | trim }}
+
+[settings]
+experimental = true

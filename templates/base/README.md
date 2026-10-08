@@ -5,7 +5,8 @@
 ## Development
 
 This project uses [mise](https://mise.jdx.dev) to manage tool versions and tasks, and [prek](https://prek.j178.dev) for
-git hooks.
+git hooks. The tool versions come from the templates through mise's
+[`include`](https://mise.jdx.dev/configuration.html#include), which needs mise 2026.10.6 or later.
 
 ```bash
 mise tasks                  # list all available tasks

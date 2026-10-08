@@ -51,7 +51,17 @@ reference() {
 
 case "$kind" in
 mise)
-	printf '[task_config]\nincludes = [\n'
+	printf 'include = [\n'
+	for layer in base $(printf '%s' "$layers" | tr , ' '); do
+		[ -f "$root/static/mise/config/$layer.toml" ] || continue
+		if [ "$self" = true ]; then
+			printf '  "../%s",\n' "$(reference "mise/config/$layer.toml")"
+		else
+			printf '  "%s",\n' "$(reference "mise/config/$layer.toml")"
+		fi
+	done
+	printf ']\n'
+	printf '\n[task_config]\nincludes = [\n'
 	for layer in base $(printf '%s' "$layers" | tr , ' '); do
 		printf '  "%s",\n' "$(reference "mise/tasks/$layer")"
 	done
