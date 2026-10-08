@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.6.10](https://github.com/aacebedo/boilerplate-templates/compare/3965b3def7c2a8d3bbdaa614bd117cff395a2347..v0.6.10) - 2026-10-08
+#### Miscellaneous Chores
+- (**deps**) Update biome in templates/base/.mise/conf.d/00-base.toml - ([0566188](https://github.com/aacebedo/boilerplate-templates/commit/05661887600b909648afda178f83e70281df6ae8)) - ci-actions-dep-updater[bot]
+- (**deps**) Update biome in templates/base/.biome.json - ([3965b3d](https://github.com/aacebedo/boilerplate-templates/commit/3965b3def7c2a8d3bbdaa614bd117cff395a2347)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.6.9](https://github.com/aacebedo/boilerplate-templates/compare/d33f1825a6270eeb7f5c983cb20c26dc7d31ceed..v0.6.9) - 2026-10-08
 #### Miscellaneous Chores
 - (**deps**) Update tombi in templates/base/.mise/conf.d/00-base.toml - ([d33f182](https://github.com/aacebedo/boilerplate-templates/commit/d33f1825a6270eeb7f5c983cb20c26dc7d31ceed)) - ci-actions-dep-updater[bot]
