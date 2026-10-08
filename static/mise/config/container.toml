@@ -1,0 +1,8 @@
+[tools]
+hadolint = "2.15.1"
+
+[env]
+IMAGE_NAME = "ghcr.io/{{vars.repo_owner}}/{{vars.repo_name}}"
+
+[bootstrap.packages]
+"apt:podman" = "latest"

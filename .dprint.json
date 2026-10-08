@@ -21,6 +21,7 @@
     "templates/base/.github/workflows/release.yaml",
     "templates/base/.github/workflows/update-deps.yaml",
     "templates/base/.gitignore",
+    "templates/base/.mise/config.toml",
     "templates/base/.ryl.toml",
     "templates/base/.updatecli/values.yaml",
     "templates/base/README.md",
