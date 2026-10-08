@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.6.9](https://github.com/aacebedo/boilerplate-templates/compare/d33f1825a6270eeb7f5c983cb20c26dc7d31ceed..v0.6.9) - 2026-10-08
+#### Miscellaneous Chores
+- (**deps**) Update tombi in templates/base/.mise/conf.d/00-base.toml - ([d33f182](https://github.com/aacebedo/boilerplate-templates/commit/d33f1825a6270eeb7f5c983cb20c26dc7d31ceed)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.6.8](https://github.com/aacebedo/boilerplate-templates/compare/67fc62bcf442eba48717ce2bcd971d40f5038adf..v0.6.8) - 2026-10-08
 #### Miscellaneous Chores
 - (**deps**) Update ryl in templates/base/.mise/conf.d/00-base.toml - ([67fc62b](https://github.com/aacebedo/boilerplate-templates/commit/67fc62bcf442eba48717ce2bcd971d40f5038adf)) - ci-actions-dep-updater[bot]
