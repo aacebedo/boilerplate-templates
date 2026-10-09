@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.7.3](https://github.com/aacebedo/boilerplate-templates/compare/a90b31d8ee69ce61a79243654e1af90e97c6a0cc..v0.7.3) - 2026-10-09
+#### Bug Fixes
+- (**hugo**) install chrome dependencies in bootstrap - ([a90b31d](https://github.com/aacebedo/boilerplate-templates/commit/a90b31d8ee69ce61a79243654e1af90e97c6a0cc)) - Alexandre ACEBEDO
+
+- - -
+
 ## [v0.7.2](https://github.com/aacebedo/boilerplate-templates/compare/60b686b0e1b03ebe74ab17049870cf74c1e44b09..v0.7.2) - 2026-10-09
 #### Bug Fixes
 - update templates pending - ([60b686b](https://github.com/aacebedo/boilerplate-templates/commit/60b686b0e1b03ebe74ab17049870cf74c1e44b09)) - Alexandre ACEBEDO
