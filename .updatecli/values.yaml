@@ -194,6 +194,14 @@ templateTools:
     targets:
       - file: static/mise/config/helmcharts.toml
         prefix: ^helm_unittest_version = "
+  - slug: caddy
+    kind: githubrelease
+    owner: caddyserver
+    repo: caddy
+    trimPrefix: true
+    targets:
+      - file: static/mise/config/hugo.toml
+        prefix: ^caddy = "
   - slug: hugo
     kind: githubrelease
     owner: gohugoio

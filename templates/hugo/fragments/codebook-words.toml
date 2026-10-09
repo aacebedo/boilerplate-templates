@@ -1,3 +1,5 @@
+  "caddy",
+  "caddyfile",
   "chroma",
   "djlint",
   "frontmatter",
@@ -15,3 +17,4 @@
   "shortcode",
   "shortcodes",
   "unreviewed",
+  "zstd",
