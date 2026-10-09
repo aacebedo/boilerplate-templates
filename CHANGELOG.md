@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.7.1](https://github.com/aacebedo/boilerplate-templates/compare/86e5cc1c51335888477bfb9af041a20200043358..v0.7.1) - 2026-10-09
+#### Bug Fixes
+- update templates - ([86e5cc1](https://github.com/aacebedo/boilerplate-templates/commit/86e5cc1c51335888477bfb9af041a20200043358)) - Alexandre ACEBEDO
+
+- - -
+
 ## [v0.7.0](https://github.com/aacebedo/boilerplate-templates/compare/87e5bf3de69f59a18bc8c0c8edb4d11ecab770d4..v0.7.0) - 2026-10-09
 #### Features
 - switch to include instead of copy for config files - ([87e5bf3](https://github.com/aacebedo/boilerplate-templates/commit/87e5bf3de69f59a18bc8c0c8edb4d11ecab770d4)) - Alexandre ACEBEDO
