@@ -28,7 +28,7 @@ main() {
 	templates_filter_patch "$tmp"
 
 	local changed
-	changed="$(templates_changed_files "$tmp")"
+	changed="$(templates_changed_files "$tmp" | pending "$tmp")"
 	if [ -z "$changed" ]; then
 		exit 0
 	fi
@@ -36,6 +36,25 @@ main() {
 	printf "\033[31mApplying the templates would change the project - run '%s':\033[0m\n" "mise run update-templates" >&2
 	printf '%s\n' "$changed" | sed 's|^|  |' >&2
 	exit 1
+}
+
+pending() {
+	local tmp="$1" path base
+	: >"$tmp/empty"
+	while IFS= read -r path; do
+		if [ ! -f "$path" ] || [ ! -f "$tmp/new/$path" ]; then
+			printf '%s\n' "$path"
+			continue
+		fi
+		base="$tmp/old/$path"
+		if [ ! -f "$base" ]; then
+			base="$tmp/empty"
+		fi
+		git merge-file -p --ours "$path" "$base" "$tmp/new/$path" >"$tmp/merged" 2>/dev/null || true
+		if ! cmp -s "$tmp/merged" "$path"; then
+			printf '%s\n' "$path"
+		fi
+	done
 }
 
 main
