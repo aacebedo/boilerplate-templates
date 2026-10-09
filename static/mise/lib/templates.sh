@@ -96,9 +96,11 @@ templates_patch() {
 }
 
 templates_filter_patch() {
-	local tmp="$1"
+	local tmp="$1" path
 	: >"$tmp/skipped"
-	awk -v root="$PWD" -v skipped="$tmp/skipped" '
+	: >"$tmp/added"
+	: >"$tmp/deleted"
+	awk -v root="$PWD" -v skipped="$tmp/skipped" -v added="$tmp/added" -v deleted="$tmp/deleted" '
 		function emit() {
 			if (n > 0 && keep)
 				for (i = 1; i <= n; i++) print buf[i]
@@ -118,12 +120,15 @@ templates_filter_patch() {
 					if (absent(src)) {
 						keep = 0
 						print src >skipped
+					} else if (dst ~ /^b\/old\//) {
+						keep = 0
+						print src >deleted
 					}
 				} else {
 					sub(/^b\/new\//, "", dst)
 					if (!absent(dst)) {
 						keep = 0
-						print dst >skipped
+						print dst >added
 					}
 				}
 			}
@@ -134,8 +139,20 @@ templates_filter_patch() {
 	if [ -s "$tmp/skipped" ]; then
 		sort -u -o "$tmp/skipped" "$tmp/skipped"
 	fi
+	while IFS= read -r path; do
+		cmp -s "$path" "$tmp/new/$path" || printf '%s\n' "$path"
+	done <"$tmp/added" >"$tmp/added.diff"
+	mv "$tmp/added.diff" "$tmp/added"
 }
 
 templates_patch_files() {
 	awk '/^diff --git / { p = $4; sub(/^b\/(new|old)\//, "", p); print p }' "$1" | sort -u
+}
+
+templates_changed_files() {
+	local tmp="$1"
+	{
+		templates_patch_files "$tmp/filtered.patch"
+		cat "$tmp/added" "$tmp/deleted"
+	} | sort -u
 }

@@ -37,8 +37,8 @@ main() {
 	if templates_plan_is_empty "$tmp"; then
 		printf "\033[31mHEAD already records %s with the same answers, so there is nothing to compare against.\033[0m\n" \
 			"$templates_new_ref" >&2
-		printf "\033[31mEdit %s and leave the change uncommitted, or pass --from-ref <ref> to name the applied \
-		version.\033[0m\n" "$templates_answers" >&2
+		printf "\033[31mEdit %s and leave the change uncommitted, or pass %s to name the applied version.\033[0m\n" \
+			"$templates_answers" "--from-ref <ref>" >&2
 		exit 1
 	fi
 
@@ -57,25 +57,83 @@ main() {
 			"$(sed 's/^/  /' "$tmp/skipped")" >&2
 	fi
 
-	if [ ! -s "$tmp/filtered.patch" ]; then
+	if [ -z "$(templates_changed_files "$tmp")" ]; then
 		printf '\033[37mNothing to apply: the templates produce what the project already has.\033[0m\n'
 		write_answers "$tmp/manifest.yaml" "$templates_new_ref" >"$templates_answers"
 		exit 0
 	fi
 
-	find "$tmp/old" -type f -exec git hash-object -w {} + >/dev/null
-
 	local status=0
-	git apply -p2 --3way "$tmp/filtered.patch" || status=$?
+	if [ -s "$tmp/filtered.patch" ]; then
+		find "$tmp/old" -type f -exec git hash-object -w {} + >/dev/null
+		if ! git apply -p2 --3way "$tmp/filtered.patch"; then
+			if [ -z "$(git ls-files --unmerged)" ]; then
+				printf "\033[31mCould not apply %s, so nothing was changed.\033[0m\n" "$templates_new_ref" >&2
+				exit 1
+			fi
+			status=1
+		fi
+	fi
+	merge_added "$tmp" || status=1
+	apply_deleted "$tmp" || status=1
 
 	write_answers "$tmp/manifest.yaml" "$templates_new_ref" >"$templates_answers"
 
 	if [ "$status" -ne 0 ]; then
 		printf "\033[31mApplying %s left conflicts to resolve:\033[0m\n%s\n" \
-			"$templates_new_ref" "$(git diff --name-only --diff-filter=U)" >&2
+			"$templates_new_ref" "$(git ls-files --unmerged | cut -f2 | sort -u | sed 's/^/  /')" >&2
 		exit 1
 	fi
 	printf '\033[37mApplied the templates at %s\033[0m\n' "$templates_new_ref"
+}
+
+stage_conflict() {
+	local path="$1" mode=100644 stage=1 blob
+	shift
+	if [ -x "$path" ]; then
+		mode=100755
+	fi
+	{
+		printf '0 %040d\t%s\n' 0 "$path"
+		for blob in "$@"; do
+			if [ -n "$blob" ]; then
+				printf '%s %s %d\t%s\n' "$mode" "$blob" "$stage" "$path"
+			fi
+			stage=$((stage + 1))
+		done
+	} | git update-index --index-info
+}
+
+merge_added() {
+	local tmp="$1" path ours theirs status=0
+	: >"$tmp/empty"
+	while IFS= read -r path; do
+		ours="$(git hash-object -w -- "$path")"
+		theirs="$(git hash-object -w -- "$tmp/new/$path")"
+		if git merge-file -L ours -L base -L theirs "$path" "$tmp/empty" "$tmp/new/$path"; then
+			git add -- "$path"
+		else
+			printf "\033[33mThe templates now provide %s, which the project already has.\033[0m\n" "$path" >&2
+			stage_conflict "$path" "" "$ours" "$theirs"
+			status=1
+		fi
+	done <"$tmp/added"
+	return "$status"
+}
+
+apply_deleted() {
+	local tmp="$1" path status=0
+	while IFS= read -r path; do
+		if cmp -s "$path" "$tmp/old/$path"; then
+			git rm -q -f --ignore-unmatch -- "$path"
+			rm -f -- "$path"
+		else
+			printf "\033[33mThe templates no longer provide %s, which the project has changed.\033[0m\n" "$path" >&2
+			stage_conflict "$path" "$(git hash-object -w -- "$tmp/old/$path")" "$(git hash-object -w -- "$path")" ""
+			status=1
+		fi
+	done <"$tmp/deleted"
+	return "$status"
 }
 
 write_answers() {

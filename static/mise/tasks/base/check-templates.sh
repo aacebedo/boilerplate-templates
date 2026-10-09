@@ -27,12 +27,14 @@ main() {
 	templates_patch "$tmp"
 	templates_filter_patch "$tmp"
 
-	if [ ! -s "$tmp/filtered.patch" ]; then
+	local changed
+	changed="$(templates_changed_files "$tmp")"
+	if [ -z "$changed" ]; then
 		exit 0
 	fi
 
 	printf "\033[31mApplying the templates would change the project - run '%s':\033[0m\n" "mise run update-templates" >&2
-	templates_patch_files "$tmp/filtered.patch" | sed 's|^|  |' >&2
+	printf '%s\n' "$changed" | sed 's|^|  |' >&2
 	exit 1
 }
 
