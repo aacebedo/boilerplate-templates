@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.8.0](https://github.com/aacebedo/boilerplate-templates/compare/344bebdfc987bf20fed86896979a17b8a472168e..v0.8.0) - 2026-10-10
+#### Features
+- move the hugo test files to static files - ([344bebd](https://github.com/aacebedo/boilerplate-templates/commit/344bebdfc987bf20fed86896979a17b8a472168e)) - Alexandre ACEBEDO
+
+- - -
+
 ## [v0.7.4](https://github.com/aacebedo/boilerplate-templates/compare/61eb343ebc6b784af5f6162fcc37aff37375f8d1..v0.7.4) - 2026-10-09
 #### Bug Fixes
 - (**hugo**) run the lighthouse test against the built site served with compression - ([61eb343](https://github.com/aacebedo/boilerplate-templates/commit/61eb343ebc6b784af5f6162fcc37aff37375f8d1)) - Alexandre ACEBEDO
