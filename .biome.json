@@ -7,8 +7,7 @@
       "!templates/base/.biome.json",
       "!templates/base/.devcontainer/devcontainer.json",
       "!templates/base/.dprint.json",
-      "!templates/hugo/src/layouts",
-      "!templates/hugo/tests/package.json"
+      "!templates/hugo/src/layouts"
     ]
   },
   "vcs": {

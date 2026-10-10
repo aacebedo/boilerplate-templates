@@ -238,13 +238,13 @@ templateTools:
     kind: npm
     name: lighthouse
     targets:
-      - file: templates/hugo/tests/package.json
+      - file: static/mise/tasks/hugo/hugo/test_files/package.json
         prefix: '"lighthouse": "'
   - slug: puppeteer
     kind: npm
     name: puppeteer
     targets:
-      - file: templates/hugo/tests/package.json
+      - file: static/mise/tasks/hugo/hugo/test_files/package.json
         prefix: '"puppeteer": "'
   - slug: python
     kind: githubrelease

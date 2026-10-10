@@ -21,7 +21,6 @@ exclude = { glob = [
   "templates/hugo/src/go.mod",
   "templates/hugo/src/hugo.yaml",
   "templates/hugo/src/layouts/home.html",
-  "templates/hugo/tests/package.json",
   "templates/python/pyproject.toml",
   "templates/rust/.rustfmt.toml",
   "templates/rust/Cargo.toml",

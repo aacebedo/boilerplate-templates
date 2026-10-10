@@ -6,7 +6,11 @@
 
 set -euo pipefail
 
-npm --prefix tests install
+test_files="$(dirname "$0")/test_files"
+runner=.build/lighthouse-runner
+mkdir -p "$runner"
+cp "$test_files/package.json" "$test_files/lighthouse-check.mjs" "$runner/"
+npm --prefix "$runner" install
 
 caddyfile="$(mktemp)"
 cat >"$caddyfile" <<EOF
@@ -23,4 +27,4 @@ trap 'kill "${CADDY_PID}" 2>/dev/null || true; rm -f "${caddyfile}"' EXIT
 
 curl --retry 5 --retry-delay 5 --retry-all-errors --fail localhost:8080 >/dev/null
 
-node tests/lighthouse-check.mjs http://localhost:8080 90 .build/lighthouse
+node "$runner/lighthouse-check.mjs" http://localhost:8080 90 .build/lighthouse

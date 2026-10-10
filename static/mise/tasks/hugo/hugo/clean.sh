@@ -5,4 +5,4 @@
 
 set -euo pipefail
 
-rm -rf .build src/.hugo_build.lock tests/node_modules tests/package-lock.json src/hugo_stats.json
+rm -rf .build src/.hugo_build.lock src/hugo_stats.json
