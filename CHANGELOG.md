@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.8.2](https://github.com/aacebedo/boilerplate-templates/compare/bbb5333adeea87ad2623e273c2f026bf67ba77a9..v0.8.2) - 2026-10-12
+#### Miscellaneous Chores
+- (**deps**) Update tombi in static/mise/config/base.toml - ([1522430](https://github.com/aacebedo/boilerplate-templates/commit/1522430f22f76041344c793192fac5b906650611)) - ci-actions-dep-updater[bot]
+- (**deps**) Update checkov in static/mise/config/helmcharts.toml - ([dd04c36](https://github.com/aacebedo/boilerplate-templates/commit/dd04c36dea10262c1ec961197697bcb86232dc31)) - ci-actions-dep-updater[bot]
+- (**deps**) Update the ruff dprint plugin in static/dprint/python.json - ([bbb5333](https://github.com/aacebedo/boilerplate-templates/commit/bbb5333adeea87ad2623e273c2f026bf67ba77a9)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.8.1](https://github.com/aacebedo/boilerplate-templates/compare/767eba9d045e16da01be96a525eaaaff260e1179..v0.8.1) - 2026-10-12
 #### Miscellaneous Chores
 - (**deps**) Update the gofumpt dprint plugin in static/dprint/hugo.json - ([767eba9](https://github.com/aacebedo/boilerplate-templates/commit/767eba9d045e16da01be96a525eaaaff260e1179)) - ci-actions-dep-updater[bot]
