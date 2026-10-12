@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.8.4](https://github.com/aacebedo/boilerplate-templates/compare/ee4073aa8e7ba0d2d794cd968bff821d1e729a0e..v0.8.4) - 2026-10-12
+#### Miscellaneous Chores
+- (**deps**) Update puppeteer in static/mise/tasks/hugo/hugo/test_fil... - ([7b57e17](https://github.com/aacebedo/boilerplate-templates/commit/7b57e1758103328b3cc19bfa34eacf49fd93376a)) - ci-actions-dep-updater[bot]
+- (**deps**) Update python in static/mise/config/python.toml - ([a666a1a](https://github.com/aacebedo/boilerplate-templates/commit/a666a1afa70de7eade8d78591100cfd9372233b9)) - ci-actions-dep-updater[bot]
+- (**deps**) Update python in templates/python/pyproject.toml - ([32a5f1c](https://github.com/aacebedo/boilerplate-templates/commit/32a5f1c1cd99e91b6402edfb40d3b6e6262568bf)) - ci-actions-dep-updater[bot]
+- (**deps**) Update go in static/mise/config/hugo.toml - ([92e4a29](https://github.com/aacebedo/boilerplate-templates/commit/92e4a29be09aaf6b84f68890080d0290aec91981)) - ci-actions-dep-updater[bot]
+- (**deps**) Update go in templates/hugo/src/go.mod - ([9a996ac](https://github.com/aacebedo/boilerplate-templates/commit/9a996acb30307e3d2797894599e8428a8185ef39)) - ci-actions-dep-updater[bot]
+- (**deps**) Update node in static/mise/config/hugo.toml - ([ee4073a](https://github.com/aacebedo/boilerplate-templates/commit/ee4073aa8e7ba0d2d794cd968bff821d1e729a0e)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.8.3](https://github.com/aacebedo/boilerplate-templates/compare/c2be26b33d8ccd1e30b57034fa06c21e1fdd788c..v0.8.3) - 2026-10-12
 #### Miscellaneous Chores
 - (**deps**) Update devcontainer-base in templates/base/.github/workf... - ([2c50b7a](https://github.com/aacebedo/boilerplate-templates/commit/2c50b7af6d683db8b4d48cff96fcbe61be88f41a)) - ci-actions-dep-updater[bot]
