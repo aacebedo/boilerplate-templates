@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.8.1](https://github.com/aacebedo/boilerplate-templates/compare/767eba9d045e16da01be96a525eaaaff260e1179..v0.8.1) - 2026-10-12
+#### Miscellaneous Chores
+- (**deps**) Update the gofumpt dprint plugin in static/dprint/hugo.json - ([767eba9](https://github.com/aacebedo/boilerplate-templates/commit/767eba9d045e16da01be96a525eaaaff260e1179)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.8.0](https://github.com/aacebedo/boilerplate-templates/compare/344bebdfc987bf20fed86896979a17b8a472168e..v0.8.0) - 2026-10-10
 #### Features
 - move the hugo test files to static files - ([344bebd](https://github.com/aacebedo/boilerplate-templates/commit/344bebdfc987bf20fed86896979a17b8a472168e)) - Alexandre ACEBEDO
