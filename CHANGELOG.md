@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.8.3](https://github.com/aacebedo/boilerplate-templates/compare/c2be26b33d8ccd1e30b57034fa06c21e1fdd788c..v0.8.3) - 2026-10-12
+#### Miscellaneous Chores
+- (**deps**) Update devcontainer-base in templates/base/.github/workf... - ([2c50b7a](https://github.com/aacebedo/boilerplate-templates/commit/2c50b7af6d683db8b4d48cff96fcbe61be88f41a)) - ci-actions-dep-updater[bot]
+- (**deps**) Update devcontainer-base in templates/base/.devcontainer... - ([25b8355](https://github.com/aacebedo/boilerplate-templates/commit/25b835532890d8043be1be91105913e1cc47ad8d)) - ci-actions-dep-updater[bot]
+- (**deps**) Update devcontainer-base in templates/base/.github/workf... - ([db192ab](https://github.com/aacebedo/boilerplate-templates/commit/db192abb72f5ea79cba7a2cc4cd0c17601e8edba)) - ci-actions-dep-updater[bot]
+- (**deps**) Update uv in static/mise/config/base.toml - ([18a7566](https://github.com/aacebedo/boilerplate-templates/commit/18a756641dc727fe1be5919a9ed4e19aea3befd0)) - ci-actions-dep-updater[bot]
+- (**deps**) Update rumdl in static/mise/config/base.toml - ([c2be26b](https://github.com/aacebedo/boilerplate-templates/commit/c2be26b33d8ccd1e30b57034fa06c21e1fdd788c)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.8.2](https://github.com/aacebedo/boilerplate-templates/compare/bbb5333adeea87ad2623e273c2f026bf67ba77a9..v0.8.2) - 2026-10-12
 #### Miscellaneous Chores
 - (**deps**) Update tombi in static/mise/config/base.toml - ([1522430](https://github.com/aacebedo/boilerplate-templates/commit/1522430f22f76041344c793192fac5b906650611)) - ci-actions-dep-updater[bot]
