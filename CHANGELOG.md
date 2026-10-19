@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.8.6](https://github.com/aacebedo/boilerplate-templates/compare/552ff1755c30f202696c10a9eccf1310f1c8a080..v0.8.6) - 2026-10-19
+#### Miscellaneous Chores
+- (**deps**) Update helm in static/mise/config/helmcharts.toml - ([b613113](https://github.com/aacebedo/boilerplate-templates/commit/b6131136fd377f8f4da457ad89f297cc0959747d)) - ci-actions-dep-updater[bot]
+- (**deps**) Update boilerplate in static/mise/config/base.toml - ([0439aea](https://github.com/aacebedo/boilerplate-templates/commit/0439aea31d120e55d3b78802eb02ee0ee92ee125)) - ci-actions-dep-updater[bot]
+- (**deps**) Update alejandra in static/mise/config/nix.toml - ([d25c885](https://github.com/aacebedo/boilerplate-templates/commit/d25c885d06c4b2236a2fc8eeeeb9b77ed72dad12)) - ci-actions-dep-updater[bot]
+- (**deps**) Update uv in static/mise/config/base.toml - ([552ff17](https://github.com/aacebedo/boilerplate-templates/commit/552ff1755c30f202696c10a9eccf1310f1c8a080)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.8.5](https://github.com/aacebedo/boilerplate-templates/compare/699d22deb2cfd03eb5aa1ae08a8c8ec3b47ef49f..v0.8.5) - 2026-10-19
 #### Miscellaneous Chores
 - (**deps**) Update rumdl in static/mise/config/base.toml - ([699d22d](https://github.com/aacebedo/boilerplate-templates/commit/699d22deb2cfd03eb5aa1ae08a8c8ec3b47ef49f)) - ci-actions-dep-updater[bot]
