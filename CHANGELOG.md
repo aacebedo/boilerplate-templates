@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.8.9](https://github.com/aacebedo/boilerplate-templates/compare/30469f6b1383e93f5f7451e9cdcf558890f0807b..v0.8.9) - 2026-10-19
+#### Miscellaneous Chores
+- (**deps**) Update dprint in static/mise/config/base.toml - ([dfb2304](https://github.com/aacebedo/boilerplate-templates/commit/dfb2304e56ea7e8fae2cefbd7819c3b74cad97ce)) - ci-actions-dep-updater[bot]
+- (**deps**) Update prek in static/mise/config/base.toml - ([54c0c9c](https://github.com/aacebedo/boilerplate-templates/commit/54c0c9cca2ce5ca89002afc06339439fb98dec0e)) - ci-actions-dep-updater[bot]
+- (**deps**) Update puppeteer in static/mise/tasks/hugo/hugo/test_fil... - ([0b189a8](https://github.com/aacebedo/boilerplate-templates/commit/0b189a8576dac01e2d2bdf33924fb31c17292b0f)) - ci-actions-dep-updater[bot]
+- (**deps**) Update djlint in static/mise/config/hugo.toml - ([8ff380f](https://github.com/aacebedo/boilerplate-templates/commit/8ff380fa85d6edfbc98644143b91565678ab8a41)) - ci-actions-dep-updater[bot]
+- (**deps**) Update trivy in static/mise/config/base.toml - ([30469f6](https://github.com/aacebedo/boilerplate-templates/commit/30469f6b1383e93f5f7451e9cdcf558890f0807b)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.8.8](https://github.com/aacebedo/boilerplate-templates/compare/b2604a281c5e542302ff0b9afddb3364b0bfde4e..v0.8.8) - 2026-10-19
 #### Miscellaneous Chores
 - (**deps**) Update actions/create-github-app-token in .github/workfl... - ([f6aaf01](https://github.com/aacebedo/boilerplate-templates/commit/f6aaf01db24d1f167ca077afa17c2c649a879307)) - ci-actions-dep-updater[bot]
