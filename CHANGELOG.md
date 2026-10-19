@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.8.5](https://github.com/aacebedo/boilerplate-templates/compare/699d22deb2cfd03eb5aa1ae08a8c8ec3b47ef49f..v0.8.5) - 2026-10-19
+#### Miscellaneous Chores
+- (**deps**) Update rumdl in static/mise/config/base.toml - ([699d22d](https://github.com/aacebedo/boilerplate-templates/commit/699d22deb2cfd03eb5aa1ae08a8c8ec3b47ef49f)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.8.4](https://github.com/aacebedo/boilerplate-templates/compare/ee4073aa8e7ba0d2d794cd968bff821d1e729a0e..v0.8.4) - 2026-10-12
 #### Miscellaneous Chores
 - (**deps**) Update puppeteer in static/mise/tasks/hugo/hugo/test_fil... - ([7b57e17](https://github.com/aacebedo/boilerplate-templates/commit/7b57e1758103328b3cc19bfa34eacf49fd93376a)) - ci-actions-dep-updater[bot]
