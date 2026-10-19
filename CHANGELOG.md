@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.8.7](https://github.com/aacebedo/boilerplate-templates/compare/574a43aa8ecc66b56dd00935ab967967beda7cd3..v0.8.7) - 2026-10-19
+#### Miscellaneous Chores
+- (**deps**) Update hugo in static/mise/config/hugo.toml - ([574a43a](https://github.com/aacebedo/boilerplate-templates/commit/574a43aa8ecc66b56dd00935ab967967beda7cd3)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.8.6](https://github.com/aacebedo/boilerplate-templates/compare/552ff1755c30f202696c10a9eccf1310f1c8a080..v0.8.6) - 2026-10-19
 #### Miscellaneous Chores
 - (**deps**) Update helm in static/mise/config/helmcharts.toml - ([b613113](https://github.com/aacebedo/boilerplate-templates/commit/b6131136fd377f8f4da457ad89f297cc0959747d)) - ci-actions-dep-updater[bot]
