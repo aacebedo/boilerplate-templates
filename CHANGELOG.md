@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.8.8](https://github.com/aacebedo/boilerplate-templates/compare/b2604a281c5e542302ff0b9afddb3364b0bfde4e..v0.8.8) - 2026-10-19
+#### Miscellaneous Chores
+- (**deps**) Update actions/create-github-app-token in .github/workfl... - ([f6aaf01](https://github.com/aacebedo/boilerplate-templates/commit/f6aaf01db24d1f167ca077afa17c2c649a879307)) - ci-actions-dep-updater[bot]
+- (**deps**) Update the ruff dprint plugin in static/dprint/python.json - ([e64c5fe](https://github.com/aacebedo/boilerplate-templates/commit/e64c5fef6e1f79d1fb9ed6ff5af0478de342e256)) - ci-actions-dep-updater[bot]
+- (**deps**) Update the markupFmt dprint plugin in static/dprint/hugo... - ([b2604a2](https://github.com/aacebedo/boilerplate-templates/commit/b2604a281c5e542302ff0b9afddb3364b0bfde4e)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.8.7](https://github.com/aacebedo/boilerplate-templates/compare/574a43aa8ecc66b56dd00935ab967967beda7cd3..v0.8.7) - 2026-10-19
 #### Miscellaneous Chores
 - (**deps**) Update hugo in static/mise/config/hugo.toml - ([574a43a](https://github.com/aacebedo/boilerplate-templates/commit/574a43aa8ecc66b56dd00935ab967967beda7cd3)) - ci-actions-dep-updater[bot]
