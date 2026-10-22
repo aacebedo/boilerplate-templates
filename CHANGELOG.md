@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.8.13](https://github.com/aacebedo/boilerplate-templates/compare/895dfea07f576c69e19397bbba7d72d26c89de3c..v0.8.13) - 2026-10-22
+#### Miscellaneous Chores
+- (**deps**) Update updatecli in static/mise/config/base.toml - ([caedf44](https://github.com/aacebedo/boilerplate-templates/commit/caedf44eb5d1b6055c2c76ce86e0cbfcf2a108f8)) - ci-actions-dep-updater[bot]
+- (**deps**) Update the gofumpt dprint plugin in static/dprint/hugo.json - ([895dfea](https://github.com/aacebedo/boilerplate-templates/commit/895dfea07f576c69e19397bbba7d72d26c89de3c)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.8.12](https://github.com/aacebedo/boilerplate-templates/compare/b308c2b870842fc08048df3002793b18765ac5fd..v0.8.12) - 2026-10-22
 #### Miscellaneous Chores
 - (**deps**) Update the markdown dprint plugin in static/dprint/base.... - ([b308c2b](https://github.com/aacebedo/boilerplate-templates/commit/b308c2b870842fc08048df3002793b18765ac5fd)) - ci-actions-dep-updater[bot]
