@@ -1,4 +1,4 @@
-{{- $python := "3.15.0" -}}
+{{- $python := "3.15.1" -}}
 [project]
 name = "{{ .package_name }}"
 version = "{{ .package_version }}"
