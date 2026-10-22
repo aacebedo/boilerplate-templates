@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.8.16](https://github.com/aacebedo/boilerplate-templates/compare/f2e10d2cc7d4288292707bed9af56b33f73557e3..v0.8.16) - 2026-10-22
+#### Miscellaneous Chores
+- (**deps**) Update uv in static/mise/config/base.toml - ([48699b7](https://github.com/aacebedo/boilerplate-templates/commit/48699b70ef3a89655aaa4b1f4f7df4ee5dbab5c3)) - ci-actions-dep-updater[bot]
+- (**deps**) Update python in static/mise/config/python.toml - ([20a5d35](https://github.com/aacebedo/boilerplate-templates/commit/20a5d358909407e959e9f7cd3a4cfb1d19f0e9a0)) - ci-actions-dep-updater[bot]
+- (**deps**) Update python in templates/python/pyproject.toml - ([736c74b](https://github.com/aacebedo/boilerplate-templates/commit/736c74b62230cc0269e3399da4a6b54ca5fd6f12)) - ci-actions-dep-updater[bot]
+- (**deps**) Update puppeteer in static/mise/tasks/hugo/hugo/test_fil... - ([f2e10d2](https://github.com/aacebedo/boilerplate-templates/commit/f2e10d2cc7d4288292707bed9af56b33f73557e3)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.8.15](https://github.com/aacebedo/boilerplate-templates/compare/2a12c151720bb34626ae59280bb7fccf52b6c7f9..v0.8.15) - 2026-10-22
 #### Miscellaneous Chores
 - (**deps**) Update gh in static/mise/config/base.toml - ([cdf2736](https://github.com/aacebedo/boilerplate-templates/commit/cdf27362dd3d7267fcef28131b8118bfa25480ec)) - ci-actions-dep-updater[bot]
