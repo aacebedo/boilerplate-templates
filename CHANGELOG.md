@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.8.15](https://github.com/aacebedo/boilerplate-templates/compare/2a12c151720bb34626ae59280bb7fccf52b6c7f9..v0.8.15) - 2026-10-22
+#### Miscellaneous Chores
+- (**deps**) Update gh in static/mise/config/base.toml - ([cdf2736](https://github.com/aacebedo/boilerplate-templates/commit/cdf27362dd3d7267fcef28131b8118bfa25480ec)) - ci-actions-dep-updater[bot]
+- (**deps**) Update node in static/mise/config/hugo.toml - ([75389cc](https://github.com/aacebedo/boilerplate-templates/commit/75389cc418a018fd9ccc02d1e77913d016bcaa6b)) - ci-actions-dep-updater[bot]
+- (**deps**) Update go in static/mise/config/hugo.toml - ([d51486b](https://github.com/aacebedo/boilerplate-templates/commit/d51486b2fbfe59f85693437404df69321ef4e14a)) - ci-actions-dep-updater[bot]
+- (**deps**) Update go in templates/hugo/src/go.mod - ([cefb0c0](https://github.com/aacebedo/boilerplate-templates/commit/cefb0c0b7335505b4285fe5617bacf35d91211d2)) - ci-actions-dep-updater[bot]
+- (**deps**) Update dprint in static/mise/config/base.toml - ([9e0ad90](https://github.com/aacebedo/boilerplate-templates/commit/9e0ad906bc493e571c824ff2f849358dea26cbc1)) - ci-actions-dep-updater[bot]
+- (**deps**) Update checkov in static/mise/config/helmcharts.toml - ([2a12c15](https://github.com/aacebedo/boilerplate-templates/commit/2a12c151720bb34626ae59280bb7fccf52b6c7f9)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.8.14](https://github.com/aacebedo/boilerplate-templates/compare/9a9bd19ac83ba019ad673a0364ec8dbd4c186116..v0.8.14) - 2026-10-22
 #### Miscellaneous Chores
 - (**deps**) Update ryl in static/mise/config/base.toml - ([9a9bd19](https://github.com/aacebedo/boilerplate-templates/commit/9a9bd19ac83ba019ad673a0364ec8dbd4c186116)) - ci-actions-dep-updater[bot]
