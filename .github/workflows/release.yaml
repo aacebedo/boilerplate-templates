@@ -3,9 +3,9 @@ name: Release
 
 # yamllint disable-line rule:truthy
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * *"
 
 permissions: {}
 
@@ -17,6 +17,6 @@ jobs:
       contents: write
 
     with:
-      container-image: ghcr.io/aacebedo/devcontainer-base:1.24.4
+      container-image: ghcr.io/aacebedo/devcontainer-base:1.25.0
       container-options: >-
         --user root

@@ -1,15 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.5.14/schema.json",
-  "files": {
-    "includes": [
-      "**",
-      "!templates/*/fragments",
-      "!templates/base/.biome.json",
-      "!templates/base/.devcontainer/devcontainer.json",
-      "!templates/base/.dprint.json",
-      "!templates/hugo/src/layouts"
-    ]
-  },
+  "$schema": "https://biomejs.dev/schemas/2.6.2/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -26,5 +16,15 @@
       "allowComments": true,
       "allowTrailingCommas": true
     }
+  },
+  "files": {
+    "includes": [
+      "**",
+      "!templates/*/fragments",
+      "!templates/base/.biome.json",
+      "!templates/base/.devcontainer/devcontainer.json",
+      "!templates/base/.dprint.json",
+      "!templates/hugo/src/layouts"
+    ]
   }
 }
