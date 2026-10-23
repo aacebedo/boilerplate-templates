@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.8.17](https://github.com/aacebedo/boilerplate-templates/compare/ed5ca42669a7c9c62767a1b3d205a51c639d210c..v0.8.17) - 2026-10-23
+#### Bug Fixes
+- keep the setup action available for the post steps of mise-action - ([d1ecb16](https://github.com/aacebedo/boilerplate-templates/commit/d1ecb16f3702ab7ca75859c92d7d38bb49af40e3)) - Alexandre Acebedo, Claude Opus 5.5
+- refresh the dependency update pull requests after each push to main - ([ed5ca42](https://github.com/aacebedo/boilerplate-templates/commit/ed5ca42669a7c9c62767a1b3d205a51c639d210c)) - Alexandre Acebedo, Claude Opus 5.5
+
+- - -
+
 ## [v0.8.16](https://github.com/aacebedo/boilerplate-templates/compare/f2e10d2cc7d4288292707bed9af56b33f73557e3..v0.8.16) - 2026-10-22
 #### Miscellaneous Chores
 - (**deps**) Update uv in static/mise/config/base.toml - ([48699b7](https://github.com/aacebedo/boilerplate-templates/commit/48699b70ef3a89655aaa4b1f4f7df4ee5dbab5c3)) - ci-actions-dep-updater[bot]
