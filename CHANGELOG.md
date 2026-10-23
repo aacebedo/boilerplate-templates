@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.8.19](https://github.com/aacebedo/boilerplate-templates/compare/65fb42447b043e33f024ec409d14d0801d8957e5..v0.8.19) - 2026-10-23
+#### Miscellaneous Chores
+- (**deps**) deps(github): bump Action release for jdx/mise-action fr... - ([1687c91](https://github.com/aacebedo/boilerplate-templates/commit/1687c91570e3f37171f62bf5bef6a0c6207e2ec7)) - ci-actions-dep-updater[bot]
+- (**deps**) Update ruff in static/mise/config/python.toml - ([65fb424](https://github.com/aacebedo/boilerplate-templates/commit/65fb42447b043e33f024ec409d14d0801d8957e5)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.8.18](https://github.com/aacebedo/boilerplate-templates/compare/f3527e63e5bf93de59b385ff3b981f8c401b3ac4..v0.8.18) - 2026-10-23
 #### Miscellaneous Chores
 - (**deps**) Update djlint in static/mise/config/hugo.toml - ([d078957](https://github.com/aacebedo/boilerplate-templates/commit/d0789577770548520e735fe66ddb73a02b203765)) - ci-actions-dep-updater[bot]
