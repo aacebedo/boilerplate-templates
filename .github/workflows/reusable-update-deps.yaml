@@ -39,10 +39,17 @@ jobs:
           persist-credentials: false
       - name: Setup
         uses: ./.boilerplate-templates/static/github/actions/setup
-      - name: Remove the templates checkout
+      - name: Move the templates checkout aside
         shell: bash
-        run: rm -rf .boilerplate-templates
+        run: mv .boilerplate-templates "${RUNNER_TEMP}/boilerplate-templates"
       - name: Apply update policies
         run: mise run update-deps --apply
         env:
           UPDATECLI_GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
+      - name: Restore the templates checkout
+        if: always()
+        shell: bash
+        run: |
+          if [ -d "${RUNNER_TEMP}/boilerplate-templates" ]; then
+            mv "${RUNNER_TEMP}/boilerplate-templates" .boilerplate-templates
+          fi
