@@ -24,6 +24,9 @@ on:
 jobs:
   release:
     runs-on: ubuntu-26.04
+    concurrency:
+      group: release
+      cancel-in-progress: false
     container: >-
       ${{ inputs.container-image != '' && fromJSON(format('{{"image":{0},"options":{1}}}',
       toJSON(inputs.container-image), toJSON(inputs.container-options))) || '' }}
