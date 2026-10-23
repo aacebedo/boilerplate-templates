@@ -2,7 +2,7 @@
 # version they were rendered from. Rewritten by "mise run update-templates".
 ---
 template_url: .
-template_ref: v0.8.19
+template_ref: v0.8.20
 devcontainer: true
 github_owner: aacebedo
 layers: ""
