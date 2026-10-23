@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.9.0](https://github.com/aacebedo/boilerplate-templates/compare/71df715d1c82044ed62267d2c801f647c8c7de74..v0.9.0) - 2026-10-23
+#### Features
+- release nightly or on demand instead of on every push to main - ([0b3d476](https://github.com/aacebedo/boilerplate-templates/commit/0b3d476c022dd5d719b2806acd51185b32b9ca1b)) - Alexandre Acebedo, Claude Opus 5.5
+#### Bug Fixes
+- debounce the dependency update after a burst of merges - ([41d2191](https://github.com/aacebedo/boilerplate-templates/commit/41d2191d54f07d35a73d9bba9ece3d3d894f9257)) - Alexandre Acebedo, Claude Opus 5.5
+#### Miscellaneous Chores
+- (**deps**) Apply the templates at the latest release - ([deeffbf](https://github.com/aacebedo/boilerplate-templates/commit/deeffbf80c18e3343a7dcc3b2c4c78683b480d82)) - ci-actions-dep-updater[bot]
+- apply the templates at v0.8.19 - ([71df715](https://github.com/aacebedo/boilerplate-templates/commit/71df715d1c82044ed62267d2c801f647c8c7de74)) - Alexandre Acebedo, Claude Opus 5.5
+
+- - -
+
 ## [v0.8.20](https://github.com/aacebedo/boilerplate-templates/compare/e666d6034cce39acf743b638217e3ae72b2dabd5..v0.8.20) - 2026-10-23
 #### Miscellaneous Chores
 - (**deps**) Update tombi in static/mise/config/base.toml - ([e666d60](https://github.com/aacebedo/boilerplate-templates/commit/e666d6034cce39acf743b638217e3ae72b2dabd5)) - ci-actions-dep-updater[bot]
