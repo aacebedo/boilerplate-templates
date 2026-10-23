@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.8.20](https://github.com/aacebedo/boilerplate-templates/compare/e666d6034cce39acf743b638217e3ae72b2dabd5..v0.8.20) - 2026-10-23
+#### Miscellaneous Chores
+- (**deps**) Update tombi in static/mise/config/base.toml - ([e666d60](https://github.com/aacebedo/boilerplate-templates/commit/e666d6034cce39acf743b638217e3ae72b2dabd5)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.8.19](https://github.com/aacebedo/boilerplate-templates/compare/65fb42447b043e33f024ec409d14d0801d8957e5..v0.8.19) - 2026-10-23
 #### Miscellaneous Chores
 - (**deps**) deps(github): bump Action release for jdx/mise-action fr... - ([1687c91](https://github.com/aacebedo/boilerplate-templates/commit/1687c91570e3f37171f62bf5bef6a0c6207e2ec7)) - ci-actions-dep-updater[bot]
