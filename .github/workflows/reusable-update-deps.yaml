@@ -4,6 +4,11 @@ name: Reusable dependency update
 # yamllint disable-line rule:truthy
 on:
   workflow_call:
+    inputs:
+      debounce-seconds:
+        description: Seconds a push run waits, so that a burst of merges ends in a single update
+        type: number
+        default: 600
     secrets:
       CI_ACTIONS_DEP_UPDATER_CLIENT_ID:
         description: Client ID of the GitHub App that opens the update pull requests
@@ -13,8 +18,26 @@ on:
         required: true
 
 jobs:
-  update-deps:
+  debounce:
     runs-on: ubuntu-26.04
+    concurrency:
+      group: update-deps-debounce
+      cancel-in-progress: true
+
+    steps:
+      - name: Wait for the merges to settle
+        if: github.event_name == 'push'
+        shell: bash
+        run: sleep "${DEBOUNCE_SECONDS}"
+        env:
+          DEBOUNCE_SECONDS: ${{ inputs.debounce-seconds }}
+
+  update-deps:
+    needs: debounce
+    runs-on: ubuntu-26.04
+    concurrency:
+      group: update-deps
+      cancel-in-progress: false
 
     steps:
       - name: Generate a token

@@ -12,10 +12,6 @@ on:
 
 permissions: {}
 
-concurrency:
-  group: update-deps
-  cancel-in-progress: false
-
 jobs:
   update-deps:
     uses: {{ shell "sh" (printf "%s/_partials/static-files.sh" templateFolder) (env "PWD" "") .layers "github" "reusable-update-deps.yaml" }}
