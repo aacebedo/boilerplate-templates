@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.8.18](https://github.com/aacebedo/boilerplate-templates/compare/f3527e63e5bf93de59b385ff3b981f8c401b3ac4..v0.8.18) - 2026-10-23
+#### Miscellaneous Chores
+- (**deps**) Update djlint in static/mise/config/hugo.toml - ([d078957](https://github.com/aacebedo/boilerplate-templates/commit/d0789577770548520e735fe66ddb73a02b203765)) - ci-actions-dep-updater[bot]
+- (**deps**) Update biome in static/mise/config/base.toml - ([afb913c](https://github.com/aacebedo/boilerplate-templates/commit/afb913cd1f47081c9012eeb87ce69cd48fc1572f)) - ci-actions-dep-updater[bot]
+- (**deps**) Update biome in templates/base/.biome.json - ([1882e03](https://github.com/aacebedo/boilerplate-templates/commit/1882e038926b1c726fc5b1d1601ca46d457d9ef9)) - ci-actions-dep-updater[bot]
+- (**deps**) Update dprint in static/mise/config/base.toml - ([7c83a6f](https://github.com/aacebedo/boilerplate-templates/commit/7c83a6f9b46a47e7ba1dce36ff57053682345eb9)) - ci-actions-dep-updater[bot]
+- (**deps**) Update prek in static/mise/config/base.toml - ([b0b0415](https://github.com/aacebedo/boilerplate-templates/commit/b0b041560673b489ed76f099bb4f7f332a826f52)) - ci-actions-dep-updater[bot]
+- (**deps**) Update trivy in static/mise/config/base.toml - ([f3527e6](https://github.com/aacebedo/boilerplate-templates/commit/f3527e63e5bf93de59b385ff3b981f8c401b3ac4)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.8.17](https://github.com/aacebedo/boilerplate-templates/compare/ed5ca42669a7c9c62767a1b3d205a51c639d210c..v0.8.17) - 2026-10-23
 #### Bug Fixes
 - keep the setup action available for the post steps of mise-action - ([d1ecb16](https://github.com/aacebedo/boilerplate-templates/commit/d1ecb16f3702ab7ca75859c92d7d38bb49af40e3)) - Alexandre Acebedo, Claude Opus 5.5
