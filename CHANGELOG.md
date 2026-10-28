@@ -2,6 +2,19 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.9.1](https://github.com/aacebedo/boilerplate-templates/compare/9bcee1161d35ab9cc89d8af3e08d8cbbf50c9b38..v0.9.1) - 2026-10-27
+#### Miscellaneous Chores
+- (**deps**) deps(github): bump Action release for jdx/mise-action fr... - ([5be3cbc](https://github.com/aacebedo/boilerplate-templates/commit/5be3cbc29ed69c8e632f27749f671e5bc7d2b61e)) - ci-actions-dep-updater[bot]
+- (**deps**) Update gh in static/mise/config/base.toml - ([6ccc7d2](https://github.com/aacebedo/boilerplate-templates/commit/6ccc7d281e4cccbec9dcd190a24c6f2c9eca172b)) - ci-actions-dep-updater[bot]
+- (**deps**) Update tombi in static/mise/config/base.toml - ([9e1f95f](https://github.com/aacebedo/boilerplate-templates/commit/9e1f95f1c45614737007571d1992a4c385bfc531)) - ci-actions-dep-updater[bot]
+- (**deps**) Update ryl in static/mise/config/base.toml - ([d8dfcd3](https://github.com/aacebedo/boilerplate-templates/commit/d8dfcd37d6bbeab48db1d6d04e7e4fd40fed2e78)) - ci-actions-dep-updater[bot]
+- (**deps**) Update the ruff dprint plugin in static/dprint/python.json - ([4067bfa](https://github.com/aacebedo/boilerplate-templates/commit/4067bfafb942a8ec9a260839c95df8e398be6093)) - ci-actions-dep-updater[bot]
+- (**deps**) Update the markdown dprint plugin in static/dprint/base.... - ([ee386ed](https://github.com/aacebedo/boilerplate-templates/commit/ee386ed449ee453c26ba6c5e7c8a52132cd5f767)) - ci-actions-dep-updater[bot]
+- (**deps**) Apply the templates at the latest release - ([9bcee11](https://github.com/aacebedo/boilerplate-templates/commit/9bcee1161d35ab9cc89d8af3e08d8cbbf50c9b38)) - ci-actions-dep-updater[bot]
+- (**version**) v0.9.1 [skip ci] - ([1b3289e](https://github.com/aacebedo/boilerplate-templates/commit/1b3289e3b582312b69516ee85aa7713a6da6d2f6)) - github-actions[bot]
+
+- - -
+
 ## [v0.9.1](https://github.com/aacebedo/boilerplate-templates/compare/9bcee1161d35ab9cc89d8af3e08d8cbbf50c9b38..v0.9.1) - 2026-10-26
 #### Miscellaneous Chores
 - (**deps**) deps(github): bump Action release for jdx/mise-action fr... - ([5be3cbc](https://github.com/aacebedo/boilerplate-templates/commit/5be3cbc29ed69c8e632f27749f671e5bc7d2b61e)) - ci-actions-dep-updater[bot]
