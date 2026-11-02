@@ -1,6 +1,6 @@
 [tools]
 helm = "4.3.1"
-"pipx:checkov" = "3.3.30"
+"pipx:checkov" = "3.4.2"
 
 [vars]
 helm_unittest_version = "1.2.1"
