@@ -2,7 +2,7 @@
 caddy = "2.11.7"
 go = "1.27.3"
 hugo-extended = "0.169.0"
-node = "26.12.1"
+node = "26.13.0"
 "pipx:djlint" = "1.49.2"
 
 [bootstrap.packages]
