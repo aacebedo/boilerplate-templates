@@ -2,6 +2,29 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.9.2](https://github.com/aacebedo/boilerplate-templates/compare/df87fdab526475f6a42528a368d627015cc976c3..v0.9.2) - 2026-11-02
+#### Miscellaneous Chores
+- (**deps**) Update node in static/mise/config/hugo.toml - ([844bec1](https://github.com/aacebedo/boilerplate-templates/commit/844bec1e57113c6a059f7a08e191fe1ad017c59c)) - ci-actions-dep-updater[bot]
+- (**deps**) Update reuse in static/mise/config/base.toml - ([3cb159c](https://github.com/aacebedo/boilerplate-templates/commit/3cb159c9d7a7c0c439a320988c112798d5eb632e)) - ci-actions-dep-updater[bot]
+- (**deps**) Update rumdl in static/mise/config/base.toml - ([a956b80](https://github.com/aacebedo/boilerplate-templates/commit/a956b80c98d2dd3359671b5292c44b4527bfe524)) - ci-actions-dep-updater[bot]
+- (**deps**) Update prek in static/mise/config/base.toml - ([d2a515c](https://github.com/aacebedo/boilerplate-templates/commit/d2a515cec9baaeb6e3ca97ec598924ed28579a5a)) - ci-actions-dep-updater[bot]
+- (**deps**) deps(github): bump Action tag for jdx/mise-action from v... - ([7df4add](https://github.com/aacebedo/boilerplate-templates/commit/7df4add1929f2f458d3758fbecc20d1cac8355ab)) - ci-actions-dep-updater[bot]
+- (**deps**) Update pytest in templates/python/pyproject.toml - ([6607600](https://github.com/aacebedo/boilerplate-templates/commit/6607600254c3558da096c9be92cebe452f0a4f79)) - ci-actions-dep-updater[bot]
+- (**deps**) Update ruff in static/mise/config/python.toml - ([5394c85](https://github.com/aacebedo/boilerplate-templates/commit/5394c859e0125466ba46abefc1dfe17b9a69a283)) - ci-actions-dep-updater[bot]
+- (**deps**) Update lighthouse in static/mise/tasks/hugo/hugo/test_fi... - ([129c12f](https://github.com/aacebedo/boilerplate-templates/commit/129c12f12751bca80e3a3959df6b9e90e5b83284)) - ci-actions-dep-updater[bot]
+- (**deps**) Update djlint in static/mise/config/hugo.toml - ([5af132a](https://github.com/aacebedo/boilerplate-templates/commit/5af132ae3e66f58b909f57933c90e8e7ce607265)) - ci-actions-dep-updater[bot]
+- (**deps**) Update tombi in static/mise/config/base.toml - ([d288050](https://github.com/aacebedo/boilerplate-templates/commit/d2880501c42dee34ba8251271b37b6f20b99887d)) - ci-actions-dep-updater[bot]
+- (**deps**) Update hugo in static/mise/config/hugo.toml - ([0dfed0e](https://github.com/aacebedo/boilerplate-templates/commit/0dfed0e829e9f81a800d6f25327e471719501ab2)) - ci-actions-dep-updater[bot]
+- (**deps**) Update checkov in static/mise/config/helmcharts.toml - ([7910d7b](https://github.com/aacebedo/boilerplate-templates/commit/7910d7b5f8146868664512226cb9b7b26f3e814f)) - ci-actions-dep-updater[bot]
+- (**deps**) Update ryl in static/mise/config/base.toml - ([2be5c35](https://github.com/aacebedo/boilerplate-templates/commit/2be5c35d53bcb38b449c1fc62b55fc5d52053104)) - ci-actions-dep-updater[bot]
+- (**deps**) Update uv in static/mise/config/base.toml - ([0ba5d68](https://github.com/aacebedo/boilerplate-templates/commit/0ba5d68fb08a94e5b83540685e68bdc22a4d7ea4)) - ci-actions-dep-updater[bot]
+- (**deps**) Update the ruff dprint plugin in static/dprint/python.json - ([0d317ba](https://github.com/aacebedo/boilerplate-templates/commit/0d317ba044ec7c6d3f0c0737ffd7a6ade9dd3421)) - ci-actions-dep-updater[bot]
+- (**deps**) Update gh in static/mise/config/base.toml - ([d7d757b](https://github.com/aacebedo/boilerplate-templates/commit/d7d757b702f279f41105a3823fd58fcebc4f25cf)) - ci-actions-dep-updater[bot]
+- (**deps**) Update the markdown dprint plugin in static/dprint/base.... - ([95c6011](https://github.com/aacebedo/boilerplate-templates/commit/95c6011776a4bc816b901dd1e22d27590a926a59)) - ci-actions-dep-updater[bot]
+- (**deps**) Apply the templates at the latest release - ([df87fda](https://github.com/aacebedo/boilerplate-templates/commit/df87fdab526475f6a42528a368d627015cc976c3)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.9.1](https://github.com/aacebedo/boilerplate-templates/compare/9bcee1161d35ab9cc89d8af3e08d8cbbf50c9b38..v0.9.1) - 2026-10-27
 #### Miscellaneous Chores
 - (**deps**) deps(github): bump Action release for jdx/mise-action fr... - ([5be3cbc](https://github.com/aacebedo/boilerplate-templates/commit/5be3cbc29ed69c8e632f27749f671e5bc7d2b61e)) - ci-actions-dep-updater[bot]
