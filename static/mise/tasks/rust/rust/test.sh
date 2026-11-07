@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
-#MISE description = "Build and test the crate"
-#MISE hide = true
+#MISE description = "Build and test the crate with nextest"
 
-#MISE depends = ["rust:build"]
+#USAGE arg "[nextest_args]..." help="Extra arguments for cargo nextest run, e.g. -E 'test(name)' or --cargo-profile <p>"
 
 set -euo pipefail
 
-cargo test
+cargo nextest run --no-tests=warn "$@"

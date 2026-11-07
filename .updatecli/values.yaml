@@ -274,7 +274,23 @@ templateTools:
     repo: rust
     targets:
       - file: static/mise/config/rust.toml
-        prefix: ^rust = "
+        prefix: ^rust = \{ version = "
+  - slug: cargo-nextest
+    kind: githubrelease
+    owner: nextest-rs
+    repo: nextest
+    versionfilterRegex: ^cargo-nextest-(\d+\.\d+\.\d+)$
+    targets:
+      - file: static/mise/config/rust.toml
+        prefix: ^"github:nextest-rs/nextest" = \{ version = "
+  - slug: cargo-llvm-cov
+    kind: githubrelease
+    owner: taiki-e
+    repo: cargo-llvm-cov
+    trimPrefix: true
+    targets:
+      - file: static/mise/config/rust.toml
+        prefix: ^"github:taiki-e/cargo-llvm-cov" = "
   - slug: alejandra
     kind: githubrelease
     owner: kamadorueda
