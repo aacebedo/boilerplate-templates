@@ -13,7 +13,7 @@ rumdl = "0.3.2"
 updatecli = "0.123.0"
 biome = "2.6.2"
 "github:blopker/codebook" = "0.3.42"
-uv = "0.13.6"
+uv = "0.13.7"
 "pipx:reuse" = { version = "6.3.0", extras = "charset-normalizer" }
 boilerplate = "0.17.0"
 yq = "4.54.1"
