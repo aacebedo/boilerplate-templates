@@ -16,7 +16,7 @@ biome = "2.6.2"
 uv = "0.13.7"
 "pipx:reuse" = { version = "6.3.0", extras = "charset-normalizer" }
 boilerplate = "0.17.0"
-yq = "4.54.2"
+yq = "4.54.3"
 
 [vars]
 # editorconfig-checker-disable
