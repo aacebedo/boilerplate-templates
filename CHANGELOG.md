@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.10.1](https://github.com/aacebedo/boilerplate-templates/compare/5363c937b6c56f7c7f0a940298b8752211f138b5..v0.10.1) - 2026-11-09
+#### Miscellaneous Chores
+- (**deps**) Update yq in static/mise/config/base.toml - ([de3e429](https://github.com/aacebedo/boilerplate-templates/commit/de3e4291b17fd9f5b12ef0548f58a4dcf2ff7441)) - ci-actions-dep-updater[bot]
+- (**deps**) Update tombi in static/mise/config/base.toml - ([ae7ef49](https://github.com/aacebedo/boilerplate-templates/commit/ae7ef4997ab5086a40504c2552a64463e9263ab9)) - ci-actions-dep-updater[bot]
+- (**deps**) Update the typescript dprint plugin in static/dprint/hug... - ([75e4484](https://github.com/aacebedo/boilerplate-templates/commit/75e448415688730486730cb9a09e2a8c4f61d9a9)) - ci-actions-dep-updater[bot]
+- (**deps**) Apply the templates at the latest release - ([5363c93](https://github.com/aacebedo/boilerplate-templates/commit/5363c937b6c56f7c7f0a940298b8752211f138b5)) - ci-actions-dep-updater[bot]
+
+- - -
+
 ## [v0.10.0](https://github.com/aacebedo/boilerplate-templates/compare/76b11967a52cf06815ec3a0d7d27d1224202f9e7..v0.10.0) - 2026-11-07
 #### Features
 - improved rust config and rust tasks - ([76b1196](https://github.com/aacebedo/boilerplate-templates/commit/76b11967a52cf06815ec3a0d7d27d1224202f9e7)) - Alexandre ACEBEDO
