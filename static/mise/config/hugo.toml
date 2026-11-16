@@ -1,7 +1,7 @@
 [tools]
 caddy = "2.11.9"
 go = "1.27.3"
-hugo-extended = "0.169.0"
+hugo-extended = "0.170.0"
 node = "26.13.0"
 "pipx:djlint" = "1.49.10"
 
