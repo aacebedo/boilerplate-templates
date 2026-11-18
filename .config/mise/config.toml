@@ -1,12 +1,12 @@
 min_version = "2026.10.6"
 include = [
-  "../static/mise/config/base.toml",
+  "../../static/mise/config/base.toml",
 ]
 
 [task_config]
 includes = [
   "static/mise/tasks/base",
-  ".mise/tasks",
+  ".config/mise/tasks",
 ]
 
 [settings]

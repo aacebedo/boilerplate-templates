@@ -3,11 +3,12 @@ branch_whitelist = ["main"]
 ignore_merge_commits = true
 
 post_bump_hooks = [
-  "git push",
+{{ template "fragments" (dict "vars" . "name" "cog-post-bump-hooks.toml") -}}
+{{`  "git push",
   "git push origin {{version_tag}}",
-  "cog changelog --at {{version_tag}} --template full_hash > /tmp/cog-release-notes-{{version}}.md",
+  "cog --config .config/cog.toml changelog --at {{version_tag}} -t full_hash > /tmp/cog-release-notes-{{version}}.md",
   "gh release create {{version_tag}} --title {{version_tag}} --notes-file /tmp/cog-release-notes-{{version}}.md",
-  "rm -f /tmp/cog-release-notes-{{version}}.md",
+  "rm -f /tmp/cog-release-notes-{{version}}.md",`}}
 ]
 
 [commit_types.chore]
@@ -26,5 +27,5 @@ changelog_title = "Reverts"
 path = "CHANGELOG.md"
 template = "remote"
 remote = "github.com"
-owner = "aacebedo"
-repository = "boilerplate-templates"
+owner = "{{ .github_owner }}"
+repository = "{{ .project_slug }}"

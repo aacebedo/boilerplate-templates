@@ -133,7 +133,7 @@ words = [
 ignore_paths = [
   ".boilerplate-answers.yaml",
   "CHANGELOG.md",
-  "cog.toml",
+  ".config/cog.toml",
   ".git/**",
   "REUSE.toml",
 ]

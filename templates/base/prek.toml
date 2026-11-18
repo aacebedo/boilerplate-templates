@@ -4,7 +4,7 @@ repo = "local"
 [[repos.hooks]]
 id = "ryl"
 name = "ryl"
-entry = "ryl --config-file .ryl.toml"
+entry = "ryl --config-file .config/ryl.toml"
 language = "system"
 types = ["yaml"]
 exclude = '^\.updatecli/manifests/'
@@ -15,7 +15,7 @@ repo = "local"
 [[repos.hooks]]
 id = "editorconfig-checker"
 name = "editorconfig-checker"
-entry = "editorconfig-checker"
+entry = "editorconfig-checker -config .config/editorconfig-checker.json"
 language = "system"
 
 [[repos]]
@@ -166,7 +166,7 @@ repo = "local"
 id = "cog-check"
 name = "cog check"
 entry = "cog"
-args = ["check", "--from-latest-tag"]
+args = ["--config", ".config/cog.toml", "check", "--from-latest-tag"]
 language = "system"
 pass_filenames = false
 stages = ["pre-push"]

@@ -1,6 +1,6 @@
 ignore = [
   ".boilerplate-answers.yaml",
-  ".mise/node_modules/",
+  ".config/mise/node_modules/",
   ".updatecli/manifests/",
 {{ template "fragments" (dict "vars" . "name" "ryl-ignore.toml") }}]
 

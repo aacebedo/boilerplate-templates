@@ -8,7 +8,7 @@
     "**/node_modules",
     "**/*-lock.json",
     ".boilerplate-answers.yaml",
-    ".updatecli/manifests/**",
+    "../.updatecli/manifests/**",
     "CHANGELOG.md"
   ],
   "extends": [

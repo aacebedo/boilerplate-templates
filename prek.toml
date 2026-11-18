@@ -1,22 +1,22 @@
 exclude = { glob = [
   "templates/*/fragments/**",
-  "templates/*/.mise/conf.d/**",
+  "templates/*/.config/mise/conf.d/**",
   "static/updatecli/*/manifests/**",
   "templates/base/_partials/*.tmpl",
   "templates/base/.biome.json",
   "templates/base/.codebook.toml",
   "templates/base/.devcontainer/devcontainer.json",
-  "templates/base/.dprint.json",
+  "templates/base/.config/dprint.json",
   "templates/base/.github/workflows/pr-checks.yaml",
   "templates/base/.github/workflows/release.yaml",
   "templates/base/.github/workflows/update-deps.yaml",
   "templates/base/.gitignore",
-  "templates/base/.mise/config.toml",
-  "templates/base/.ryl.toml",
+  "templates/base/.config/mise/config.toml",
+  "templates/base/.config/ryl.toml",
   "templates/base/.updatecli/values.yaml",
   "templates/base/README.md",
   "templates/base/REUSE.toml",
-  "templates/base/cog.toml",
+  "templates/base/.config/cog.toml",
   "templates/base/prek.toml",
   "templates/hugo/src/go.mod",
   "templates/hugo/src/hugo.yaml",
@@ -32,7 +32,7 @@ repo = "local"
 [[repos.hooks]]
 id = "ryl"
 name = "ryl"
-entry = "ryl --config-file .ryl.toml"
+entry = "ryl --config-file .config/ryl.toml"
 language = "system"
 types = ["yaml"]
 exclude = '^(\.updatecli|static/updatecli/[^/]+)/manifests/'
@@ -43,7 +43,7 @@ repo = "local"
 [[repos.hooks]]
 id = "editorconfig-checker"
 name = "editorconfig-checker"
-entry = "editorconfig-checker"
+entry = "editorconfig-checker -config .config/editorconfig-checker.json"
 language = "system"
 
 [[repos]]
@@ -194,7 +194,7 @@ repo = "local"
 id = "cog-check"
 name = "cog check"
 entry = "cog"
-args = ["check", "--from-latest-tag"]
+args = ["--config", ".config/cog.toml", "check", "--from-latest-tag"]
 language = "system"
 pass_filenames = false
 stages = ["pre-push"]

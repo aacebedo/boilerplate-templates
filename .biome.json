@@ -23,7 +23,7 @@
       "!templates/*/fragments",
       "!templates/base/.biome.json",
       "!templates/base/.devcontainer/devcontainer.json",
-      "!templates/base/.dprint.json",
+      "!templates/base/.config/dprint.json",
       "!templates/hugo/src/layouts"
     ]
   }

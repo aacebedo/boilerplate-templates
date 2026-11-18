@@ -1,0 +1,3 @@
+# Clippy has no lookup in .config/: point it there for every cargo invocation (CLI, hooks, IDEs).
+[env]
+CLIPPY_CONF_DIR = { value = ".config", relative = true }

@@ -39,7 +39,10 @@ else
 fi
 
 reference() {
-	if [ "$self" = true ]; then
+	if [ "$self" = true ] && [ "$kind" = dprint ]; then
+		# dprint resolves the extends of .config/dprint.json from .config/.
+		printf '../static/%s' "$1"
+	elif [ "$self" = true ]; then
 		printf 'static/%s' "$1"
 	elif [ "$kind" = dprint ]; then
 		path="${url#https://github.com/}"
@@ -55,7 +58,8 @@ mise)
 	for layer in base $(printf '%s' "$layers" | tr , ' '); do
 		[ -f "$root/static/mise/config/$layer.toml" ] || continue
 		if [ "$self" = true ]; then
-			printf '  "../%s",\n' "$(reference "mise/config/$layer.toml")"
+			# mise resolves the includes of .config/mise/config.toml from .config/mise/.
+			printf '  "../../%s",\n' "$(reference "mise/config/$layer.toml")"
 		else
 			printf '  "%s",\n' "$(reference "mise/config/$layer.toml")"
 		fi
@@ -65,7 +69,7 @@ mise)
 	for layer in base $(printf '%s' "$layers" | tr , ' '); do
 		printf '  "%s",\n' "$(reference "mise/tasks/$layer")"
 	done
-	printf '  ".mise/tasks",\n]\n'
+	printf '  ".config/mise/tasks",\n]\n'
 	;;
 dprint)
 	for layer in $(printf '%s' "$layers" | tr , ' '); do
