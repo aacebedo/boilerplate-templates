@@ -12,7 +12,7 @@ gh = "2.105.0"
 rumdl = "0.3.4"
 updatecli = "0.124.0"
 biome = "2.6.2"
-"github:blopker/codebook" = "0.4.0"
+"github:blopker/codebook" = "0.4.1"
 uv = "0.13.8"
 "pipx:reuse" = { version = "6.3.0", extras = "charset-normalizer" }
 boilerplate = "0.17.0"
