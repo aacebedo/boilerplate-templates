@@ -2,7 +2,7 @@
   "private": true,
   "dependencies": {
     "lighthouse": "13.6.0",
-    "puppeteer": "25.18.1"
+    "puppeteer": "25.19.0"
   },
   "allowScripts": {
     "puppeteer": true
