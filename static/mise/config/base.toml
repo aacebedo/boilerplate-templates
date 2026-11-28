@@ -15,7 +15,7 @@ biome = "2.6.2"
 "github:blopker/codebook" = "0.4.1"
 uv = "0.13.9"
 "pipx:reuse" = { version = "6.3.0", extras = "charset-normalizer" }
-boilerplate = "0.17.0"
+boilerplate = "0.17.1"
 yq = "4.54.3"
 
 [vars]
