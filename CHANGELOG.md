@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.11.0](https://github.com/aacebedo/boilerplate-templates/compare/8fb75606eb113336b7f1eecebf40cdb40c0aa3c8..v0.11.0) - 2026-11-28
+#### Features
+- gather the tool configurations under .config/ - ([8fb7560](https://github.com/aacebedo/boilerplate-templates/commit/8fb75606eb113336b7f1eecebf40cdb40c0aa3c8)) - Alexandre ACEBEDO
+
+- - -
+
 ## [v0.10.3](https://github.com/aacebedo/boilerplate-templates/compare/5e5f6304aa217c02cd81937f5c002839b8575d4f..v0.10.3) - 2026-11-23
 #### Miscellaneous Chores
 - (**deps**) Update uv in static/mise/config/base.toml - ([12aec64](https://github.com/aacebedo/boilerplate-templates/commit/12aec64f31d3dce2f3ed1ca0e4c4ac462cf6bd99)) - ci-actions-dep-updater[bot]
